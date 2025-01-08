@@ -1,6 +1,6 @@
 🌱 **Course Schedule**
 
-| Week | Date(s) | Topic(s) | Assign/activities |
+| Week | Date(s) | Topic(s) | Acts.&Assigns. |
 |------|:------|----------:|--------:|
 |  W01    | Mar. 6     |Introduction; Ch.1| [Praat](https://www.fon.hum.uva.nl/praat/)|
 |  W02    | Mar. 13 | Ch.1 Basics and acoustic filters |        |
