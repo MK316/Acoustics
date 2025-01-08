@@ -1,1 +1,3 @@
-# Graduate course
+### Weekly schedule
+
+
