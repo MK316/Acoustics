@@ -43,7 +43,7 @@ with tabs[0]:
     By the end of this course, participants will have the confidence to design and conduct experiments, analyze findings, and apply results to enhance their teaching practices.
     </div>
     """, unsafe_allow_html=True)
-    """, unsafe_allow_html=True)
+
 # Content for the Schedule tab
 with tabs[1]:
     st.caption("Spring 2025")
