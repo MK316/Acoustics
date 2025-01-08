@@ -2,7 +2,7 @@
 
 | Week | Date(s) | Topic(s) | Assign/activities | Links |
 |------|------|----------|--------|-------|
-|  W01    | Mar 6     |Introduction| Grouping       |       |
+|  W01    | Mar 6     |Introduction| Praat       | [download](https://www.fon.hum.uva.nl/praat/)      |
 |  W02    | Mar 13 |          |        |       |
 |  W03    | Mar 20 |          |        |       |
 |  W04    | Mar 27 |          |        |       |
