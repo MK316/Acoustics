@@ -10,7 +10,7 @@
 |  W06    | Apr. 10 |  Ch.3 Digital signal processing |        |       |
 |  W07    | Apr. 17 |  _(continued)_ |        |       |
 |  W08    | Apr. 24 | _(continued)_  |        |       |
-|  W09    | May 1 | **Midterm** |        |       |
+|  W09    | May 1 | **Midterm** | _(written exam)_ |       |
 |  W10    | May 8 |   Ch.4 Basic audition |        |       |
 |  W11    | May 15 | _(continued)_ |        |       |
 |  W12    | May 22 | Ch.5 Speech perception |        |       |
