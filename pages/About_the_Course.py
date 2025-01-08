@@ -32,9 +32,9 @@ with tabs[0]:
     st.caption("🔎 Course Overview")
     st.markdown("""
     <div class="justify-text">
-    This course is designed to provide in-service English teachers with essential skills for integrating technology into language education. This course emphasizes both theoretical and practical aspects of acoustics and perception, exploring their application in teaching English pronunciation and listening comprehension.<br><br>
+    This course is designed to provide students with essential skills for integrating technology into language education. This course emphasizes both theoretical and practical aspects of acoustics and perception, exploring their application in teaching English pronunciation and listening comprehension.<br><br>
 
-    Participants will:
+    Students will:
     - Explore the fundamentals of speech sounds in the context of English language learning.
     - Develop a working knowledge of experimental design in acoustics and perception studies.
     - Learn basic Praat coding skills for implementing and analyzing acoustic experiments.
