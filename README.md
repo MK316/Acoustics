@@ -2,10 +2,10 @@
 
 | Week | Date(s) | Topic(s) | Assign/activities | Links |
 |------|------|----------|--------|-------|
-|  W01    | Mar 6     |Introduction| Praat       | [download](https://www.fon.hum.uva.nl/praat/)      |
-|  W02    | Mar 13 | Ch.1 Basics and acoustic filters |        |       |
-|  W03    | Mar 20 | Ch.1         |        |       |
-|  W04    | Mar 27 | Ch.2 The acoustic theory of speech |        |       |
+|  W01    | Mar. 6     |Introduction| Praat       | [download](https://www.fon.hum.uva.nl/praat/)      |
+|  W02    | Mar. 13 | Ch.1 Basics and acoustic filters |        |       |
+|  W03    | Mar. 20 | Ch.1         |        |       |
+|  W04    | Mar. 27 | Ch.2 The acoustic theory of speech |        |       |
 |  W05    | Apr. 3 |  Ch.2        |        |       |
 |  W06    | Apr. 10 |  Ch.3 Digital signal processing |        |       |
 |  W07    | Apr. 17 |  Ch.3  |        |       |
