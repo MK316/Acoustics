@@ -2,7 +2,7 @@
 
 | Week | Date(s) | Topic(s) | Assign/activities | Links |
 |------|------|----------|--------|-------|
-|  W01    | Mar. 6     |Introduction| Praat       | [download](https://www.fon.hum.uva.nl/praat/)      |
+|  W01    | Mar. 6     |Introduction, Ch.1| Praat       | [download](https://www.fon.hum.uva.nl/praat/)      |
 |  W02    | Mar. 13 | Ch.1 Basics and acoustic filters |        |       |
 |  W03    | Mar. 20 | _(continued)_         |        |       |
 |  W04    | Mar. 27 | Ch.2 The acoustic theory of speech |        |       |
