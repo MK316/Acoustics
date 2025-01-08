@@ -33,7 +33,7 @@ with tabs[0]:
     st.markdown("""
     <div class="justify-text">
     This course is designed to provide in-service English teachers with essential skills for integrating technology into language education. This course emphasizes both theoretical and practical aspects of acoustics and perception, exploring their application in teaching English pronunciation and listening comprehension.
-
+    <br>
 
     Participants will:
     - Explore the fundamentals of speech sounds in the context of English language learning.
