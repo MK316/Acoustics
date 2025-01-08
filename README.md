@@ -17,4 +17,4 @@
 |  W13    | May 29 |          |        |       |
 |  W14    | June 5 |          |        |       |
 |  W15    | June 12 |          |        |       |
-|  W16    | June 19 |          |        |       |
+|  W16    | June 19 |Final presentation |        |       |
