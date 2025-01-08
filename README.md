@@ -9,9 +9,9 @@
 |  W05    | Apr. 3 | _(continued)_ |        |       |
 |  W06    | Apr. 10 |  Ch.3 Digital signal processing |        |       |
 |  W07    | Apr. 17 |  _(continued)_ |        |       |
-|  W08    | Apr. 24 |  Ch.4 Basic audition |        |       |
-|  W09    | May 1 |  _(continued)_ |        |       |
-|  W10    | *May 8 |  (Ch.5 Speech perception) |        |       |
+|  W08    | Apr. 24 | _(continued)_  |        |       |
+|  W09    | May 1 | Midterm |        |       |
+|  W10    | May 8 |   Ch.4 Basic audition |        |       |
 |  W11    | May 15 |  Ch.5 Speech perception  |        |       |
 |  W12    | May 22 | _(continued)_ |        |       |
 |  W13    | May 29 | Ch.6 Vowels  |        |       |
