@@ -12,9 +12,9 @@
 |  W08    | Apr. 24 | _(continued)_  |        |       |
 |  W09    | May 1 | **Midterm** |        |       |
 |  W10    | May 8 |   Ch.4 Basic audition |        |       |
-|  W11    | May 15 |  Ch.5 Speech perception  |        |       |
-|  W12    | May 22 | _(continued)_ |        |       |
-|  W13    | May 29 | Ch.6 Vowels  |        |       |
-|  W14    | June 5 | _(continued)_  |        |       |
+|  W11    | May 15 | _(continued)_ |        |       |
+|  W12    | May 22 | Ch.5 Speech perception |        |       |
+|  W13    | May 29 | _(continued)_  |        |       |
+|  W14    | June 5 | Ch.6 Vowels  |        |       |
 |  W15    | June 12 | Ch.7 Fricatives |        |       |
 |  W16    | June 19 |**Final presentation** |        |       |
