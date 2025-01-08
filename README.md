@@ -16,5 +16,5 @@
 |  W12    | May 22 | Ch.5 Speech perception |        |       |
 |  W13    | May 29 | _(continued)_  |        |       |
 |  W14    | June 5 | Ch.6 Vowels  |        |       |
-|  W15    | June 12 | Ch.7 Fricatives |        |       |
+|  W15    | June 12 | (Ch.7 Fricatives) |        |       |
 |  W16    | June 19 |**Final presentation** |        |       |
