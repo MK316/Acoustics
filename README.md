@@ -11,8 +11,8 @@
 |  W07    | Apr. 17 |  Ch.3  |        |       |
 |  W08    | Apr. 24 |  Ch.4 Basic audition |        |       |
 |  W09    | May 1 |  Ch.4 |        |       |
-|  W10    | *May 8 |  Ch.5 Speech perception |        |       |
-|  W11    | May 15 |  Ch.5  |        |       |
+|  W10    | *May 8 |  (Ch.5 Speech perception) |        |       |
+|  W11    | May 15 |  Ch.5 Speech perception  |        |       |
 |  W12    | May 22 | Ch.5 |        |       |
 |  W13    | May 29 | Ch.6 Vowels  |        |       |
 |  W14    | June 5 | Ch.6  |        |       |
