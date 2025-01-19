@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Streamlit app
-st.title("Multipage Tabs Example")
+st.title("Ch.1 Basic acoustics & acoustic filters")
 
 # Create tabs
 tab1, tab2, tab3 = st.tabs(["Sine Wave Plot", "Tab 2", "Tab 3"])
