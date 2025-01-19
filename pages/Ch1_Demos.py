@@ -13,6 +13,7 @@ with tab1:
     st.caption("🔎 Here you will find links to useful online resources related to lectures and course materials.")
     
     # First section: Colorful buttons with descriptions and links
+    st.write("---")  # Divider for separation
     st.write("1. Visit these websites for additional resources:")
     col1, col2, col3 = st.columns(3)
     with col1:
