@@ -24,7 +24,7 @@ with tab1:
             """,
             unsafe_allow_html=True,
         )
-        st.write("Description: Access an introductory resource for acoustic phonetics.")
+        st.caption("Description: Access an introductory resource for acoustic phonetics.")
     with col2:
         st.markdown(
             """
