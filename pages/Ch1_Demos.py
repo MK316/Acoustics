@@ -14,7 +14,7 @@ with tab1:
     
     # First section: Colorful buttons with descriptions and links
     st.write("Visit these websites for additional resources:")
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     with col1:
         st.markdown(
             """
@@ -35,12 +35,7 @@ with tab1:
             unsafe_allow_html=True,
         )
         st.write("Description: Explore advanced examples in speech science.")
-
-    st.write("---")  # Divider for separation
-
-    # Second section: More colorful buttons
-    st.write("Explore more tools and examples:")
-    col3, col4, col5 = st.columns(3)
+ 
     with col3:
         st.markdown(
             """
@@ -51,6 +46,13 @@ with tab1:
             unsafe_allow_html=True,
         )
         st.write("Description: A tool for analyzing sound waveforms.")
+        
+    st.write("---")  # Divider for separation
+
+    # Second section: More colorful buttons
+    st.write("Explore more tools and examples:")
+    col3, col4, col5 = st.columns(3)
+
     with col4:
         st.markdown(
             """
@@ -71,6 +73,18 @@ with tab1:
             unsafe_allow_html=True,
         )
         st.write("Description: Visualize speech data and patterns.")
+
+    with col6:
+        st.markdown(
+            """
+            <a href="https://www.tool3.com" target="_blank">
+                <button style="background-color: #9C27B0; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 5px;">Tool 3</button>
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("Description: Visualize speech data and patterns.")
+
 
 # Tab 2: Placeholder for future content
 with tab2:
