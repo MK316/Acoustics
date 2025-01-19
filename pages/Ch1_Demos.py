@@ -18,7 +18,7 @@ with tab1:
     with col1:
         st.markdown(
             """
-            <a href="https://www.example.com" target="_blank">
+            <a href="https://www.google.com" target="_blank">
                 <button style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 5px;">Open Website 1</button>
             </a>
             """,
