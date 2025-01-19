@@ -6,7 +6,7 @@ import streamlit as st
 st.caption("Ch.1 Basic acoustics & acoustic filters")
 
 # Create tabs
-tab1, tab2, tab3 = st.tabs(["Sine Wave Plot", "Tab 2", "Tab 3"])
+tab1, tab2, tab3 = st.tabs(["EX1-4", "Tab 2", "Tab 3"])
 
 # Tab 1: Sine Wave Plot
 with tab1:
