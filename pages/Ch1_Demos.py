@@ -8,29 +8,35 @@ st.caption("Ch.1 Basic acoustics & acoustic filters")
 # Create tabs
 tab1, tab2, tab3 = st.tabs(["Links", "Tab 2", "EX1-4"])
 
-# Tab 1: Links with buttons to open websites
+# Tab 1: Links with two sections of buttons
 with tab1:
     st.header("Links")
-    st.write("Click the buttons below to visit the websites:")
     
-    col1, col2, col3, col4 = st.columns(4)
-    
+    # First section: st.write and 2 buttons
+    st.write("Visit these websites for additional resources:")
+    col1, col2 = st.columns(2)
     with col1:
-        if st.button("Wave propagation"):
+        if st.button("Open Website 1"):
             st.markdown("[Visit Website 1](https://www.example.com)", unsafe_allow_html=True)
-
     with col2:
         if st.button("Open Website 2"):
             st.markdown("[Visit Website 2](https://www.example.org)", unsafe_allow_html=True)
     
-    
-    with col3:
-        if st.button("Wave propagation"):
-            st.markdown("[Visit Website 1](https://www.example.com)", unsafe_allow_html=True)
+    st.write("---")  # Divider for separation
 
+    # Second section: st.write and 3 buttons
+    st.write("Explore more tools and examples:")
+    col3, col4, col5 = st.columns(3)
+    with col3:
+        if st.button("Tool 1"):
+            st.markdown("[Open Tool 1](https://www.tool1.com)", unsafe_allow_html=True)
     with col4:
-        if st.button("Open Website 2"):
-            st.markdown("[Visit Website 2](https://www.example.org)", unsafe_allow_html=True)
+        if st.button("Tool 2"):
+            st.markdown("[Open Tool 2](https://www.tool2.com)", unsafe_allow_html=True)
+    with col5:
+        if st.button("Tool 3"):
+            st.markdown("[Open Tool 3](https://www.tool3.com)", unsafe_allow_html=True)
+
 # Tab 2: Placeholder for future content
 with tab2:
     st.header("Tab 2 Content")
