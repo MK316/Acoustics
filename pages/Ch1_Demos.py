@@ -8,35 +8,69 @@ st.caption("Ch.1 Basic acoustics & acoustic filters")
 # Create tabs
 tab1, tab2, tab3 = st.tabs(["Links", "Tab 2", "EX1-4"])
 
-# Tab 1: Links with two sections of buttons
+# Tab 1: Links with colorful buttons, descriptions, and links
 with tab1:
     st.header("Links")
     
-    # First section: st.write and 2 buttons
+    # First section: Colorful buttons with descriptions and links
     st.write("Visit these websites for additional resources:")
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("Open Website 1"):
-            st.markdown("[Visit Website 1](https://www.example.com)", unsafe_allow_html=True)
-        st.caption("This link shows... how sounds propagate through the air when we hear sound in reality")
+        st.markdown(
+            """
+            <a href="https://www.example.com" target="_blank">
+                <button style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 5px;">Open Website 1</button>
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("Description: Access an introductory resource for acoustic phonetics.")
     with col2:
-        if st.button("Open Website 2"):
-            st.markdown("[Visit Website 2](https://www.example.org)", unsafe_allow_html=True)
-    
+        st.markdown(
+            """
+            <a href="https://www.example.org" target="_blank">
+                <button style="background-color: #2196F3; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 5px;">Open Website 2</button>
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("Description: Explore advanced examples in speech science.")
+
     st.write("---")  # Divider for separation
 
-    # Second section: st.write and 3 buttons
+    # Second section: More colorful buttons
     st.write("Explore more tools and examples:")
     col3, col4, col5 = st.columns(3)
     with col3:
-        if st.button("Tool 1"):
-            st.markdown("[Open Tool 1](https://www.tool1.com)", unsafe_allow_html=True)
+        st.markdown(
+            """
+            <a href="https://www.tool1.com" target="_blank">
+                <button style="background-color: #f44336; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 5px;">Tool 1</button>
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("Description: A tool for analyzing sound waveforms.")
     with col4:
-        if st.button("Tool 2"):
-            st.markdown("[Open Tool 2](https://www.tool2.com)", unsafe_allow_html=True)
+        st.markdown(
+            """
+            <a href="https://www.tool2.com" target="_blank">
+                <button style="background-color: #FF9800; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 5px;">Tool 2</button>
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("Description: Simulate acoustic filters with this tool.")
     with col5:
-        if st.button("Tool 3"):
-            st.markdown("[Open Tool 3](https://www.tool3.com)", unsafe_allow_html=True)
+        st.markdown(
+            """
+            <a href="https://www.tool3.com" target="_blank">
+                <button style="background-color: #9C27B0; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 5px;">Tool 3</button>
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.write("Description: Visualize speech data and patterns.")
 
 # Tab 2: Placeholder for future content
 with tab2:
