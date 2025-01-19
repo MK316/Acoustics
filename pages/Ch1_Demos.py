@@ -18,7 +18,7 @@ with tab1:
     with col1:
         if st.button("Open Website 1"):
             st.markdown("[Visit Website 1](https://www.example.com)", unsafe_allow_html=True)
-        st.caption("This link shows...")
+        st.caption("This link shows... how sounds propagate through the air when we hear sound in reality")
     with col2:
         if st.button("Open Website 2"):
             st.markdown("[Visit Website 2](https://www.example.org)", unsafe_allow_html=True)
