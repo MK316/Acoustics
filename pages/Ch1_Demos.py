@@ -22,8 +22,6 @@ with tab1:
     with col2:
         if st.button("Open Website 2"):
             st.markdown("[Visit Website 2](https://www.example.org)", unsafe_allow_html=True)
-
-    st.write("Click the buttons below to visit the websites:")
     
     
     with col3:
