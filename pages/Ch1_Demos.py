@@ -10,7 +10,7 @@ tab1, tab2, tab3 = st.tabs(["👀 Links", "🌀 Apps", "🌱EX1-4"])
 
 # Tab 1: Links with colorful buttons, descriptions, and links
 with tab1:
-    st.caption("Here you will find links to useful online resources related to lectures and course materials.")
+    st.caption("🔎 Here you will find links to useful online resources related to lectures and course materials.")
     
     # First section: Colorful buttons with descriptions and links
     st.write("1. Visit these websites for additional resources:")
