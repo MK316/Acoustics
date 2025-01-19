@@ -78,7 +78,7 @@ with tab1:
         st.markdown(
             """
             <a href="https://www.tool3.com" target="_blank">
-                <button style="background-color: #9C27B0; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 5px;">Tool 3</button>
+                <button style="background-color: #9C27C0; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 5px;">Tool 3</button>
             </a>
             """,
             unsafe_allow_html=True,
