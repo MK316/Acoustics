@@ -51,7 +51,7 @@ with tab1:
 
     # Second section: More colorful buttons
     st.write("Explore more tools and examples:")
-    col3, col4, col5 = st.columns(3)
+    col4, col5, col6 = st.columns(3)
 
     with col4:
         st.markdown(
