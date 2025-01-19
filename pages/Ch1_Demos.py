@@ -8,11 +8,27 @@ st.caption("Ch.1 Basic acoustics & acoustic filters")
 # Create tabs
 tab1, tab2, tab3 = st.tabs(["Links", "Tab 2", "EX1-4"])
 
-# Tab 1: Sine Wave Plot
+# Tab 1: Links with buttons to open websites
 with tab1:
     st.header("Links")
-    st.write("This is where you can add content for the third tab.")
+    st.write("Click the buttons below to visit the websites:")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        if st.button("Wave propagation"):
+            st.markdown("[Visit Website 1](https://www.example.com)", unsafe_allow_html=True)
 
+    with col2:
+        if st.button("Open Website 2"):
+            st.markdown("[Visit Website 2](https://www.example.org)", unsafe_allow_html=True)
+
+# Tab 2: Placeholder for future content
+with tab2:
+    st.header("Tab 2 Content")
+    st.write("This is where you can add content for the second tab.")
+
+# Tab 3: Sine Wave Plot
 with tab3:
     st.header("Sine Wave Plot")
     
@@ -35,13 +51,3 @@ with tab3:
 
     # Display the plot in Streamlit
     st.pyplot(fig)
-
-# Tab 2: Placeholder for future content
-with tab2:
-    st.header("Tab 2 Content")
-    st.write("This is where you can add content for the second tab.")
-
-# Tab 3: Placeholder for future content
-with tab3:
-    st.header("Tab 3 Content")
-    st.write("This is where you can add content for the third tab.")
