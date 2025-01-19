@@ -13,7 +13,7 @@ with tab1:
     st.header("Links")
     
     # First section: Colorful buttons with descriptions and links
-    st.write("Visit these websites for additional resources:")
+    st.write("1. Visit these websites for additional resources:")
     col1, col2, col3 = st.columns(3)
     with col1:
         st.markdown(
@@ -50,7 +50,7 @@ with tab1:
     st.write("---")  # Divider for separation
 
     # Second section: More colorful buttons
-    st.write("Explore more tools and examples:")
+    st.write("2. Explore more tools and examples:")
     col4, col5, col6 = st.columns(3)
 
     with col4:
