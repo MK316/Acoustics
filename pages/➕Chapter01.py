@@ -72,6 +72,7 @@ with tab2:
     st.pyplot(fig)
 
 
+
 with tab3:
     st.markdown("### 🎶 Create a Complex Wave")
 
@@ -110,9 +111,10 @@ with tab3:
         
         # Plot individual sine wave
         axes[i].plot(t[:1000], sine_wave[:1000])  # Show only first 1000 points for clarity
-        axes[i].set_title(f"Sine Wave {i+1}: {frequencies[i]} Hz, Amplitude: {amplitudes[i]}")
-        axes[i].set_xlabel("Time (s)")
-        axes[i].set_ylabel("Amplitude")
+        axes[i].set_title(f"Sine Wave {i+1}: {frequencies[i]} Hz, Amplitude: {amplitudes[i]}", fontsize=10)
+        axes[i].set_xlabel("Time (s)", fontsize=9)
+        axes[i].set_ylabel("Amplitude", fontsize=9)
+        axes[i].tick_params(axis='both', labelsize=8)
         axes[i].grid(True)
 
     # Normalize the complex wave to prevent clipping
@@ -120,10 +122,14 @@ with tab3:
 
     # Plot the final complex wave
     axes[-1].plot(t[:1000], complex_wave[:1000])
-    axes[-1].set_title("Final Complex Waveform (Sum of All Components)")
-    axes[-1].set_xlabel("Time (s)")
-    axes[-1].set_ylabel("Amplitude")
+    axes[-1].set_title("Final Complex Waveform (Sum of All Components)", fontsize=10)
+    axes[-1].set_xlabel("Time (s)", fontsize=9)
+    axes[-1].set_ylabel("Amplitude", fontsize=9)
+    axes[-1].tick_params(axis='both', labelsize=8)
     axes[-1].grid(True)
+
+    # Adjust spacing to prevent overlapping
+    plt.subplots_adjust(hspace=0.4)
 
     # Display all plots
     st.pyplot(fig)
