@@ -196,7 +196,6 @@ with tab4:
 with tab5:
 
 
-
     # Define glossary of terms and their definitions
     quiz_data = {
         "sound": "A vibration that propagates as an acoustic wave through a medium.",
@@ -234,7 +233,7 @@ with tab5:
         "bandwidth": "The range of frequencies within the pass band of a filter."
     }
     
-    # Function to initialize the first quiz or continue to the next set
+    # Function to initialize the quiz
     def initialize_quiz():
         """Selects new questions from remaining words until all are asked."""
         if "remaining_terms" not in st.session_state:
@@ -263,9 +262,49 @@ with tab5:
     if "quiz_questions" not in st.session_state:
         initialize_quiz()
     
-    st.markdown(f"### 🎓 Acoustic Terminology Quiz (Set {st.session
+    st.markdown(f"### 🎓 Acoustic Terminology Quiz (Set {st.session_state.quiz_count})")
+    st.write(f"📌 **Remaining Questions: {len(st.session_state.remaining_terms)}**")
+    
+    # Display quiz questions
+    for i, (correct_term, definition) in enumerate(st.session_state.quiz_questions):
+        st.write(f"**Question {i+1}:** {definition}")
+        options = st.session_state.quiz_options.get(f"q{i}", [])
+    
+        # Display radio button options
+        st.session_state.quiz_answers[f"q{i}"] = st.radio(
+            f"Select the correct term for Question {i+1}:",
+            options,
+            key=f"quiz_{i}",
+            index=options.index(st.session_state.quiz_answers[f"q{i}"]) if st.session_state.quiz_answers[f"q{i}"] in options else None
+        )
+    
+    # Button to check answers
+    if st.button("Check Answers", key="check_answers_button"):
+        results = []
+        for i, (correct_term, _) in enumerate(st.session_state.quiz_questions):
+            user_answer = st.session_state.quiz_answers.get(f"q{i}")
+            if user_answer == correct_term:
+                results.append(f"✅ **Question {i+1}:** Correct! The term is **{correct_term}**.")
+            else:
+                results.append(f"❌ **Question {i+1}:** Incorrect. The correct answer is **{correct_term}**.")
+    
+        for result in results:
+            st.write(result)
+    
+        # Display remaining questions count after checking
+        st.write(f"📌 **Remaining Questions: {len(st.session_state.remaining_terms)}**")
+    
+    # Button to continue to the next quiz set
+    if st.session_state.remaining_terms:
+        if st.button("Next Quiz Set", key="next_quiz_button"):
+            st.session_state.quiz_count += 1  # Increment quiz count
+            initialize_quiz()  # Get a new quiz set
+            st.rerun()
+    else:
+        st.write("🎉 **All questions have been asked! Great job completing the quiz!**")
     
     
+
 
 #################################################
 with tab6:
