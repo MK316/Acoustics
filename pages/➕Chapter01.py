@@ -1,13 +1,15 @@
 import streamlit as st
 
-tab1, tab2 = st.tabs(["Lecture slides", "Download"])
+tab1, tab2 = st.tabs(["Lecture slides", "Apps", "Download"])
 
 
 with tab1:
     st.write("Other content here.")
 
-
 with tab2:
+    st.caption("Apps to help the content")
+    
+with tab3:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
