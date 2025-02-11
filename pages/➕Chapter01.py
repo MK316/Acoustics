@@ -196,6 +196,7 @@ with tab4:
 with tab5:
 
 
+
     # Define glossary of terms and their definitions
     quiz_data = {
         "sound": "A vibration that propagates as an acoustic wave through a medium.",
@@ -233,60 +234,38 @@ with tab5:
         "bandwidth": "The range of frequencies within the pass band of a filter."
     }
     
-    # Function to initialize the quiz
+    # Function to initialize the first quiz or continue to the next set
     def initialize_quiz():
-        """Initialize the quiz with new random questions and answer options."""
-        st.session_state.quiz_questions = random.sample(list(quiz_data.items()), 5)  # Select 5 random questions
-        st.session_state.quiz_options = {}  # Store answer choices
-        st.session_state.quiz_answers = {}  # Store user answers
+        """Selects new questions from remaining words until all are asked."""
+        if "remaining_terms" not in st.session_state:
+            st.session_state.remaining_terms = list(quiz_data.items())  # Store all terms initially
+            st.session_state.quiz_count = 1  # Start at quiz 1
         
+        # Select up to 5 remaining terms
+        num_questions = min(5, len(st.session_state.remaining_terms))
+        st.session_state.quiz_questions = random.sample(st.session_state.remaining_terms, num_questions)
+    
+        # Remove selected terms from remaining pool
+        st.session_state.remaining_terms = [item for item in st.session_state.remaining_terms if item not in st.session_state.quiz_questions]
+    
+        # Store answer choices and reset user answers
+        st.session_state.quiz_options = {}
+        st.session_state.quiz_answers = {}
+    
         for i, (correct_term, _) in enumerate(st.session_state.quiz_questions):
-            # Generate 3 incorrect options
             wrong_answers = random.sample([term for term in quiz_data.keys() if term != correct_term], 3)
             options = wrong_answers + [correct_term]
-            random.shuffle(options)  # Shuffle options
-            st.session_state.quiz_options[f"q{i}"] = options  # Store the shuffled options
-            st.session_state.quiz_answers[f"q{i}"] = None  # Initialize user answers
+            random.shuffle(options)
+            st.session_state.quiz_options[f"q{i}"] = options
+            st.session_state.quiz_answers[f"q{i}"] = None
     
     # Ensure quiz is initialized
     if "quiz_questions" not in st.session_state:
         initialize_quiz()
     
-    st.markdown("### 🎓 Chapter 1: Terminology Quiz")
-    st.write("Select the correct answer for each definition.")
+    st.markdown(f"### 🎓 Acoustic Terminology Quiz (Set {st.session
     
-    # Display quiz questions
-    for i, (correct_term, definition) in enumerate(st.session_state.quiz_questions):
-        st.write(f"**Question {i+1}:** {definition}")
     
-        # Ensure options exist before accessing
-        options = st.session_state.quiz_options.get(f"q{i}", [])
-    
-        # Display radio button options
-        st.session_state.quiz_answers[f"q{i}"] = st.radio(
-            f"Select the correct term for Question {i+1}:",
-            options,
-            key=f"quiz_{i}",
-            index=options.index(st.session_state.quiz_answers[f"q{i}"]) if st.session_state.quiz_answers[f"q{i}"] in options else None
-        )
-    
-    # Button to check answers
-    if st.button("Check Answers", key="check_answers_button"):
-        results = []
-        for i, (correct_term, _) in enumerate(st.session_state.quiz_questions):
-            user_answer = st.session_state.quiz_answers.get(f"q{i}")
-            if user_answer == correct_term:
-                results.append(f"✅ **Question {i+1}:** Correct! The term is **{correct_term}**.")
-            else:
-                results.append(f"❌ **Question {i+1}:** Incorrect. The correct answer is **{correct_term}**.")
-    
-        for result in results:
-            st.write(result)
-    
-    # Button to generate a new quiz
-    if st.button("Generate New Quiz", key="generate_quiz_button"):
-        initialize_quiz()
-        st.rerun()
 
 #################################################
 with tab6:
