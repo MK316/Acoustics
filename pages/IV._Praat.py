@@ -3,7 +3,7 @@ import streamlit as st
 tab0, tab1, tab2, tab3, tab4 = st.tabs(["💍Praat Introduction", "💍Getting started", "💍Basic functions", "💍Speech manipulation","💍Automation with scripting"])
 
 with tab0:
-    st.image("https://github.com/MK316/Acoustics/raw/main/images/praat01.jpg", caption="Doing Phonetics by Computer; icon, object window, picture window")
+    st.image("https://github.com/MK316/Acoustics/raw/main/images/praat01.jpg", caption="Doing Phonetics by Computer; icon, Praat objects window, Praat picture window")
     st.markdown("---")
     st.markdown("""
     - Praat is a free software for speech analysis and phonetic research, widely used in linguistics and language education. It offers spectrograms, pitch tracking, formant analysis, and speech synthesis, with scripting support for automation.
