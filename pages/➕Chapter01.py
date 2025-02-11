@@ -10,7 +10,7 @@ with tab1:
     st.write("Other content here.")
 
 with tab2:
-    st.markdown("### 🎵 Generate a Simple Periodic Wave")
+    st.markdown("### 🎵 1. Generate a Simple Periodic Wave")
 
     # User input for frequency, amplitude, and phase shift
     frequency = st.number_input("Enter Frequency (Hz)", min_value=1, max_value=5000, value=440, step=1)
@@ -48,9 +48,9 @@ with tab2:
     # Provide a download button for the generated sound
     st.audio(audio_buffer, format='audio/wav')
     st.download_button(label="Download Wave File", data=audio_buffer, file_name="generated_wave.wav", mime="audio/wav")
-
+    st.markdown("---")
     # ---------- Phase Shift Comparison App ----------
-    st.markdown("### 🔄 Phase Shift Visualization")
+    st.markdown("### 🔄 2. Phase Shift Visualization")
     st.write("This section compares how the waveform changes with different phase shifts.")
 
     # Generate three example waves with different phase shifts (0°, 90°, 180°)
