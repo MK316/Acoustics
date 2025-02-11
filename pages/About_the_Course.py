@@ -78,7 +78,7 @@ with tabs[3]:
 # Content for the Links tab
 with tabs[4]:
     st.header("Links")
-    st.write("Provide useful links here. This could include additional reading materials, online resources, and related external websites.")
+    st.write("Useful links will be updated here. This could include additional reading materials, online resources, and related external websites.")
 
 # Content for the Calendar tab
 with tabs[5]:
