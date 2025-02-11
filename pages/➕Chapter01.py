@@ -293,8 +293,6 @@ with tab5:
         for result in results:
             st.write(result)
     
-        # Display remaining questions count after checking
-        st.write(f"📌 **Remaining Questions: {len(st.session_state.remaining_terms)}**")
     
     # Button to continue to the next quiz set
     if st.session_state.remaining_terms:
