@@ -252,7 +252,7 @@ with tab5:
     if "quiz_questions" not in st.session_state:
         initialize_quiz()
     
-    st.markdown("### 🎓 Acoustic Terminology Quiz")
+    st.markdown("### 🎓 Chapter 1: Terminology Quiz")
     st.write("Select the correct answer for each definition.")
     
     # Display quiz questions
