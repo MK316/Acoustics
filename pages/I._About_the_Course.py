@@ -40,7 +40,7 @@ with tabs[0]:
     - Learn basic Praat coding skills for implementing and analyzing acoustic experiments.
     - Create experimental tools for testing pronunciation and listening skills using speech data.
 
-    By the end of this course, participants will have the knowledge and skills to design and conduct experiments, analyze findings, and apply results to enhance their teaching practices.
+    By the end of this course, participants will have the knowledge and skills to design and conduct experiments. (+ analyze findings, and apply results to enhance their teaching practices.)
     </div>
     """, unsafe_allow_html=True)
 
