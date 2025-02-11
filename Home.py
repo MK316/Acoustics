@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.markdown("""
-  #### 🔸 Phonology & English Education
+  #### 🐾 Phonology & English Education
   - Semester: Spring 2025
   - Topic: Acoustics and Perception Experiment
   """)
