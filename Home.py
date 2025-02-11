@@ -5,5 +5,5 @@ st.markdown("""
   - Semester: Spring 2025
   - Topic: Acoustics and Perception Experiment
   """)
-st.image("https://github.com/MK316/Acoustics/raw/main/images/acoustics-logo1.jpg", "What is sound? How learners perceive English sounds similarly or differently?")
+st.image("https://github.com/MK316/Acoustics/raw/main/images/acoustics-logo1.jpg", "What is sound, and how does it relate to spoken English? How do English learners perceive sounds differently based on their linguistic background?")
 st.caption("🕑 Last updated: Feb.11, 2025")
