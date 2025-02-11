@@ -233,20 +233,24 @@ with tab5:
         "bandwidth": "The range of frequencies within the pass band of a filter."
     }
     
-    # Initialize session state to persist quiz data
-    if "quiz_questions" not in st.session_state:
+    # Function to initialize the quiz
+    def initialize_quiz():
+        """Initialize the quiz with new random questions and answer options."""
         st.session_state.quiz_questions = random.sample(list(quiz_data.items()), 5)  # Select 5 random questions
-        st.session_state.quiz_options = {}  # Stores answer choices for each question
+        st.session_state.quiz_options = {}  # Store answer choices
+        st.session_state.quiz_answers = {}  # Store user answers
+        
         for i, (correct_term, _) in enumerate(st.session_state.quiz_questions):
             # Generate 3 incorrect options
             wrong_answers = random.sample([term for term in quiz_data.keys() if term != correct_term], 3)
             options = wrong_answers + [correct_term]
             random.shuffle(options)  # Shuffle options
             st.session_state.quiz_options[f"q{i}"] = options  # Store the shuffled options
+            st.session_state.quiz_answers[f"q{i}"] = None  # Initialize user answers
     
-    # Store user answers persistently
-    if "quiz_answers" not in st.session_state:
-        st.session_state.quiz_answers = {f"q{i}": None for i in range(5)}
+    # Ensure quiz is initialized
+    if "quiz_questions" not in st.session_state:
+        initialize_quiz()
     
     st.markdown("### 🎓 Acoustic Terminology Quiz")
     st.write("Select the correct answer for each definition.")
@@ -254,11 +258,16 @@ with tab5:
     # Display quiz questions
     for i, (correct_term, definition) in enumerate(st.session_state.quiz_questions):
         st.write(f"**Question {i+1}:** {definition}")
+    
+        # Ensure options exist before accessing
+        options = st.session_state.quiz_options.get(f"q{i}", [])
+    
+        # Display radio button options
         st.session_state.quiz_answers[f"q{i}"] = st.radio(
             f"Select the correct term for Question {i+1}:",
-            st.session_state.quiz_options[f"q{i}"],
+            options,
             key=f"quiz_{i}",
-            index=st.session_state.quiz_options[f"q{i}"].index(st.session_state.quiz_answers[f"q{i}"]) if st.session_state.quiz_answers[f"q{i}"] else None
+            index=options.index(st.session_state.quiz_answers[f"q{i}"]) if st.session_state.quiz_answers[f"q{i}"] in options else None
         )
     
     # Button to check answers
@@ -276,9 +285,7 @@ with tab5:
     
     # Button to generate a new quiz
     if st.button("Generate New Quiz", key="generate_quiz_button"):
-        del st.session_state["quiz_questions"]
-        del st.session_state["quiz_options"]
-        del st.session_state["quiz_answers"]
+        initialize_quiz()
         st.rerun()
 
 #################################################
