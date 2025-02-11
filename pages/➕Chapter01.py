@@ -149,19 +149,19 @@ with tab3:
 
 #################################################
 with tab4:
-    st.markdown("### 🧮 Find the Greatest Common Divisor (GCD)")
+    st.markdown("### 🧮 Find the Greatest Common Denominator (GCD)")
 
-    # Generate 5 sets of random numbers
-    num_sets = 5
-    numbers_list = [np.random.randint(10, 100, 3) for _ in range(num_sets)]
+    # Generate 3 sets of random numbers within the range of 1 to 50
+    num_sets = 3
+    numbers_list = [np.random.randint(1, 51, 3) for _ in range(num_sets)]
 
     # Store user inputs
     user_answers = []
-    
+
     # Display the sets and input fields
     for i, numbers in enumerate(numbers_list):
         st.write(f"**Set {i+1}:** {numbers[0]}, {numbers[1]}, {numbers[2]}")
-        user_input = st.number_input(f"Your GCD Answer for Set {i+1}:", min_value=1, max_value=100, key=f"gcd_input_{i}")
+        user_input = st.number_input(f"Your GCD Answer for Set {i+1}:", min_value=1, max_value=50, key=f"gcd_input_{i}")
         user_answers.append(user_input)
 
     # Button to check answers
@@ -171,9 +171,9 @@ with tab4:
             correct_gcd = math.gcd(math.gcd(numbers[0], numbers[1]), numbers[2])
             user_answer = user_answers[i]
             if user_answer == correct_gcd:
-                results.append(f"✅ Set {i+1}: Correct! GCD of {numbers} is {correct_gcd}.")
+                results.append(f"✅ **Set {i+1}:** Correct! GCD of {numbers} is {correct_gcd}.")
             else:
-                results.append(f"❌ Set {i+1}: Incorrect. The correct GCD of {numbers} is {correct_gcd}.")
+                results.append(f"❌ **Set {i+1}:** Incorrect. The correct GCD of {numbers} is {correct_gcd}.")
 
         # Display results
         for result in results:
