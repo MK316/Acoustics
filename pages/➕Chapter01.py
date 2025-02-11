@@ -233,15 +233,17 @@ with tab5:
         "bandwidth": "The range of frequencies within the pass band of a filter."
     }
     
+    # Initialize session state variables safely
+    if "quiz_count" not in st.session_state:
+        st.session_state.quiz_count = 1  # Start at quiz 1
+    
+    if "remaining_terms" not in st.session_state:
+        st.session_state.remaining_terms = list(quiz_data.items())  # Store all terms initially
+    
     # Function to initialize the quiz
     def initialize_quiz():
         """Selects new questions from remaining words until all are asked."""
-        if "remaining_terms" not in st.session_state:
-            st.session_state.remaining_terms = list(quiz_data.items())  # Store all terms initially
-            st.session_state.quiz_count = 1  # Start at quiz 1
-        
-        # Select up to 5 remaining terms
-        num_questions = min(5, len(st.session_state.remaining_terms))
+        num_questions = min(5, len(st.session_state.remaining_terms))  # Take up to 5 remaining questions
         st.session_state.quiz_questions = random.sample(st.session_state.remaining_terms, num_questions)
     
         # Remove selected terms from remaining pool
@@ -302,9 +304,6 @@ with tab5:
             st.rerun()
     else:
         st.write("🎉 **All questions have been asked! Great job completing the quiz!**")
-    
-    
-
 
 #################################################
 with tab6:
