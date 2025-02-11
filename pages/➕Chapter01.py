@@ -149,7 +149,7 @@ with tab3:
 
 #################################################
 with tab4:
-    st.markdown("### 🧮 Find the Greatest Common Denominator (GCD)")
+    st.markdown("### 🧮 Find the Greatest Common Divisor (GCD)")
 
     # Generate 3 sets of random numbers within the range of 1 to 50
     num_sets = 3
@@ -162,18 +162,19 @@ with tab4:
     for i, numbers in enumerate(numbers_list):
         st.write(f"**Set {i+1}:** {numbers[0]}, {numbers[1]}, {numbers[2]}")
         user_input = st.number_input(f"Your GCD Answer for Set {i+1}:", min_value=1, max_value=50, key=f"gcd_input_{i}")
-        user_answers.append(user_input)
+        user_answers.append(int(user_input))  # Convert input to integer
 
     # Button to check answers
     if st.button("Check Answers"):
         results = []
         for i, numbers in enumerate(numbers_list):
-            correct_gcd = math.gcd(math.gcd(numbers[0], numbers[1]), numbers[2])
+            correct_gcd = math.gcd(math.gcd(numbers[0], numbers[1]), numbers[2])  # Compute correct GCD
             user_answer = user_answers[i]
+
             if user_answer == correct_gcd:
-                results.append(f"✅ **Set {i+1}:** Correct! GCD of {numbers} is {correct_gcd}.")
+                results.append(f"✅ **Set {i+1}:** Correct! GCD of {numbers} is **{correct_gcd}**.")
             else:
-                results.append(f"❌ **Set {i+1}:** Incorrect. The correct GCD of {numbers} is {correct_gcd}.")
+                results.append(f"❌ **Set {i+1}:** Incorrect. The correct GCD of {numbers} is **{correct_gcd}**.")
 
         # Display results
         for result in results:
