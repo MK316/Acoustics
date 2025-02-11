@@ -1,8 +1,8 @@
 import streamlit as st
 
-tab1, tab2 = st.tabs(["Praat software", "manual"])
+tab0, tab1, tab2, tab3, tab4 = st.tabs(["0. Praat Introduction", "1. Getting started", "2. Basic functions", "3. Speech manipulation","4. Automation with scripting"])
 
-with tab1:
+with tab0:
     st.image("https://github.com/MK316/Acoustics/raw/main/images/praat-icon.jpg", caption="Doing Phonetics by Computer")
     st.markdown("---")
     st.markdown("""
@@ -11,5 +11,20 @@ with tab1:
     - How to install: Just double click the icon appearing after downloading file.
     """)
 
+with tab1:
+    st.caption("TBA")
+
 with tab2:
     st.caption("TBA")
+    
+with tab3:
+    st.caption("TBA")
+
+
+with tab4:
+    st.caption("TBA")
+
+
+
+
+
