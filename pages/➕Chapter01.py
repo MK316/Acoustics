@@ -190,7 +190,7 @@ with tab4:
     if st.button("Generate New Questions"):
         st.session_state.gcd_numbers = [np.random.randint(min_val, max_val + 1, 3).tolist() for _ in range(num_sets)]
         st.session_state.gcd_answers = [None] * num_sets  # Reset stored answers
-        st.experimental_rerun()
+        st.rerun()
 #################################################
 with tab5:
     st.write("### Download Lecture Slides")
