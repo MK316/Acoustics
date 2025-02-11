@@ -3,7 +3,7 @@ import streamlit as st
 def main():
 #    st.title('Coding4ET Tutorials')
 
-    tabs = st.tabs(["Google drive files", "Others"]
+    tabs = st.tabs(["Google drive files", "Others"])
 
 with tabs[0]:
     st.markdown("#### Access to Shared Google Drive: Restricted list")
