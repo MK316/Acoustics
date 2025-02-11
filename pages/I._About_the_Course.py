@@ -45,7 +45,9 @@ with tabs[0]:
     """, unsafe_allow_html=True)
 
     st.markdown("📗Texbook: Johnson, K. (2012) _Acoustics and Auditory Phonetics_ (3rd edition), Wiley-Blackwell [link](https://books.google.co.kr/books/about/Acoustic_and_Auditory_Phonetics.html?id=sKOUKJXbmYMC&redir_esc=y)")
-               
+    st.markdown("🔎Praat software to cite:") 
+    st.markdown("Paul Boersma & David Weenink (1992–2022). _Praat: doing phonetics by computer_ [Computer program]. Version 6.4.27, retrieved 23 January 2025 from https://www.praat.org.")
+    st.markdown("Download from [fon.hum.uva.nl](https://www.fon.hum.uva.nl/praat/)")
 # Content for the Schedule tab
 with tabs[1]:
     st.caption("Spring 2025")
