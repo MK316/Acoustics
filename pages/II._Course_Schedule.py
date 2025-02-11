@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # Create tabs for different sections of the course
-tabs = st.tabs(["🍐 Course Overview", "🍏 Evaluation"])
+tabs = st.tabs(["🍐 Weekly", "🍏 Assignment details"])
                 
 # Content for the Schedule tab
 with tabs[0]:
@@ -21,5 +21,5 @@ with tabs[0]:
         st.error(f"Request failed: {e}")
 
 with tabs[1]:
-  st.title("TBA")
+  st.write("When necessary, assignments will be detailed in this section.")
 
