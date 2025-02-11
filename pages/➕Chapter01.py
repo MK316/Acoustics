@@ -71,7 +71,7 @@ with tab2:
     # Display phase shift comparison plot
     st.pyplot(fig)
 
-
+#################################################
 
 with tab3:
     st.markdown("### 🎶 Create a Complex Wave")
@@ -101,6 +101,9 @@ with tab3:
     # Initialize complex wave
     complex_wave = np.zeros_like(t)
 
+    # Define a color palette for different waves
+    colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]  # Blue, Orange, Green, Red, Purple
+
     # Create a figure with subplots for individual waves and final wave
     fig, axes = plt.subplots(num_components + 1, 1, figsize=(6, 2 * (num_components + 1)))
 
@@ -109,8 +112,8 @@ with tab3:
         sine_wave = amplitudes[i] * np.sin(2 * np.pi * frequencies[i] * t)
         complex_wave += sine_wave  # Add to the complex wave
         
-        # Plot individual sine wave
-        axes[i].plot(t[:1000], sine_wave[:1000])  # Show only first 1000 points for clarity
+        # Plot individual sine wave with different colors
+        axes[i].plot(t[:1000], sine_wave[:1000], color=colors[i % len(colors)], linewidth=1.5)
         axes[i].set_title(f"Sine Wave {i+1}: {frequencies[i]} Hz, Amplitude: {amplitudes[i]}", fontsize=10)
         axes[i].set_xlabel("Time (s)", fontsize=9)
         axes[i].set_ylabel("Amplitude", fontsize=9)
@@ -121,10 +124,10 @@ with tab3:
     complex_wave /= np.max(np.abs(complex_wave))
 
     # Plot the final complex wave
-    axes[-1].plot(t[:1000], complex_wave[:1000])
+    axes[-1].plot(t[:1000], complex_wave[:1000], color="black", linewidth=1.5)  # Final wave in black
     axes[-1].set_title("Final Complex Waveform (Sum of All Components)", fontsize=10)
-    axes[-1].set_xlabel("Time (s)", fontsize=9)
-    axes[-1].set_ylabel("Amplitude", fontsize=9)
+    axes[-1].set_xlabel("Time (s)", fontsize=8)
+    axes[-1].set_ylabel("Amplitude", fontsize=8)
     axes[-1].tick_params(axis='both', labelsize=8)
     axes[-1].grid(True)
 
@@ -142,6 +145,8 @@ with tab3:
     # Provide a download button for the generated sound
     st.audio(audio_buffer, format='audio/wav')
     st.download_button(label="Download Complex Wave File", data=audio_buffer, file_name="complex_wave.wav", mime="audio/wav")
+
+#################################################
 
 with tab4:
     st.write("### Download Lecture Slides")
