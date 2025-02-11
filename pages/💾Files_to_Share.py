@@ -2,11 +2,11 @@ import streamlit as st
 
 
 
-tab1, tab2 = st.tabs(["Google drive files", "Others"])
+tab1, tab2 = st.tabs(["Padlet", "Others"])
 
 with tab1:
     st.markdown("#### Access to Padlet")
-    st.markdown("[Padlet](https://padlet.com/mirankim316/acoustics): Group members, Google Drive")
+    st.markdown("[Padlet](https://padlet.com/mirankim316/acoustics): Padlet to share files")
     
     # Button to open GitHub ID page
     if st.button("Open Padlet"):
