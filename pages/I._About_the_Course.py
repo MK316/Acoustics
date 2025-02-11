@@ -25,7 +25,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Create tabs for different sections of the course
-tabs = st.tabs(["🍐 Course Overview", "🍓 Schedule", "🍏 Evaluation", "🍒 Assignments", "🍋 Links", "📆 Calendar"])
+tabs = st.tabs(["🍐 Course Overview", "🍏 Evaluation", "🍒 Assignments", "🍋 Links", "📆 Calendar"])
 
 # Course Overview tab
 with tabs[0]:
@@ -49,24 +49,9 @@ with tabs[0]:
     st.markdown("🔎Praat software to cite:") 
     st.markdown("- Paul Boersma & David Weenink (1992–2022). _Praat: doing phonetics by computer_ [Computer program]. Version 6.4.27, retrieved 23 January 2025 from https://www.praat.org.")
     st.markdown("- Download from [fon.hum.uva.nl](https://www.fon.hum.uva.nl/praat/)")
-# Content for the Schedule tab
-with tabs[1]:
-    st.caption("Spring 2025")
-    # URL of the raw markdown file on GitHub
-    markdown_url = "https://raw.githubusercontent.com/MK316/Acoustics/refs/heads/main/README.md"
-    
-    try:
-        response = requests.get(markdown_url)
-        response.raise_for_status()  # Raises an HTTPError for bad responses
-        markdown_content = response.text
-        st.markdown(markdown_content, unsafe_allow_html=True)
-    except requests.exceptions.HTTPError as err:
-        st.error(f"Failed to retrieve Markdown content: {err}")
-    except requests.exceptions.RequestException as e:
-        st.error(f"Request failed: {e}")
         
 # Content for the Evaluation tab
-with tabs[2]:
+with tabs[1]:
     st.header("Evaluation")
     st.markdown("""
     - Attendance: 10%
@@ -76,17 +61,17 @@ with tabs[2]:
     """)
 
 # Content for the Assignments tab
-with tabs[3]:
+with tabs[2]:
     st.header("Assignments")
     st.write("Detailed assignments for the course will be updated here in time. Stay tuned!")
 
 # Content for the Links tab
-with tabs[4]:
+with tabs[3]:
     st.header("Links")
     st.write("Useful links will be updated here. This could include additional reading materials, online resources, and related external websites.")
 
 # Content for the Calendar tab
-with tabs[5]:
+with tabs[4]:
     # Dropdown for selecting a month
     month_option = st.selectbox("Select a Month", options=["March", "April", "May", "June"], index=0)
     # Dictionary to map month names to their corresponding numbers
