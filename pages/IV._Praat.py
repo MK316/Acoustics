@@ -1,6 +1,6 @@
 import streamlit as st
 
-tab0, tab1, tab2, tab3, tab4 = st.tabs(["0. Praat Introduction", "1. Getting started", "2. Basic functions", "3. Speech manipulation","4. Automation with scripting"])
+tab0, tab1, tab2, tab3, tab4 = st.tabs(["Praat Introduction", "Getting started", "Basic functions", "Speech manipulation","Automation with scripting"])
 
 with tab0:
     st.image("https://github.com/MK316/Acoustics/raw/main/images/praat-icon.jpg", caption="Doing Phonetics by Computer")
