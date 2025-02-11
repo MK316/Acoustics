@@ -195,6 +195,8 @@ with tab4:
 #################################################
 with tab5:
 
+
+
     # Define glossary of terms and their definitions
     quiz_data = {
         "sound": "A vibration that propagates as an acoustic wave through a medium.",
@@ -233,22 +235,21 @@ with tab5:
     }
     
     # Initialize session state for quiz questions
-    if "quiz_questions" not in st.session_state or "new_quiz" in st.session_state:
-        st.session_state.quiz_questions = random.sample(list(quiz_data.items()), 5)
+    if "quiz_questions" not in st.session_state:
+        st.session_state.quiz_questions = random.sample(list(quiz_data.items()), 5)  # Select 5 random questions
         st.session_state.answers = {}
-        if "new_quiz" in st.session_state:
-            del st.session_state["new_quiz"]  # Remove trigger after rerunning
     
     st.markdown("### 🎓 Acoustic Terminology Quiz")
     st.write("Select the correct answer for each definition.")
     
-    # Generate quiz interface
+    # Display questions
     for i, (correct_term, definition) in enumerate(st.session_state.quiz_questions):
         # Generate wrong answer choices
         wrong_answers = random.sample([term for term in quiz_data.keys() if term != correct_term], 3)
         options = wrong_answers + [correct_term]
         random.shuffle(options)  # Shuffle options
     
+        # Display question and options
         st.write(f"**Question {i+1}:** {definition}")
         selected_answer = st.radio(
             f"Select the correct term for Question {i+1}:",
@@ -256,10 +257,10 @@ with tab5:
             key=f"quiz_{i}",
             index=None
         )
-        st.session_state.answers[f"quiz_{i}"] = selected_answer
+        st.session_state.answers[f"quiz_{i}"] = selected_answer  # Store user answers persistently
     
-    # Button to check answers
-    if st.button("Check Answers"):
+    # Button to check answers with unique key
+    if st.button("Check Answers", key="check_answers_button"):
         results = []
         for i, (correct_term, _) in enumerate(st.session_state.quiz_questions):
             user_answer = st.session_state.answers.get(f"quiz_{i}")
@@ -271,10 +272,12 @@ with tab5:
         for result in results:
             st.write(result)
     
-    # Button to generate a new quiz
-    if st.button("Generate New Quiz"):
-        st.session_state["new_quiz"] = True  # Set trigger for rerun
+    # Button to generate a new quiz with unique key
+    if st.button("Generate New Quiz", key="generate_quiz_button"):
+        del st.session_state["quiz_questions"]  # Reset stored questions
+        del st.session_state["answers"]  # Reset user answers
         st.rerun()
+
 
 
 #################################################
