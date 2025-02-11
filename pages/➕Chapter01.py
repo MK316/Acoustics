@@ -149,7 +149,7 @@ with tab3:
 
 #################################################
 with tab4:
-        st.markdown("### 🧮 Find the Greatest Common Divisor (GCD)")
+    st.markdown("### 🧮 Find the Greatest Common Divisor (GCD)")
 
     # Generate 5 sets of random numbers
     num_sets = 5
