@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 import soundfile as sf
 import io
 import math
+import random
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 App1: Simple", "🌀App2: Complex", "🌀GCD", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📖 Lecture slides", "🌀 App1: Simple", "🌀App2: Complex", "🌀GCD", "Quiz", "💾 Download"])
 
 with tab1:
     st.write("Other content here.")
@@ -193,6 +194,91 @@ with tab4:
         st.rerun()
 #################################################
 with tab5:
+
+    # Define glossary of terms and their definitions
+    quiz_data = {
+        "sound": "A vibration that propagates as an acoustic wave through a medium.",
+        "acoustic medium": "A substance (e.g., air, water, or solid) that carries sound waves.",
+        "acoustic waveform": "A graphical representation of sound pressure variation over time.",
+        "sound wave": "A wave of compression and rarefaction through an acoustic medium.",
+        "rarefaction": "The part of a sound wave where particles are spread apart.",
+        "compression": "The part of a sound wave where particles are pushed together.",
+        "periodic sounds": "Sounds that repeat at regular intervals over time.",
+        "simple periodic wave": "A wave that repeats in a sinusoidal pattern.",
+        "sine wave": "A smooth, repetitive oscillation representing a simple periodic wave.",
+        "frequency": "The number of cycles of a waveform per second, measured in hertz (Hz).",
+        "cycle": "One complete repetition of a periodic wave.",
+        "period": "The time required to complete one cycle of a wave.",
+        "hertz": "The unit of frequency, equal to one cycle per second.",
+        "amplitude": "The maximum displacement of a wave from its resting position.",
+        "phase": "The position of a point in the wave cycle at a given time.",
+        "complex periodic wave": "A waveform composed of multiple sine waves of different frequencies.",
+        "fundamental frequency": "The lowest frequency in a complex periodic wave.",
+        "component waves": "Individual sine waves that make up a complex periodic wave.",
+        "power spectrum": "A graph showing the intensity of different frequency components in a sound.",
+        "Fourier’s theorem": "A principle stating that complex waves can be broken into sine waves.",
+        "Fourier analysis": "A mathematical method to decompose complex sounds into sine waves.",
+        "aperiodic sounds": "Sounds that do not repeat in a regular pattern.",
+        "white noise": "A random sound containing all frequencies at equal intensity.",
+        "transient": "A brief burst of sound, such as a click or a clap.",
+        "impulse": "A very short, sharp sound that contains a broad range of frequencies.",
+        "low-pass filter": "A filter that allows low frequencies to pass and attenuates high frequencies.",
+        "pass band": "The range of frequencies that a filter allows to pass.",
+        "reject band": "The range of frequencies that a filter attenuates.",
+        "high-pass filter": "A filter that allows high frequencies to pass and attenuates low frequencies.",
+        "filter slope": "The rate at which a filter attenuates frequencies outside the pass band.",
+        "band-pass filter": "A filter that allows a specific range of frequencies to pass.",
+        "center frequency": "The middle frequency of a band-pass filter.",
+        "bandwidth": "The range of frequencies within the pass band of a filter."
+    }
+    
+    # Initialize session state for quiz questions
+    if "quiz_questions" not in st.session_state or "new_quiz" in st.session_state:
+        st.session_state.quiz_questions = random.sample(list(quiz_data.items()), 5)
+        st.session_state.answers = {}
+        if "new_quiz" in st.session_state:
+            del st.session_state["new_quiz"]  # Remove trigger after rerunning
+    
+    st.markdown("### 🎓 Acoustic Terminology Quiz")
+    st.write("Select the correct answer for each definition.")
+    
+    # Generate quiz interface
+    for i, (correct_term, definition) in enumerate(st.session_state.quiz_questions):
+        # Generate wrong answer choices
+        wrong_answers = random.sample([term for term in quiz_data.keys() if term != correct_term], 3)
+        options = wrong_answers + [correct_term]
+        random.shuffle(options)  # Shuffle options
+    
+        st.write(f"**Question {i+1}:** {definition}")
+        selected_answer = st.radio(
+            f"Select the correct term for Question {i+1}:",
+            options,
+            key=f"quiz_{i}",
+            index=None
+        )
+        st.session_state.answers[f"quiz_{i}"] = selected_answer
+    
+    # Button to check answers
+    if st.button("Check Answers"):
+        results = []
+        for i, (correct_term, _) in enumerate(st.session_state.quiz_questions):
+            user_answer = st.session_state.answers.get(f"quiz_{i}")
+            if user_answer == correct_term:
+                results.append(f"✅ **Question {i+1}:** Correct! The term is **{correct_term}**.")
+            else:
+                results.append(f"❌ **Question {i+1}:** Incorrect. The correct answer is **{correct_term}**.")
+    
+        for result in results:
+            st.write(result)
+    
+    # Button to generate a new quiz
+    if st.button("Generate New Quiz"):
+        st.session_state["new_quiz"] = True  # Set trigger for rerun
+        st.rerun()
+
+
+#################################################
+with tab6:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
