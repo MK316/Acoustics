@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import soundfile as sf
 import io
 
-tab1, tab2, tab3 = st.tabs(["📖 Lecture slides", "🌀 Apps", "💾 Download"])
+tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 App1: Simple", "App2: Complex","💾 Download"])
 
 with tab1:
     st.write("Other content here.")
@@ -72,6 +72,60 @@ with tab2:
     st.pyplot(fig)
 
 with tab3:
+        st.markdown("### 🎶 Create a Complex Wave")
+
+    # User selects number of sine wave components
+    num_components = st.number_input("Number of sine waves to combine", min_value=1, max_value=5, value=2)
+
+    frequencies = []
+    amplitudes = []
+
+    # User inputs for multiple frequencies and amplitudes
+    for i in range(num_components):
+        col1, col2 = st.columns(2)
+        with col1:
+            freq = st.number_input(f"Frequency {i+1} (Hz)", min_value=1, max_value=5000, value=440 if i == 0 else 880, step=1)
+            frequencies.append(freq)
+        with col2:
+            amp = st.slider(f"Amplitude {i+1}", min_value=0.1, max_value=1.0, value=0.5, step=0.05)
+            amplitudes.append(amp)
+
+    duration = 1.0  # Fixed duration of 1 second
+    sampling_rate = 44100  # Standard audio sampling rate
+
+    # Generate time values
+    t = np.linspace(0, duration, int(sampling_rate * duration), endpoint=False)
+
+    # Generate complex wave by summing multiple sine waves
+    complex_wave = np.zeros_like(t)
+    for i in range(num_components):
+        complex_wave += amplitudes[i] * np.sin(2 * np.pi * frequencies[i] * t)
+
+    # Normalize the wave to avoid clipping
+    complex_wave /= np.max(np.abs(complex_wave))
+
+    # Plot the waveform
+    fig, ax = plt.subplots(figsize=(6, 3))
+    ax.plot(t[:1000], complex_wave[:1000])  # Show only first 1000 points for clarity
+    ax.set_xlabel("Time (s)")
+    ax.set_ylabel("Amplitude")
+    ax.set_title("Complex Waveform")
+    ax.grid(True)
+
+    # Display the waveform
+    st.pyplot(fig)
+
+    # Save the wave as a temporary audio file
+    audio_buffer = io.BytesIO()
+    sf.write(audio_buffer, complex_wave, sampling_rate, format='WAV')
+    audio_buffer.seek(0)
+
+    # Provide a download button for the generated sound
+    st.audio(audio_buffer, format='audio/wav')
+    st.download_button(label="Download Complex Wave File", data=audio_buffer, file_name="complex_wave.wav", mime="audio/wav")
+
+
+with tab4:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
