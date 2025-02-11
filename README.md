@@ -7,8 +7,8 @@
 |  W03    | Mar. 20 | _(continued)_         |        |
 |  W04    | Mar. 27 | Ch.2 The acoustic theory of speech |        |
 |  W05    | Apr. 3 | _(continued)_ |        |
-|  W06    | Apr. 10 |  Ch.3 Digital signal processing |        |
-|  W07    | Apr. 17 |  _(continued)_ |        |
+|  W06    | Apr. 10 |  _(continued)_ |        |
+|  W07    | Apr. 17 |  Ch.3 Digital signal processing |        |
 |  W08    | Apr. 24 | _(continued)_  |        |
 |  W09    | May 1 | **Midterm** | _(written exam)_ |
 |  W10    | May 8 |   Ch.4 Basic audition |        |
