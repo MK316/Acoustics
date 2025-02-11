@@ -149,7 +149,7 @@ with tab3:
 
 #################################################
 with tab4:
-    st.markdown("### 🧮 Find the Greatest Common Divisor (GCD)")
+    st.markdown("### 🧮 Find the Greatest Common Denominator (GCD)")
 
     # Number of sets and number range
     num_sets = 3
