@@ -8,8 +8,8 @@ st.markdown("""
 
 st.image(
     "https://github.com/MK316/Acoustics/raw/main/images/acoustics-logo2.jpg",
-    caption="What is sound, and how does it relate to spoken English? How do English learners perceive sounds differently based on their linguistic background?",
     width=250  # Adjust width as needed
 )
 
+st.caption("What is sound, and how does it relate to spoken English? How do English learners perceive sounds differently based on their linguistic background?")
 st.caption("🕑 Last updated: Feb.11, 2025")
