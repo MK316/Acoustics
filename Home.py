@@ -1,6 +1,9 @@
 import streamlit as st
 
-st.markdown("### 🔸 Phonology & English Education")
-st.write("Semester: Spring 2025")
-st.caption("〽️ Topic: Acoustics and perception studies")
-st.caption("🕑 Last updated: Jan.08, 2025")
+st.markdown("""
+  #### 🔸 Phonology & English Education")
+  - Semester: Spring 2025
+  - Topic: Acoustics and Perception Experiment
+  """)
+st.image("https://github.com/MK316/Acoustics/raw/main/images/acoustics-logo1.jpg", "What is sound? How we perceive sounds differently?")
+st.caption("🕑 Last updated: Feb.11, 2025")
