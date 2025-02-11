@@ -264,7 +264,7 @@ with tab5:
     if "quiz_questions" not in st.session_state:
         initialize_quiz()
     
-    st.markdown(f"### 🎓 Acoustic Terminology Quiz (Set {st.session_state.quiz_count})")
+    st.markdown(f"### 🎓 Lesson 1: Terminology Quiz (Set {st.session_state.quiz_count})")
     st.write(f"📌 **Remaining Questions: {len(st.session_state.remaining_terms)}**")
     
     # Display quiz questions
