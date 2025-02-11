@@ -5,7 +5,7 @@ import requests
 tabs = st.tabs(["🍐 Course Overview", "🍏 Evaluation"])
                 
 # Content for the Schedule tab
-with tabs[1]:
+with tabs[0]:
     st.caption("Spring 2025")
     # URL of the raw markdown file on GitHub
     markdown_url = "https://raw.githubusercontent.com/MK316/Acoustics/refs/heads/main/README.md"
@@ -20,5 +20,6 @@ with tabs[1]:
     except requests.exceptions.RequestException as e:
         st.error(f"Request failed: {e}")
 
-with tabs[2]:
+with tabs[1]:
   st.title("TBA")
+
