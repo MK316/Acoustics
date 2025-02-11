@@ -14,7 +14,7 @@ with tab0:
     - **How to install:** Just double-click the icon appearing after downloading the file.
     
     ### 📒 Praat Windows Overview
-    - **Double click the icon to start
+    - **Double click the icon to start**
     - **Praat Objects Window:** This is the main control panel where you load, create, and manipulate audio files. It lists all active objects (e.g., sounds, TextGrids) and allows access to analysis and modification functions.
     - **Praat Picture Window:** This window is used for generating high-quality visualizations of spectrograms, pitch contours, and other speech data. It provides tools for customizing and exporting figures for presentations or research papers.
     """)
