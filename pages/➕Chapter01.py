@@ -153,7 +153,7 @@ with tab4:
 
     # Number of sets and number range
     num_sets = 3
-    min_val, max_val = 1, 50
+    min_val, max_val = 1, 100
 
     # Initialize session state for storing numbers
     if "gcd_numbers" not in st.session_state:
