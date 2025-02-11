@@ -129,7 +129,7 @@ with tab3:
     axes[-1].grid(True)
 
     # Adjust spacing to prevent overlapping
-    plt.subplots_adjust(hspace=0.4)
+    plt.subplots_adjust(hspace=0.5)
 
     # Display all plots
     st.pyplot(fig)
