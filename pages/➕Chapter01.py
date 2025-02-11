@@ -1,6 +1,6 @@
 import streamlit as st
 
-tab1, tab2 = st.tabs(["Lecture slides", "Apps", "Download"])
+tab1, tab2, tab3 = st.tabs(["Lecture slides", "Apps", "Download"])
 
 
 with tab1:
