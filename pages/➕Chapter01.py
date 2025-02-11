@@ -151,25 +151,31 @@ with tab3:
 with tab4:
     st.markdown("### 🧮 Find the Greatest Common Divisor (GCD)")
 
-    # Generate 3 sets of random numbers within the range of 1 to 50
+    # Number of sets and number range
     num_sets = 3
-    numbers_list = [np.random.randint(1, 51, 3) for _ in range(num_sets)]
+    min_val, max_val = 1, 50
 
-    # Store user inputs
+    # Initialize session state for storing numbers
+    if "gcd_numbers" not in st.session_state:
+        st.session_state.gcd_numbers = [np.random.randint(min_val, max_val + 1, 3).tolist() for _ in range(num_sets)]
+        st.session_state.gcd_answers = [None] * num_sets  # Initialize answer storage
+
+    # Display questions and collect user input
     user_answers = []
-
-    # Display the sets and input fields
-    for i, numbers in enumerate(numbers_list):
+    for i, numbers in enumerate(st.session_state.gcd_numbers):
         st.write(f"**Set {i+1}:** {numbers[0]}, {numbers[1]}, {numbers[2]}")
-        user_input = st.number_input(f"Your GCD Answer for Set {i+1}:", min_value=1, max_value=50, key=f"gcd_input_{i}")
-        user_answers.append(int(user_input))  # Convert input to integer
+        user_input = st.number_input(
+            f"Your GCD Answer for Set {i+1}:", 
+            min_value=1, max_value=50, key=f"gcd_input_{i}", value=st.session_state.gcd_answers[i] or 1
+        )
+        user_answers.append(user_input)
 
     # Button to check answers
     if st.button("Check Answers"):
         results = []
-        for i, numbers in enumerate(numbers_list):
+        for i, numbers in enumerate(st.session_state.gcd_numbers):
             correct_gcd = math.gcd(math.gcd(numbers[0], numbers[1]), numbers[2])  # Compute correct GCD
-            user_answer = user_answers[i]
+            user_answer = int(user_answers[i])  # Ensure integer comparison
 
             if user_answer == correct_gcd:
                 results.append(f"✅ **Set {i+1}:** Correct! GCD of {numbers} is **{correct_gcd}**.")
@@ -179,6 +185,12 @@ with tab4:
         # Display results
         for result in results:
             st.write(result)
+
+    # Button to generate new questions
+    if st.button("Generate New Questions"):
+        st.session_state.gcd_numbers = [np.random.randint(min_val, max_val + 1, 3).tolist() for _ in range(num_sets)]
+        st.session_state.gcd_answers = [None] * num_sets  # Reset stored answers
+        st.experimental_rerun()
 #################################################
 with tab5:
     st.write("### Download Lecture Slides")
