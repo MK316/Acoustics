@@ -1,5 +1,8 @@
 streamlit
-gtts
 pandas
 numpy
+gtts
+tabulate
 matplotlib
+qrcode
+wordcloud
