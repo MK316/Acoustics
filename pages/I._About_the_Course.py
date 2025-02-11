@@ -44,7 +44,7 @@ with tabs[0]:
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("📗Texbook: Johnson (2012) _Acoustics and Auditory Phonetics_ (3rd edition), Wiley-Blackwell")
+    st.markdown("📗Texbook: Johnson, K. (2012) _Acoustics and Auditory Phonetics_ (3rd edition), Wiley-Blackwell")
                
 # Content for the Schedule tab
 with tabs[1]:
