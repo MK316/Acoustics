@@ -44,6 +44,8 @@ with tabs[0]:
     </div>
     """, unsafe_allow_html=True)
 
+    st.caption("Texbook: Johnson (2012) Acoustics and Auditory Phonetics (3rd edition), Wiley-Blackwell)
+               
 # Content for the Schedule tab
 with tabs[1]:
     st.caption("Spring 2025")
