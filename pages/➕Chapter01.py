@@ -196,7 +196,6 @@ with tab4:
 with tab5:
 
 
-
     # Define glossary of terms and their definitions
     quiz_data = {
         "sound": "A vibration that propagates as an acoustic wave through a medium.",
@@ -234,36 +233,39 @@ with tab5:
         "bandwidth": "The range of frequencies within the pass band of a filter."
     }
     
-    # Initialize session state for quiz questions
+    # Initialize session state to persist quiz data
     if "quiz_questions" not in st.session_state:
         st.session_state.quiz_questions = random.sample(list(quiz_data.items()), 5)  # Select 5 random questions
-        st.session_state.answers = {}
+        st.session_state.quiz_options = {}  # Stores answer choices for each question
+        for i, (correct_term, _) in enumerate(st.session_state.quiz_questions):
+            # Generate 3 incorrect options
+            wrong_answers = random.sample([term for term in quiz_data.keys() if term != correct_term], 3)
+            options = wrong_answers + [correct_term]
+            random.shuffle(options)  # Shuffle options
+            st.session_state.quiz_options[f"q{i}"] = options  # Store the shuffled options
+    
+    # Store user answers persistently
+    if "quiz_answers" not in st.session_state:
+        st.session_state.quiz_answers = {f"q{i}": None for i in range(5)}
     
     st.markdown("### 🎓 Acoustic Terminology Quiz")
     st.write("Select the correct answer for each definition.")
     
-    # Display questions
+    # Display quiz questions
     for i, (correct_term, definition) in enumerate(st.session_state.quiz_questions):
-        # Generate wrong answer choices
-        wrong_answers = random.sample([term for term in quiz_data.keys() if term != correct_term], 3)
-        options = wrong_answers + [correct_term]
-        random.shuffle(options)  # Shuffle options
-    
-        # Display question and options
         st.write(f"**Question {i+1}:** {definition}")
-        selected_answer = st.radio(
+        st.session_state.quiz_answers[f"q{i}"] = st.radio(
             f"Select the correct term for Question {i+1}:",
-            options,
+            st.session_state.quiz_options[f"q{i}"],
             key=f"quiz_{i}",
-            index=None
+            index=st.session_state.quiz_options[f"q{i}"].index(st.session_state.quiz_answers[f"q{i}"]) if st.session_state.quiz_answers[f"q{i}"] else None
         )
-        st.session_state.answers[f"quiz_{i}"] = selected_answer  # Store user answers persistently
     
-    # Button to check answers with unique key
+    # Button to check answers
     if st.button("Check Answers", key="check_answers_button"):
         results = []
         for i, (correct_term, _) in enumerate(st.session_state.quiz_questions):
-            user_answer = st.session_state.answers.get(f"quiz_{i}")
+            user_answer = st.session_state.quiz_answers.get(f"q{i}")
             if user_answer == correct_term:
                 results.append(f"✅ **Question {i+1}:** Correct! The term is **{correct_term}**.")
             else:
@@ -272,13 +274,12 @@ with tab5:
         for result in results:
             st.write(result)
     
-    # Button to generate a new quiz with unique key
+    # Button to generate a new quiz
     if st.button("Generate New Quiz", key="generate_quiz_button"):
-        del st.session_state["quiz_questions"]  # Reset stored questions
-        del st.session_state["answers"]  # Reset user answers
+        del st.session_state["quiz_questions"]
+        del st.session_state["quiz_options"]
+        del st.session_state["quiz_answers"]
         st.rerun()
-
-
 
 #################################################
 with tab6:
