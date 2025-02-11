@@ -72,7 +72,7 @@ with tab2:
     st.pyplot(fig)
 
 with tab3:
-        st.markdown("### 🎶 Create a Complex Wave")
+    st.markdown("### 🎶 Create a Complex Wave")
 
     # User selects number of sine wave components
     num_components = st.number_input("Number of sine waves to combine", min_value=1, max_value=5, value=2)
