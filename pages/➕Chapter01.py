@@ -1,6 +1,10 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+    # Generate and play the sound
+import soundfile as sf
+import io
+
 
 tab1, tab2, tab3 = st.tabs(["📖 Lecture slides", "🌀 Apps", "💾 Download"])
 
@@ -32,9 +36,6 @@ with tab2:
     # Display the waveform
     st.pyplot(fig)
 
-    # Generate and play the sound
-    import soundfile as sf
-    import io
 
     # Save the wave as a temporary audio file
     audio_buffer = io.BytesIO()
