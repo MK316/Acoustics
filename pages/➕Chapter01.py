@@ -6,7 +6,7 @@ with tab1:
     st.write("### Lecture Slides Viewer")
 
     # GitHub raw URL of the file
-    pdf_url = "https://raw.githubusercontent.com/your_username/your_repo/main/lecture_slides.pdf"
+    pdf_url = "https://github.com/MK316/Acoustics/raw/main/data/test.pdf"
 
     # Embed PDF in an iframe
     st.components.v1.iframe(pdf_url, width=700, height=600)
