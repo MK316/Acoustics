@@ -1,8 +1,13 @@
 import streamlit as st
 
-tab1, tab2 = st.tabs(["Lecture slides", "Others"])
+tab1, tab2 = st.tabs(["Lecture slides", "Download"])
+
 
 with tab1:
+    st.write("Other content here.")
+
+
+with tab2:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
@@ -12,8 +17,6 @@ with tab1:
     if st.button("Download PDF 📥"):
         st.markdown(f'<meta http-equiv="refresh" content="0;url={pdf_url}">', unsafe_allow_html=True)
 
-with tab2:
-    st.write("Other content here.")
 
 
 
