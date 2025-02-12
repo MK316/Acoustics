@@ -187,9 +187,9 @@ with tab4:
     RF3_closed = 3 * RF1_closed
 
     # Display the results for a tube closed at both ends
-    st.write(f"First resonant frequency (Closed): {RF1_closed:.2f} Hz")
-    st.write(f"Second resonant frequency (Closed): {RF2_closed:.2f} Hz")
-    st.write(f"Third resonant frequency (Closed): {RF3_closed:.2f} Hz")
+    st.write(f"First resonant frequency (F1): {RF1_closed:.2f} Hz")
+    st.write(f"Second resonant frequency (F2): {RF2_closed:.2f} Hz")
+    st.write(f"Third resonant frequency (F3): {RF3_closed:.2f} Hz")
 
 
     st.markdown('#### 2. Tube with one open end')
@@ -203,9 +203,9 @@ with tab4:
     RF3_open = 5*35000 / (4*L2) # for n=3
 
     # Display the results for a tube with one open end
-    st.write(f"First resonant frequency (Open): {RF1_open:.2f} Hz")
-    st.write(f"Second resonant frequency (Open): {RF2_open:.2f} Hz")
-    st.write(f"Third resonant frequency (Open): {RF3_open:.2f} Hz")
+    st.write(f"First resonant frequency (F1): {RF1_open:.2f} Hz")
+    st.write(f"Second resonant frequency (F2): {RF2_open:.2f} Hz")
+    st.write(f"Third resonant frequency (F3): {RF3_open:.2f} Hz")
 
 ######################################################
 with tab5:
