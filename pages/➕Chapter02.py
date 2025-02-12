@@ -26,7 +26,7 @@ with tab2:
     # Embed YouTube video using a clickable link
     st.markdown("[🎥 Watch the video on YouTube](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
     st.markdown("[Clements & Ridouane (2006) Quantal phonetics and distinctive features](https://www.isca-archive.org/exling_2006/clements06_exling.pdf)")
-    st.markdown("[Stevens, K.N. (1972) The quantal nature of speech](https://www.kul.pl/files/30/fonetyka/Stevens_72_Quantal.pdf)"
+    st.markdown("[Stevens, K.N. (1972) The quantal nature of speech](https://www.kul.pl/files/30/fonetyka/Stevens_72_Quantal.pdf)")
     # Embed YouTube video using <iframe>
     video_url = "https://www.youtube.com/embed/PM4WSBZanQQ?si=WCErVnSrSjeLkme2"
     
