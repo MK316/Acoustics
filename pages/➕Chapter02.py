@@ -4,15 +4,17 @@ import matplotlib.pyplot as plt
 
 tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "💾 Download"])
 
-def plot_harmonic(mode, num_points=500):
+def plot_harmonics(num_modes=3, num_points=500):
+    plt.figure(figsize=(10, 6))
     x = np.linspace(0, 1, num_points)
-    y = np.sin(np.pi * (mode + 1) * x)  # Simple harmonic oscillator model
-    plt.figure(figsize=(10, 2))
-    plt.plot(x, y)
-    plt.title(f'Mode {mode + 1}')
-    plt.ylim(-1.5, 1.5)
-    plt.grid(True)
-    # Using Streamlit's function to display the plot
+    for mode in range(num_modes):
+        y = np.sin(np.pi * (mode + 1) * x)  # Simple harmonic oscillator model
+        plt.subplot(num_modes, 1, mode + 1)
+        plt.plot(x, y)
+        plt.title(f'Mode {mode + 1}')
+        plt.ylim(-1.5, 1.5)
+        plt.grid(True)
+    plt.tight_layout()
     st.pyplot(plt)
 
 with tab1:
@@ -118,7 +120,7 @@ with tab2:
 ######################################################
 with tab3:
     st.title('Guitar String Harmonics Simulator')
-    mode = st.sidebar.slider('Select Mode', 0, 2, 0, key='harmonic_mode')  # Ensuring slider is associated with this tab
+    # mode = st.sidebar.slider('Select Mode', 0, 2, 0, key='harmonic_mode')  # Ensuring slider is associated with this tab
     plot_harmonic(mode)
 
 
