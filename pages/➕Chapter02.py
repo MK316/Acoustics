@@ -135,7 +135,7 @@ with tab3:
     st.markdown("- [YouTube link](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
 
     video_url_1 = "https://www.youtube.com/embed/BSIw5SgUirg?si=Lu0byguLK4o8-0ye"
-    
+    video_url_2 = "https://youtu.be/to_dtcZP1EE?si=HNPrZJsO1n8jgIFf"
     st.markdown(
         f"""
         <iframe width="560" height="315" src="{video_url_1}" 
@@ -145,8 +145,15 @@ with tab3:
         """,
         unsafe_allow_html=True
     )
-
-
+    st.markdown("#### Video: Visible Sound vibration")
+        f"""
+        <iframe width="560" height="315" src="{video_url_2}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
 ######################################################
 with tab4:
     st.write("### Download Lecture Slides")
