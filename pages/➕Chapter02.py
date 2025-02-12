@@ -195,7 +195,7 @@ with tab4:
     st.markdown('#### 2. Tube with one open end')
 
     # Input for the length of the tube - one open end
-    L2 = st.number_input('Enter the length of the tube (L) in cm for open tube:', min_value=1, value=1.00, step=0.5)
+    L2 = st.number_input('Enter the length of the tube (L) in cm for open tube:', min_value=0.1, value=1.00, step=1)
 
     # Calculate resonant frequencies for a tube with one open end
     RF1_open = 35000 / (4*L2)  # for n=1
