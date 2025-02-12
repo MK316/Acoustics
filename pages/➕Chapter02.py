@@ -134,18 +134,17 @@ with tab3:
     st.markdown("#### Video: String vibration with different notes")
     st.markdown("- [YouTube link](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
 
-    video_url_1 = "https://www.youtube.com/watch?v=BSIw5SgUirg"
+    video_url_1 = "https://www.youtube.com/embed/BSIw5SgUirg?si=Lu0byguLK4o8-0ye"
     
     st.markdown(
         f"""
-        <iframe width="400" height="300" src="{video_url_1}" 
+        <iframe width="560" height="315" src="{video_url_1}" 
         title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         """,
         unsafe_allow_html=True
     )
-
 
 
 ######################################################
