@@ -135,7 +135,7 @@ with tab3:
     st.markdown("- [YouTube link](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
 
     video_url_1 = "https://www.youtube.com/embed/BSIw5SgUirg?si=Lu0byguLK4o8-0ye"
-    video_url_2 = "https://www.youtube.com/embed/to_dtcZP1EE?si=jIxg-W6b6Ewl-gvv""
+    video_url_2 = "https://www.youtube.com/embed/to_dtcZP1EE?si=jIxg-W6b6Ewl-gvv"
     st.markdown(
         f"""
         <iframe width="560" height="315" src="{video_url_1}" 
