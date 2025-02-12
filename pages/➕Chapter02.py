@@ -4,6 +4,15 @@ import matplotlib.pyplot as plt
 
 tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Apps", "💾 Download"])
 
+def plot_harmonic(mode, num_points=500):
+    x = np.linspace(0, 1, num_points)
+    y = np.sin(np.pi * (mode + 1) * x)  # Simple harmonic oscillator model
+    plt.figure(figsize=(10, 2))
+    plt.plot(x, y)
+    plt.title(f'Mode {mode + 1}')
+    plt.ylim(-1.5, 1.5)
+    plt.grid(True)
+    plt.show()
 
 with tab1:
     st.write("Other content here.")
@@ -107,20 +116,6 @@ with tab2:
 
 ######################################################
 with tab3:
-    st.title('Guitar String Harmonics Simulator')
-    mode = st.sidebar.slider('Select Mode', 0, 2, 0)  # Modes 1, 2, 3
-    plot_harmonic(mode)
-
-    def plot_harmonic(mode, num_points=500):
-    x = np.linspace(0, 1, num_points)
-    y = np.sin(np.pi * (mode + 1) * x)  # Simple harmonic oscillator model
-    plt.figure(figsize=(10, 2))
-    plt.plot(x, y)
-    plt.title(f'Mode {mode + 1}')
-    plt.ylim(-1.5, 1.5)
-    plt.grid(True)
-    plt.show()
-
     st.title('Guitar String Harmonics Simulator')
     mode = st.sidebar.slider('Select Mode', 0, 2, 0)  # Modes 1, 2, 3
     plot_harmonic(mode)
