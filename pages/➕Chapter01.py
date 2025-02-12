@@ -6,7 +6,7 @@ import io
 import math
 import random
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📖 Lecture slides", "🌀 App1: Simple", "🌀App2: Complex", "🌀GCD", "💦 Quiz", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 App1: Simple", "🌀App2: Complex", "🌀GCD", "💦 Quiz", "Videos", "💾 Download"])
 
 with tab1:
     st.write("Other content here.")
@@ -305,6 +305,19 @@ with tab5:
 
 #################################################
 with tab6:
+    video_url = "https://www.youtube.com/embed/XLfQpv2ZRPU?si=5zKkYufSdvLbsCp3"
+
+    st.markdown("#### 1. Video: Understanding physical aspect of sound")
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+with tab7:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
