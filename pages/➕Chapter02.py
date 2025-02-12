@@ -20,7 +20,8 @@ with tab2:
     Watch this video to understand **how small changes in articulation can lead to major acoustic effects**.
     
     """)
-    
+    st.markdown("[🎥 Watch the video on YouTube](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
+
     # Embed YouTube video
     video_url = "https://www.youtube.com/watch?v=PM4WSBZanQQ"  # Replace with a relevant video
     st.markdown(f'<iframe width="700" height="400" src="{video_url}" frameborder="0" allowfullscreen></iframe>', unsafe_allow_html=True)
