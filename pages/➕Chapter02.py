@@ -49,17 +49,20 @@ with tab2:
     Move the slider and see how quantal effects work!
     """)
 
-    # User selects "articulatory position" (simulated tongue height)
     articulation_position = st.slider("Select an Articulatory Position (Simulated Tongue Height)", 
                                       min_value=1, max_value=100, value=50, step=1)
+
     
-    # Simulating Quantal & Non-Quantal Zones
+    # Default frequency in case articulation_position is out of defined ranges
+    frequency = 300  # Safe default value
+    
     if 10 <= articulation_position <= 40:
         frequency = 300  # Stable zone (like vowel /i/)
     elif 41 <= articulation_position <= 59:
         frequency = 300 + (articulation_position - 40) * 8  # Non-quantal zone (unstable transition)
     elif 60 <= articulation_position <= 90:
         frequency = 450  # Stable zone (like vowel /a/)
+
     
     # Generate waveform
     duration = 0.05  # Short duration for display
