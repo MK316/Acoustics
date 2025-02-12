@@ -130,6 +130,22 @@ with tab3:
     # mode = st.sidebar.slider('Select Mode', 0, 2, 0, key='harmonic_mode')  # Ensuring slider is associated with this tab
     plot_harmonics()
 
+    st.markdown("---")
+    st.markdown("#### Video: String vibration with different notes")
+    st.markdown("- [YouTube link](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
+
+    video_url_1 = "https://www.youtube.com/watch?v=BSIw5SgUirg"
+    
+    st.markdown(
+        f"""
+        <iframe width="400" height="300" src="{video_url_1}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 
 ######################################################
