@@ -79,16 +79,16 @@ with tab2:
     else:
         st.warning("⚠ **You are in a Non-Quantal Zone!** Small articulation changes cause a BIG acoustic shift.")
     
-    st.markdown("""
-    ---
-    ## 🎯 Key Takeaways
-    - **Quantal Zones (Stable Regions)**: Articulatory adjustments do not drastically affect the sound.
-    - **Non-Quantal Zones (Unstable Regions)**: Small articulation changes lead to **big** acoustic differences.
-    - **This is why languages prefer quantal sounds**, ensuring **clear and stable communication**.
+    # st.markdown("""
+    # ---
+    # ## 🎯 Key Takeaways
+    # - **Quantal Zones (Stable Regions)**: Articulatory adjustments do not drastically affect the sound.
+    # - **Non-Quantal Zones (Unstable Regions)**: Small articulation changes lead to **big** acoustic differences.
+    # - **This is why languages prefer quantal sounds**, ensuring **clear and stable communication**.
     
-    ---
-    **Try adjusting the slider above** and observe the effects in action!
-    """)
+    # ---
+    # **Try adjusting the slider above** and observe the effects in action!
+    # """)
 
 ######################################################
 with tab3:
