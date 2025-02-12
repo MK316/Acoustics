@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
-tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "Resonant freq", "💾 Download"])
 
 # Define the function to plot all harmonics
 def plot_harmonics(num_modes=3, num_points=500):
@@ -171,9 +171,27 @@ with tab3:
         """,
         unsafe_allow_html=True
     )
-    
+
 ######################################################
+
 with tab4:
+    st.title('Resonant Frequency Calculator for a Closed Tube')
+
+    # Input for the length of the tube
+    L = st.number_input('Enter the length of the tube (L) in cm:', min_value=0.01, value=1.00, step=0.01)
+
+    # Calculate resonant frequencies
+    RF1 = 35000 / (2 * L)
+    RF2 = 2 * RF1
+    RF3 = 3 * RF1
+
+    # Display the results
+    st.write(f"First resonant frequency: {RF1:.2f} Hz")
+    st.write(f"Second resonant frequency: {RF2:.2f} Hz")
+    st.write(f"Third resonant frequency: {RF3:.2f} Hz")
+
+######################################################
+with tab5:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
