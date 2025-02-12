@@ -12,7 +12,8 @@ def plot_harmonic(mode, num_points=500):
     plt.title(f'Mode {mode + 1}')
     plt.ylim(-1.5, 1.5)
     plt.grid(True)
-    plt.show()
+    # Using Streamlit's function to display the plot
+    st.pyplot(plt)
 
 with tab1:
     st.write("Other content here.")
@@ -117,7 +118,7 @@ with tab2:
 ######################################################
 with tab3:
     st.title('Guitar String Harmonics Simulator')
-    mode = st.sidebar.slider('Select Mode', 0, 2, 0, key='harmonic_mode')  # Adding a unique key for the slider
+    mode = st.sidebar.slider('Select Mode', 0, 2, 0, key='harmonic_mode')  # Ensuring slider is associated with this tab
     plot_harmonic(mode)
 
 
