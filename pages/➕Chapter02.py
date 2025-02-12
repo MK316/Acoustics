@@ -8,6 +8,8 @@ tab1, tab2, tab3, tab3 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", 
 with tab1:
     st.write("Other content here.")
 
+#######################################################
+
 with tab2:
     st.title("🎓 Quantal Theory of Speech Acoustics")
     st.subheader("Understanding Stability and Efficiency in Speech Production")
@@ -16,10 +18,12 @@ with tab2:
     ### 📌 What is Quantal Theory?
     Quantal Theory, proposed by **Kenneth N. Stevens (1972, 1989)**, explains how **speech sounds are produced efficiently and remain stable** despite variability in articulation.
     
+    ---
     ### 🎥 Pitch Hearing Demonstration
     Watch this video to understand **how small changes in articulation can lead to major acoustic effects**.
-    
     """)
+
+    # Embed YouTube video using a clickable link
     st.markdown("[🎥 Watch the video on YouTube](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
    
     # Embed YouTube video using <iframe>
@@ -35,15 +39,16 @@ with tab2:
         unsafe_allow_html=True
     )
 
+    st.markdown("""
     ---
     ### 🎵 Interactive: Simulating Quantal vs. Non-Quantal Effects
     Try adjusting the **articulatory position** (simulated as tongue height) and observe:
     - **Stable Regions**: Small articulation changes **do not** significantly affect the waveform.
     - **Unstable Regions**: Small articulation changes **cause a major waveform shift**.
-    
+
     Move the slider and see how quantal effects work!
     """)
-    
+
     # User selects "articulatory position" (simulated tongue height)
     articulation_position = st.slider("Select an Articulatory Position (Simulated Tongue Height)", 
                                       min_value=1, max_value=100, value=50, step=1)
@@ -79,16 +84,17 @@ with tab2:
     else:
         st.warning("⚠ **You are in a Non-Quantal Zone!** Small articulation changes cause a BIG acoustic shift.")
     
-    # st.markdown("""
-    # ---
-    # ## 🎯 Key Takeaways
-    # - **Quantal Zones (Stable Regions)**: Articulatory adjustments do not drastically affect the sound.
-    # - **Non-Quantal Zones (Unstable Regions)**: Small articulation changes lead to **big** acoustic differences.
-    # - **This is why languages prefer quantal sounds**, ensuring **clear and stable communication**.
-    
-    # ---
-    # **Try adjusting the slider above** and observe the effects in action!
-    # """)
+    st.markdown("""
+    ---
+    ## 🎯 Key Takeaways
+    - **Quantal Zones (Stable Regions)**: Articulatory adjustments do not drastically affect the sound.
+    - **Non-Quantal Zones (Unstable Regions)**: Small articulation changes lead to **big** acoustic differences.
+    - **This is why languages prefer quantal sounds**, ensuring **clear and stable communication**.
+
+    ---
+    **Try adjusting the slider above** and observe the effects in action!
+    """)
+
 
 ######################################################
 with tab3:
