@@ -136,6 +136,8 @@ with tab3:
 
     video_url_1 = "https://www.youtube.com/embed/BSIw5SgUirg?si=Lu0byguLK4o8-0ye"
     video_url_2 = "https://www.youtube.com/embed/to_dtcZP1EE?si=jIxg-W6b6Ewl-gvv"
+    video_url_3 = "https://www.youtube.com/embed/rkI0Nf6dHjQ?si=7trzlldwi3pSvZOF"
+    
     st.markdown(
         f"""
         <iframe width="560" height="315" src="{video_url_1}" 
@@ -150,6 +152,19 @@ with tab3:
     st.markdown(
         f"""
         <iframe width="560" height="315" src="{video_url_2}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+
+    
+
+    st.markdown("#### Video: Sound travel and medium")
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url_3}" 
         title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
