@@ -128,7 +128,7 @@ with tab2:
 with tab3:
     st.title('Guitar String Harmonics Simulator')
     # mode = st.sidebar.slider('Select Mode', 0, 2, 0, key='harmonic_mode')  # Ensuring slider is associated with this tab
-    plot_harmonics(mode)
+    plot_harmonics()
 
 
 
