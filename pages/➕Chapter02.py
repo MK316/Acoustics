@@ -178,34 +178,35 @@ with tab4:
     st.title("Resonance Frequency Calculator")
     st.markdown('#### 1. Closed tube at both ends')
 
-    # Input for the length of the tube
-    L = st.number_input('Enter the length of the tube (L) in cm:', min_value=0.01, value=1.00, step=0.01)
+    # Input for the length of the tube - closed at both ends
+    L = st.number_input('Enter the length of the tube (L) in cm for closed tube:', min_value=0.01, value=1.00, step=0.01)
 
-    # Calculate resonant frequencies
-    RF1 = 35000 / (2 * L)
-    RF2 = 2 * RF1
-    RF3 = 3 * RF1
+    # Calculate resonant frequencies for a tube closed at both ends
+    RF1_closed = 35000 / (2 * L)
+    RF2_closed = 2 * RF1_closed
+    RF3_closed = 3 * RF1_closed
 
-    # Display the results
-    st.write(f"First resonant frequency: {RF1:.2f} Hz")
-    st.write(f"Second resonant frequency: {RF2:.2f} Hz")
-    st.write(f"Third resonant frequency: {RF3:.2f} Hz")
+    # Display the results for a tube closed at both ends
+    st.write(f"First resonant frequency (Closed): {RF1_closed:.2f} Hz")
+    st.write(f"Second resonant frequency (Closed): {RF2_closed:.2f} Hz")
+    st.write(f"Third resonant frequency (Closed): {RF3_closed:.2f} Hz")
 
 
-    st.markdown('#### 2. A tube with one open end')
+    st.markdown('#### 2. Tube with one open end')
 
-    # Input for the length of the tube
-    L2 = st.number_input('Enter the length of the tube (L) in cm:', min_value=0.01, value=1.00, step=0.01)
+    # Input for the length of the tube - one open end
+    L2 = st.number_input('Enter the length of the tube (L) in cm for open tube:', min_value=0.01, value=1.00, step=0.01)
 
-    # Calculate resonant frequencies
-    RF1 = 35000 / ((2n-1) * L2)
-    RF2 = 2 * RF1
-    RF3 = 3 * RF1
+    # Calculate resonant frequencies for a tube with one open end
+    RF1_open = 35000 / ((2 * 1 - 1) * L2)  # for n=1
+    RF2_open = 35000 / ((2 * 2 - 1) * L2)  # for n=2
+    RF3_open = 35000 / ((2 * 3 - 1) * L2)  # for n=3
 
-    # Display the results
-    st.write(f"First resonant frequency: {RF1:.2f} Hz")
-    st.write(f"Second resonant frequency: {RF2:.2f} Hz")
-    st.write(f"Third resonant frequency: {RF3:.2f} Hz")
+    # Display the results for a tube with one open end
+    st.write(f"First resonant frequency (Open): {RF1_open:.2f} Hz")
+    st.write(f"Second resonant frequency (Open): {RF2_open:.2f} Hz")
+    st.write(f"Third resonant frequency (Open): {RF3_open:.2f} Hz")
+
 ######################################################
 with tab5:
     st.write("### Download Lecture Slides")
