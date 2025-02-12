@@ -11,8 +11,8 @@ with tab1:
 #######################################################
 
 with tab2:
-    st.markdown("####🎓 Quantal Theory of Speech Acoustics")
-    st.subheader("Understanding Stability and Efficiency in Speech Production")
+    st.markdown("#### 🎓 Quantal Theory of Speech Acoustics")
+    st.caption("Understanding Stability and Efficiency in Speech Production")
     
     st.markdown("""
     #### 📌 What is Quantal Theory?
