@@ -175,7 +175,8 @@ with tab3:
 ######################################################
 
 with tab4:
-    st.title('Resonant Frequency Calculator for a Closed Tube')
+    st.title("Resonance Frequency Calculator")
+    st.markdown('#### 1. Closed tube at both ends')
 
     # Input for the length of the tube
     L = st.number_input('Enter the length of the tube (L) in cm:', min_value=0.01, value=1.00, step=0.01)
@@ -190,6 +191,21 @@ with tab4:
     st.write(f"Second resonant frequency: {RF2:.2f} Hz")
     st.write(f"Third resonant frequency: {RF3:.2f} Hz")
 
+
+    st.markdown('#### 2. A tube with one open end')
+
+    # Input for the length of the tube
+    L2 = st.number_input('Enter the length of the tube (L) in cm:', min_value=0.01, value=1.00, step=0.01)
+
+    # Calculate resonant frequencies
+    RF1 = 35000 / ((2n-1) * L2)
+    RF2 = 2 * RF1
+    RF3 = 3 * RF1
+
+    # Display the results
+    st.write(f"First resonant frequency: {RF1:.2f} Hz")
+    st.write(f"Second resonant frequency: {RF2:.2f} Hz")
+    st.write(f"Third resonant frequency: {RF3:.2f} Hz")
 ######################################################
 with tab5:
     st.write("### Download Lecture Slides")
