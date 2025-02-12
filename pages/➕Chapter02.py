@@ -21,12 +21,20 @@ with tab2:
     
     """)
     st.markdown("[🎥 Watch the video on YouTube](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
-
-    # Embed YouTube video
-    video_url = "https://www.youtube.com/watch?v=PM4WSBZanQQ"  # Replace with a relevant video
-    st.markdown(f'<iframe width="700" height="400" src="{video_url}" frameborder="0" allowfullscreen></iframe>', unsafe_allow_html=True)
+   
+    # Embed YouTube video using <iframe>
+    video_url = "https://www.youtube.com/embed/PM4WSBZanQQ?si=WCErVnSrSjeLkme2"
     
-    st.markdown("""
+    st.markdown(
+        f"""
+        <iframe width="700" height="400" src="{video_url}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+
     ---
     ### 🎵 Interactive: Simulating Quantal vs. Non-Quantal Effects
     Try adjusting the **articulatory position** (simulated as tongue height) and observe:
