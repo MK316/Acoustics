@@ -87,7 +87,7 @@ with tab2:
     - **This is why languages prefer quantal sounds**, ensuring **clear and stable communication**.
     
     ---
-    🔬 **Try adjusting the slider above** and observe the effects in action!
+    **Try adjusting the slider above** and observe the effects in action!
     """)
 
 ######################################################
