@@ -15,22 +15,23 @@ with tab2:
     st.caption("Understanding Stability and Efficiency in Speech Production")
     
     st.markdown("""
-    #### 📌 What is Quantal Theory?
+    #### 1. What is Quantal Theory?
     Quantal Theory, proposed by **Kenneth N. Stevens (1972, 1989)**, explains how **speech sounds are produced efficiently and remain stable** despite variability in articulation.
     ##### Articles related
     """)
 
     st.markdown("- [Clements & Ridouane (2006) Quantal phonetics and distinctive features](https://www.isca-archive.org/exling_2006/clements06_exling.pdf)")
     st.markdown("- [Stevens, K.N. (1972) The quantal nature of speech](https://www.kul.pl/files/30/fonetyka/Stevens_72_Quantal.pdf)")
+
+    # Embed YouTube video using <iframe> 
     st.markdown("""
-    # Embed YouTube video using <iframe>    
     ---
     #### 🎥 Pitch Hearing Demonstration
     Watch this video to understand **how small changes in articulation can lead to major acoustic effects**.
     """)
 
     # Embed YouTube video using a clickable link
-    st.markdown("[🎥 Watch the video on YouTube](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
+    st.markdown("- [YouTube link](https://www.youtube.com/watch?v=QFq9ywKuCYo)")
 
     video_url = "https://www.youtube.com/embed/PM4WSBZanQQ?si=WCErVnSrSjeLkme2"
     
