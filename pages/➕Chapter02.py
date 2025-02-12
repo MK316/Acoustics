@@ -146,7 +146,7 @@ with tab3:
         unsafe_allow_html=True
     )
     
-    st.markdown("#### Video: Visible Sound vibration")
+    st.markdown("#### Video: Visible Sound vibration
         f"""
         <iframe width="560" height="315" src="{video_url_2}" 
         title="YouTube video player" frameborder="0" 
