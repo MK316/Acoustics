@@ -16,12 +16,16 @@ with tab2:
     ### 📌 What is Quantal Theory?
     Quantal Theory, proposed by **Kenneth N. Stevens (1972, 1989)**, explains how **speech sounds are produced efficiently and remain stable** despite variability in articulation.
     
-    - **Speech articulation and acoustics have a nonlinear relationship**:
-      - Some articulatory positions allow **small movements without large sound changes** (Quantal Zones - Stability).
-      - Some positions cause **small movements to lead to large acoustic shifts** (Non-Quantal Zones - Instability).
+    ### 🎥 Pitch Hearing Demonstration
+    Watch this video to understand **how small changes in articulation can lead to major acoustic effects**.
     
-    - This explains **why certain sounds are universal** (e.g., /i/, /u/, /a/) and why speech is **efficient and robust**.
+    """)
     
+    # Embed YouTube video
+    video_url = "https://www.youtube.com/watch?v=PM4WSBZanQQ"  # Replace with a relevant video
+    st.markdown(f'<iframe width="700" height="400" src="{video_url}" frameborder="0" allowfullscreen></iframe>', unsafe_allow_html=True)
+    
+    st.markdown("""
     ---
     ### 🎵 Interactive: Simulating Quantal vs. Non-Quantal Effects
     Try adjusting the **articulatory position** (simulated as tongue height) and observe:
@@ -31,7 +35,7 @@ with tab2:
     Move the slider and see how quantal effects work!
     """)
     
-    # User selects "articulatory position" (simulated as tongue height)
+    # User selects "articulatory position" (simulated tongue height)
     articulation_position = st.slider("Select an Articulatory Position (Simulated Tongue Height)", 
                                       min_value=1, max_value=100, value=50, step=1)
     
