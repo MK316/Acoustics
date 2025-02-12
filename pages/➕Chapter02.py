@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
-tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Apps", "💾 Download"])
+tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "💾 Download"])
 
 def plot_harmonic(mode, num_points=500):
     x = np.linspace(0, 1, num_points)
@@ -117,8 +117,9 @@ with tab2:
 ######################################################
 with tab3:
     st.title('Guitar String Harmonics Simulator')
-    mode = st.sidebar.slider('Select Mode', 0, 2, 0)  # Modes 1, 2, 3
+    mode = st.sidebar.slider('Select Mode', 0, 2, 0, key='harmonic_mode')  # Adding a unique key for the slider
     plot_harmonic(mode)
+
 
 
 ######################################################
