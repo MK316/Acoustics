@@ -4,17 +4,24 @@ import matplotlib.pyplot as plt
 
 tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "💾 Download"])
 
+# Define the function to plot all harmonics
 def plot_harmonics(num_modes=3, num_points=500):
+    # Create a figure object with specified size
     plt.figure(figsize=(10, 6))
     x = np.linspace(0, 1, num_points)
+    
+    # Loop through each mode and plot it
     for mode in range(num_modes):
-        y = np.sin(np.pi * (mode + 1) * x)  # Simple harmonic oscillator model
-        plt.subplot(num_modes, 1, mode + 1)
-        plt.plot(x, y)
-        plt.title(f'Mode {mode + 1}')
-        plt.ylim(-1.5, 1.5)
-        plt.grid(True)
+        y = np.sin(np.pi * (mode + 1) * x)  # Calculate the y-values using the sine function
+        plt.subplot(num_modes, 1, mode + 1)  # Create a subplot for each mode
+        plt.plot(x, y)  # Plot the current mode
+        plt.title(f'Mode {mode + 1}')  # Set the title for each mode
+        plt.ylim(-1.5, 1.5)  # Set the y-axis limits
+        plt.grid(True)  # Enable the grid
+
+    # Adjust layout to prevent overlapping
     plt.tight_layout()
+    # Use Streamlit's function to display the matplotlib plot
     st.pyplot(plt)
 
 with tab1:
