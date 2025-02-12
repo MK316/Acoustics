@@ -18,8 +18,11 @@ with tab2:
     #### 📌 What is Quantal Theory?
     Quantal Theory, proposed by **Kenneth N. Stevens (1972, 1989)**, explains how **speech sounds are produced efficiently and remain stable** despite variability in articulation.
     ##### Articles related
+    """)
+
     st.markdown("- [Clements & Ridouane (2006) Quantal phonetics and distinctive features](https://www.isca-archive.org/exling_2006/clements06_exling.pdf)")
     st.markdown("- [Stevens, K.N. (1972) The quantal nature of speech](https://www.kul.pl/files/30/fonetyka/Stevens_72_Quantal.pdf)")
+    st.markdown("""
     # Embed YouTube video using <iframe>    
     ---
     #### 🎥 Pitch Hearing Demonstration
