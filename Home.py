@@ -7,7 +7,7 @@ st.markdown("""
   """)
 
 st.image(
-    "https://github.com/MK316/Acoustics/raw/main/images/acoustics-logo3.png",
+    "https://github.com/MK316/Acoustics/raw/main/images/acoustics-logo4.png",
     width=250  # Adjust width as needed
 )
 
