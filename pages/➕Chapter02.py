@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "Resonant freq", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "🌀 Resonant freq", "💾 Download"])
 
 # Define the function to plot all harmonics
 def plot_harmonics(num_modes=3, num_points=500):
