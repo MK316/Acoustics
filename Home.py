@@ -3,7 +3,7 @@ import streamlit as st
 st.markdown("""
   #### 🐾 Phonology & English Education
   - Semester: Spring 2025
-  - Topic: Acoustics and Perception Experiment
+  - Topic: Acoustics and Auditory Phonetics
   """)
 
 st.image(
