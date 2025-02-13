@@ -272,7 +272,9 @@ with tab4:
     )
  ##############
 with tab5:
-    st.title("Spectral Tilt and Sound Quality Analysis")
+    st.markdown("💦 [Article to read: Sluijter & Van Heuven (1996) Spectral tilt as an acoustic correlate of linguistic stress](https://www.researchgate.net/publication/14340446_Spectral_tilt_as_an_acoustic_correlate_of_linguistic_stress)")
+    st.markdown("---")
+    st.markdown("#### Spectral Tilt and Sound Quality Analysis (simple demo")
 
     freq = st.sidebar.slider("Frequency", 100, 5000, 440, 100, key='freq')
     duration = st.sidebar.slider("Duration", 1, 5, 1, key='duration')
@@ -289,16 +291,17 @@ with tab5:
     sf.write('waveform_high_tilt.wav', waveform_high_tilt, sample_rate)
     sf.write('waveform_low_tilt.wav', waveform_low_tilt, sample_rate)
 
+    st.markdown("---")
     # Audio playback
-    st.header("Original Wave")
+    st.markdown("#### Original Wave")
     st.audio('waveform_original.wav')
 
-    st.header("High Spectral Tilt")
+    st.markdown("#### High Spectral Tilt")
     st.audio('waveform_high_tilt.wav')
 
-    st.header("Low Spectral Tilt")
+    st.markdown("#### Low Spectral Tilt")
     st.audio('waveform_low_tilt.wav')
-
+    st.markdown("---")
     # Optional: Display waveform plots for visual comparison
     fig, ax = plt.subplots(3, 1, figsize=(10, 8))
     ax[0].plot(waveform)
