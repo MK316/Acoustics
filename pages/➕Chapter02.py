@@ -207,6 +207,20 @@ with tab4:
     st.write(f"Second resonant frequency (F2): {RF2_open:.2f} Hz")
     st.write(f"Third resonant frequency (F3): {RF3_open:.2f} Hz")
 
+    st.markdown('#### 3. Ruben's tube demonstration')
+
+    st.caption("Video: Resonant frequencies and standing waves")
+    video_url_4 = "https://www.youtube.com/embed/zSQP0D4p8Xo?si=XrBzZ0Qy03pjf-Lf"
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url_4}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+    
 ######################################################
 with tab5:
     st.write("### Download Lecture Slides")
