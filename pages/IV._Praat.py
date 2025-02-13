@@ -1,6 +1,6 @@
 import streamlit as st
 
-tab0, tab1, tab2, tab3, tab4 = st.tabs(["💍Praat Introduction", "💍Getting started", "💍Basic functions", "💍Speech manipulation","💍Automation with scripting"])
+tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(["💍Praat Introduction", "praat picture", "💍Getting started", "💍Basic functions", "💍Speech manipulation","💍Automation with scripting"])
 
 with tab0:
     st.image("https://github.com/MK316/Acoustics/raw/main/images/praat01.jpg", 
@@ -21,8 +21,10 @@ with tab0:
 
 
 with tab1:
-    st.caption("TBA")
-
+    st.markdown("#### Screen capture")
+    st.image("https://github.com/MK316/Acoustics/raw/main/praat/Isaidmateandmade-capture.png", caption="I said made and mate. I said mate and made.")
+    st.markdown("#### Praat picture")
+    st.image("https://github.com/MK316/Acoustics/raw/main/praat/Isaidmateandmade.png", caption="I said made and mate. I said mate and made.")
 with tab2:
     st.caption("TBA")
     
@@ -33,7 +35,8 @@ with tab3:
 with tab4:
     st.caption("TBA")
 
-
+with tab5:
+    st.caption("TBA")
 
 
 
