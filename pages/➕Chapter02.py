@@ -38,39 +38,39 @@ def apply_spectral_tilt(waveform, sample_rate, tilt_amount):
     envelope = np.linspace(1, tilt_amount, len(t))
     return waveform * envelope
 
-def main():
-    st.title("Audio Spectral Tilt Comparison")
+# def main():
+#     st.title("Audio Spectral Tilt Comparison")
 
-    with st.sidebar:
-        freq = st.slider("Frequency", 100, 1000, 440)
-        duration = st.slider("Duration", 1, 5, 3)
-        sample_rate = 44100
-        tilt_amount = st.slider("Tilt Amount", 0.1, 1.0, 0.5)
+#     with st.sidebar:
+#         freq = st.slider("Frequency", 100, 1000, 440)
+#         duration = st.slider("Duration", 1, 5, 3)
+#         sample_rate = 44100
+#         tilt_amount = st.slider("Tilt Amount", 0.1, 1.0, 0.5)
 
-    # Generate original sine wave
-    waveform = generate_sine_wave(freq, duration, sample_rate)
-    tilted_waveform = apply_spectral_tilt(waveform, sample_rate, tilt_amount)
+#     # Generate original sine wave
+#     waveform = generate_sine_wave(freq, duration, sample_rate)
+#     tilted_waveform = apply_spectral_tilt(waveform, sample_rate, tilt_amount)
 
-    # Save waveforms as temporary files to play in Streamlit
-    sf.write('normal.wav', waveform, sample_rate)
-    sf.write('tilted.wav', tilted_waveform, sample_rate)
+#     # Save waveforms as temporary files to play in Streamlit
+#     sf.write('normal.wav', waveform, sample_rate)
+#     sf.write('tilted.wav', tilted_waveform, sample_rate)
 
-    st.header("Normal Sine Wave")
-    st.audio('normal.wav')
+#     st.header("Normal Sine Wave")
+#     st.audio('normal.wav')
 
-    st.header("Sine Wave with Spectral Tilt")
-    st.audio('tilted.wav')
+#     st.header("Sine Wave with Spectral Tilt")
+#     st.audio('tilted.wav')
 
-    # Optional: Display waveform plots
-    fig, ax = plt.subplots(2, 1, figsize=(10, 6))
-    ax[0].plot(waveform)
-    ax[0].set_title("Normal Waveform")
-    ax[1].plot(tilted_waveform)
-    ax[1].set_title("Tilted Waveform")
-    st.pyplot(fig)
+#     # Optional: Display waveform plots
+#     fig, ax = plt.subplots(2, 1, figsize=(10, 6))
+#     ax[0].plot(waveform)
+#     ax[0].set_title("Normal Waveform")
+#     ax[1].plot(tilted_waveform)
+#     ax[1].set_title("Tilted Waveform")
+#     st.pyplot(fig)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
 
 
