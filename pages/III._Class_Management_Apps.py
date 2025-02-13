@@ -44,7 +44,7 @@ with tabs[0]:
         qr_img = qr_img.resize((600, 600))  # Resize the image
 
         # Display the resized image with the user-provided caption
-        st.image(qr_img, caption=caption, use_container_width=False, width=400)
+        st.image(qr_img, caption=caption, use_container_width=False, width=300)
 
 # Timer tab
 with tabs[1]:
