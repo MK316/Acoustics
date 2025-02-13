@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+import soundfile as sf
 
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "🌀 Resonant frequencies", "Spectral tilt", "💾 Download"])
 
@@ -24,26 +25,53 @@ def plot_harmonics(num_modes=3, num_points=500):
     # Use Streamlit's function to display the matplotlib plot
     st.pyplot(plt)
 
-# Define the function to generate frequency response with spectral tilt outside of the main app logic
-def generate_frequency_response(f0, harmonics, decay_factor):
-    frequencies = np.arange(f0, f0 * harmonics + 1, f0)
-    amplitudes = decay_factor * np.linspace(0, -60, len(frequencies))
-    return frequencies, 10 ** (amplitudes / 20)  # Convert dB to linear scale
 
-# Define a function to plot the spectral tilt
-def plot_spectral_tilt():
-    f0 = st.slider("Fundamental Frequency (F0)", 100, 500, 200, 50)
-    harmonics = st.slider("Number of Harmonics", 10, 20, 10)
-    decay_factor = st.slider("Decay Factor", 0.5, 2.0, 1.0, 0.1)
 
-    frequencies, amplitudes = generate_frequency_response(f0, harmonics, decay_factor)
-    fig, ax = plt.subplots()
-    ax.plot(frequencies, 20 * np.log10(amplitudes), marker='o')  # Convert amplitude back to dB
-    ax.set_title("Spectral Tilt Visualization")
-    ax.set_xlabel("Frequency (Hz)")
-    ax.set_ylabel("Amplitude (dB)")
-    ax.grid(True)
+def generate_sine_wave(freq, duration, sample_rate, amplitude=1.0):
+    t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
+    waveform = amplitude * np.sin(2 * np.pi * freq * t)
+    return waveform
+
+def apply_spectral_tilt(waveform, sample_rate, tilt_amount):
+    # Apply a simple spectral tilt by multiplying the waveform by a linearly decreasing amplitude envelope
+    t = np.linspace(0, 1, int(sample_rate * len(waveform) / sample_rate))
+    envelope = np.linspace(1, tilt_amount, len(t))
+    return waveform * envelope
+
+def main():
+    st.title("Audio Spectral Tilt Comparison")
+
+    with st.sidebar:
+        freq = st.slider("Frequency", 100, 1000, 440)
+        duration = st.slider("Duration", 1, 5, 3)
+        sample_rate = 44100
+        tilt_amount = st.slider("Tilt Amount", 0.1, 1.0, 0.5)
+
+    # Generate original sine wave
+    waveform = generate_sine_wave(freq, duration, sample_rate)
+    tilted_waveform = apply_spectral_tilt(waveform, sample_rate, tilt_amount)
+
+    # Save waveforms as temporary files to play in Streamlit
+    sf.write('normal.wav', waveform, sample_rate)
+    sf.write('tilted.wav', tilted_waveform, sample_rate)
+
+    st.header("Normal Sine Wave")
+    st.audio('normal.wav')
+
+    st.header("Sine Wave with Spectral Tilt")
+    st.audio('tilted.wav')
+
+    # Optional: Display waveform plots
+    fig, ax = plt.subplots(2, 1, figsize=(10, 6))
+    ax[0].plot(waveform)
+    ax[0].set_title("Normal Waveform")
+    ax[1].plot(tilted_waveform)
+    ax[1].set_title("Tilted Waveform")
     st.pyplot(fig)
+
+if __name__ == "__main__":
+    main()
+
 
 
 with tab1:
@@ -245,7 +273,42 @@ with tab4:
  ##############
 with tab5:
     st.title("Spectral Tilt and Sound Quality Analysis")
-    plot_spectral_tilt()
+
+    freq = st.sidebar.slider("Frequency", 100, 5000, 440, 100, key='freq')
+    duration = st.sidebar.slider("Duration", 1, 5, 1, key='duration')
+    sample_rate = 44100
+    tilt_amount_high = 0.1
+    tilt_amount_low = 0.5
+
+    waveform = generate_sine_wave(freq, duration, sample_rate)
+    waveform_high_tilt = apply_spectral_tilt(waveform, sample_rate, tilt_amount_high)
+    waveform_low_tilt = apply_spectral_tilt(waveform, sample_rate, tilt_amount_low)
+
+    # Save waveforms to temporary files
+    sf.write('waveform_original.wav', waveform, sample_rate)
+    sf.write('waveform_high_tilt.wav', waveform_high_tilt, sample_rate)
+    sf.write('waveform_low_tilt.wav', waveform_low_tilt, sample_rate)
+
+    # Audio playback
+    st.header("Original Wave")
+    st.audio('waveform_original.wav')
+
+    st.header("High Spectral Tilt")
+    st.audio('waveform_high_tilt.wav')
+
+    st.header("Low Spectral Tilt")
+    st.audio('waveform_low_tilt.wav')
+
+    # Optional: Display waveform plots for visual comparison
+    fig, ax = plt.subplots(3, 1, figsize=(10, 8))
+    ax[0].plot(waveform)
+    ax[0].set_title("Original Waveform")
+    ax[1].plot(waveform_high_tilt)
+    ax[1].set_title("High Tilt Waveform")
+    ax[2].plot(waveform_low_tilt)
+    ax[2].set_title("Low Tilt Waveform")
+    st.pyplot(fig)
+
 ######################################################
 with tab6:
     st.write("### Download Lecture Slides")
