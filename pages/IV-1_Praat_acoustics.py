@@ -36,25 +36,6 @@ def display_image():
 
 
 with tab0:
-    st.image("https://github.com/MK316/Acoustics/raw/main/images/praat01.jpg", 
-             caption="Doing Phonetics by Computer; icon, Praat objects window, Praat picture window")
-    
-    st.markdown("---")
-    
-    st.markdown("""
-    - Praat is a free software for speech analysis and phonetic research, widely used in linguistics and language education. It offers spectrograms, pitch tracking, formant analysis, and speech synthesis, with scripting support for automation.
-    - [Software to download](https://www.fon.hum.uva.nl/praat/)
-    - **How to install:** Just double-click the icon appearing after downloading the file.
-    
-    ### 📒 Praat Windows Overview
-    - **Double click the icon to start**
-    - **Praat Objects Window:** This is the main control panel where you load, create, and manipulate audio files. It lists all active objects (e.g., sounds, TextGrids) and allows access to analysis and modification functions.
-    - **Praat Picture Window:** This window is used for generating high-quality visualizations of spectrograms, pitch contours, and other speech data. It provides tools for customizing and exporting figures for presentations or research papers.
-    """)
-
-
-
-
 
     # Arrange 'Start', 'Previous', 'Next', and 'Slide Selector' in a single row
     col1, col2, col3, col4 = st.columns([1, 1, 1, 5])
@@ -91,7 +72,21 @@ with tab0:
     # Display the image
     display_image()
 
-
+    st.image("https://github.com/MK316/Acoustics/raw/main/images/praat01.jpg", 
+             caption="Doing Phonetics by Computer; icon, Praat objects window, Praat picture window")
+    
+    st.markdown("---")
+    
+    st.markdown("""
+    - Praat is a free software for speech analysis and phonetic research, widely used in linguistics and language education. It offers spectrograms, pitch tracking, formant analysis, and speech synthesis, with scripting support for automation.
+    - [Software to download](https://www.fon.hum.uva.nl/praat/)
+    - **How to install:** Just double-click the icon appearing after downloading the file.
+    
+    ### 📒 Praat Windows Overview
+    - **Double click the icon to start**
+    - **Praat Objects Window:** This is the main control panel where you load, create, and manipulate audio files. It lists all active objects (e.g., sounds, TextGrids) and allows access to analysis and modification functions.
+    - **Praat Picture Window:** This window is used for generating high-quality visualizations of spectrograms, pitch contours, and other speech data. It provides tools for customizing and exporting figures for presentations or research papers.
+    """)
 
 with tab1:
     st.markdown('''
