@@ -72,7 +72,7 @@ with tab0:
     # Display the image
     display_image()
     st.markdown("---")
-    
+    st.markdown("#### ❄️ Praat software (installation)")
     st.image("https://github.com/MK316/Acoustics/raw/main/images/praat01.jpg", 
              caption="Doing Phonetics by Computer; icon, Praat objects window, Praat picture window")
     
