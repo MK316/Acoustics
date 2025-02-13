@@ -207,7 +207,7 @@ with tab4:
     st.write(f"Second resonant frequency (F2): {RF2_open:.2f} Hz")
     st.write(f"Third resonant frequency (F3): {RF3_open:.2f} Hz")
 
-    st.markdown('#### 3. Ruben's tube demonstration')
+    st.markdown("#### 3. Ruben's tube demonstration")
 
     st.caption("Video: Resonant frequencies and standing waves")
     video_url_4 = "https://www.youtube.com/embed/zSQP0D4p8Xo?si=XrBzZ0Qy03pjf-Lf"
