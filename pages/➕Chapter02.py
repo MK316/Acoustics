@@ -272,7 +272,7 @@ with tab4:
     )
  ##############
 with tab5:
-    st.markdown("💦 [Article to read: Sluijter & Van Heuven (1996) Spectral tilt as an acoustic correlate of linguistic stress](https://www.researchgate.net/publication/14340446_Spectral_tilt_as_an_acoustic_correlate_of_linguistic_stress)")
+    st.markdown("💦 Article to read: Sluijter & Van Heuven (1996) Spectral tilt as an acoustic correlate of linguistic stress [download](https://www.researchgate.net/publication/14340446_Spectral_tilt_as_an_acoustic_correlate_of_linguistic_stress)")
     st.markdown("---")
     st.markdown("#### Spectral Tilt and Sound Quality Analysis (simple demo)")
 
