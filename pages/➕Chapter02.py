@@ -24,6 +24,28 @@ def plot_harmonics(num_modes=3, num_points=500):
     # Use Streamlit's function to display the matplotlib plot
     st.pyplot(plt)
 
+# Define the function to generate frequency response with spectral tilt outside of the main app logic
+def generate_frequency_response(f0, harmonics, decay_factor):
+    frequencies = np.arange(f0, f0 * harmonics + 1, f0)
+    amplitudes = decay_factor * np.linspace(0, -60, len(frequencies))
+    return frequencies, 10 ** (amplitudes / 20)  # Convert dB to linear scale
+
+# Define a function to plot the spectral tilt
+def plot_spectral_tilt():
+    f0 = st.slider("Fundamental Frequency (F0)", 100, 500, 200, 50)
+    harmonics = st.slider("Number of Harmonics", 10, 20, 10)
+    decay_factor = st.slider("Decay Factor", 0.5, 2.0, 1.0, 0.1)
+
+    frequencies, amplitudes = generate_frequency_response(f0, harmonics, decay_factor)
+    fig, ax = plt.subplots()
+    ax.plot(frequencies, 20 * np.log10(amplitudes), marker='o')  # Convert amplitude back to dB
+    ax.set_title("Spectral Tilt Visualization")
+    ax.set_xlabel("Frequency (Hz)")
+    ax.set_ylabel("Amplitude (dB)")
+    ax.grid(True)
+    st.pyplot(fig)
+
+
 with tab1:
     st.write("Other content here.")
 
@@ -221,40 +243,9 @@ with tab4:
         unsafe_allow_html=True
     )
  ##############
- with tab5:
-
-    # Function to simulate frequency response with spectral tilt
-    def generate_frequency_response(f0, harmonics, decay_factor):
-        frequencies = np.arange(f0, f0 * harmonics + 1, f0)
-        amplitudes = decay_factor * np.linspace(0, -60, len(frequencies))
-        return frequencies, 10 ** (amplitudes / 20)  # Convert dB to linear scale
-    
-    # Streamlit application
-    def main():
-        st.title("Spectral Tilt and Sound Quality Analysis")
-    
-        # User inputs
-        f0 = st.slider("Fundamental Frequency (F0)", 100, 500, 200, 50)
-        harmonics = st.slider("Number of Harmonics", 10, 20, 10)
-        decay_factor = st.slider("Decay Factor", 0.5, 2.0, 1.0, 0.1)
-    
-        # Generate data
-        frequencies, amplitudes = generate_frequency_response(f0, harmonics, decay_factor)
-    
-        # Plotting
-        fig, ax = plt.subplots()
-        ax.plot(frequencies, 20 * np.log10(amplitudes), marker='o')  # Convert amplitude back to dB
-        ax.set_title("Spectral Tilt Visualization")
-        ax.set_xlabel("Frequency (Hz)")
-        ax.set_ylabel("Amplitude (dB)")
-        ax.grid(True)
-    
-        # Show plot in Streamlit
-        st.pyplot(fig)
-    
-    if __name__ == "__main__":
-        main()
-
+with tab5:
+    st.title("Spectral Tilt and Sound Quality Analysis")
+    plot_spectral_tilt()
 ######################################################
 with tab6:
     st.write("### Download Lecture Slides")
