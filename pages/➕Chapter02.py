@@ -291,7 +291,7 @@ with tab5:
     sf.write('waveform_high_tilt.wav', waveform_high_tilt, sample_rate)
     sf.write('waveform_low_tilt.wav', waveform_low_tilt, sample_rate)
 
-    st.markdown("---")
+
     # Audio playback
     st.markdown("#### Original Wave")
     st.audio('waveform_original.wav')
