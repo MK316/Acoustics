@@ -21,9 +21,10 @@ with tab0:
 
 
 with tab1:
-    st.markdown("### Vowel duration and post-vocalic stop voicing
+    st.markdown('''
+    ### Vowel duration and post-vocalic stop voicing
     - Test sentence: "I said, **made** and **mate**." "I said, **mate** and **made**."
-            
+    ''')     
     st.markdown("#### Screen capture")
     st.image("https://github.com/MK316/Acoustics/raw/main/praat/Isaidmateandmade-capture.png", caption="I said made and mate. I said mate and made.")
     st.markdown("#### Praat picture")
