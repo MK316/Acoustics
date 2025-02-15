@@ -49,6 +49,18 @@ with tabs[0]:
     st.markdown("🔎Praat software to cite:") 
     st.markdown("- Paul Boersma & David Weenink (1992–2022). _Praat: doing phonetics by computer_ [Computer program]. Version 6.4.27, retrieved 23 January 2025 from https://www.praat.org.")
     st.markdown("- Download from [fon.hum.uva.nl](https://www.fon.hum.uva.nl/praat/)")
+
+    st.markdown("🔎Github: data and code storage") 
+    st.markdown("- https://github.com")
+
+    st.markdown("🔎Higgingface: deploy applications, machine learning, AI models") 
+    st.markdown("- https://huggingface.co")
+
+    st.markdown("🔎Streamlit: application deploy") 
+    st.markdown("- https://streamlit.app")
+
+    st.markdown("🔎Colab: Python coding via clouding") 
+    st.markdown("- https://colab.google/")
         
 # Content for the Evaluation tab
 with tabs[1]:
