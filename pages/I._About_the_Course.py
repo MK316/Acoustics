@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import calendar
 from datetime import datetime
-import st.components.v1.iframe
+
 
 # Include custom CSS to justify text in the markdown
 # Include custom CSS to justify text in the markdown
