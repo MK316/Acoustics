@@ -88,7 +88,7 @@ with tabs[3]:
 # Content for the Links tab
 with tabs[4]:
     st.header("Files to share: on Padlet")
-    st.write("Useful links will be updated here. This could include additional reading materials, online resources, and related external websites.")
+    st.write("This Padlet serves as a dynamic hub for our Acoustics course. Here, you'll find essential course materials, additional reading resources, and online tools. It's also a space for sharing files and submitting assignments.")
     st.components.v1.iframe("https://padlet.com/mirankim316/acoustics", width=800, height=600)
 
 # Content for the Calendar tab
