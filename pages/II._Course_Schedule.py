@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # Create tabs for different sections of the course
-tabs = st.tabs(["🍐 Weekly", "🍏 Assignment details", "Padlet"])
+tabs = st.tabs(["🍐 Weekly", "🍏 Assignment details", "🐾 Padlet"])
                 
 # Content for the Schedule tab
 with tabs[0]:
@@ -24,7 +24,7 @@ with tabs[1]:
   st.write("When necessary, assignments will be detailed in this section.")
 
 with tabs[2]:
-    st.header("Files to share: on Padlet")
+    st.header("🐾 Files to share: on Padlet")
     st.write("This Padlet serves as a dynamic hub for our Acoustics course. Here, you'll find additional course materials, additional reading resources, and online tools. It's also a space for sharing files and submitting assignments.")
     st.components.v1.iframe("https://padlet.com/mirankim316/acoustics", width=800, height=600)
 
