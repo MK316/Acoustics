@@ -1,6 +1,7 @@
 import streamlit as st
 
-st.caption("Perception experiment using Praat MFC")
+st.caption("Perception experiment using Praat MFC)")
+st.caption("Online page source: https://www.fon.hum.uva.nl/praat/manual/ExperimentMFC.html")
 
 # Define the tabs
 tabs = st.tabs(["Praat manual", "Exp 1 sample", "Exp 2", "Exp 3"])
