@@ -26,7 +26,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Create tabs for different sections of the course
-tabs = st.tabs(["🍐 Course Overview", "💙 Materials", "🍏 Padlet", "🍒 Assignments", "🍋 TBA", "📆 Calendar"])
+tabs = st.tabs(["🍐 Course Overview", "💙 Materials", "🍏 Padlet", "🍒 TBA", "🍋 TBA", "📆 Calendar"])
 
 # Course Overview tab
 with tabs[0]:
@@ -87,7 +87,7 @@ with tabs[2]:
 
 # Content for the Assignments tab
 with tabs[3]:
-    st.header("Assignments")
+    st.header("TBA")
     st.write("Detailed assignments for the course will be updated here in time. Stay tuned!")
 
 # Content for the Links tab
