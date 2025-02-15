@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import os
+
 tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(["💍Praat Introduction", "praat picture", "💍Getting started", "💍Basic functions", "💍Speech manipulation","💍Automation with scripting"])
 
 # CSS to adjust the alignment of the dropdown to match the buttons
