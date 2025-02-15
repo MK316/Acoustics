@@ -14,7 +14,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Set up the path to the slides folder
-slides_path = "lectureslides"  # Ensure this is correct relative to your app's location
+slides_path = "pages/praat_slides1/"  # Ensure this is correct relative to your app's location
 slide_files = sorted([f for f in os.listdir(slides_path) if f.endswith(".png")])
 num_slides = len(slide_files)
 
