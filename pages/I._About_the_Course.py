@@ -53,24 +53,21 @@ with tabs[1]:
     st.markdown("---")
     
     # st.markdown("""
-    # #### 🔎 Software and online platforms:
+    # #### 🔎 Software and online platforms: 
     # - Praat software: Sound handling, speech analysis, perception experiments 
     # - Paul Boersma & David Weenink (1992-2025). _Praat: doing phonetics by computer_ [Computer program]. Version 6.4.27, retrieved 23 January 2025 from https://www.praat.org.
     # - Download from [fon.hum.uva.nl](https://www.fon.hum.uva.nl/praat/)
     # """)
 
 
-    st.markdown("🔎Github: data and code storage") 
-    st.markdown("- https://github.com")
+    st.markdown("""
+    #### Key Resources:
+    - **GitHub:** Data and code repository hosting. [Visit GitHub](https://github.com)
+    - **Hugging Face:** Deployment of applications and AI models. [Visit Hugging Face](https://huggingface.co)
+    - **Streamlit:** Easy deployment of applications. [Visit Streamlit](https://streamlit.app)
+    - **Google Colab:** Cloud-based Python programming. [Visit Google Colab](https://colab.google.com/)
+    """)
 
-    st.markdown("🔎Higgingface: deploy applications, machine learning, AI models") 
-    st.markdown("- https://huggingface.co")
-
-    st.markdown("🔎Streamlit: application deploy") 
-    st.markdown("- https://streamlit.app")
-
-    st.markdown("🔎Colab: Python coding via clouding") 
-    st.markdown("- https://colab.google/")
       
 # Content for the Evaluation tab
 with tabs[2]:
