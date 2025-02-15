@@ -44,7 +44,15 @@ with tabs[0]:
     By the end of this course, participants will have the knowledge and skills to design and conduct experiments. (+ analyze findings, and apply results to enhance their teaching practices.)
     </div>
     """, unsafe_allow_html=True)
-
+    st.markdown("---")
+    st.markdown("#### Evaluation")
+    st.markdown("""
+    - Attendance: 10%
+    - Midterm: 30%
+    - Final: 30%
+    - Assignments: 30%
+    """)
+    
 with tabs[1]:
 
     st.markdown("#### 📗Texbook: ")
