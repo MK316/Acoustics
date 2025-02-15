@@ -89,7 +89,7 @@ with tabs[3]:
 with tabs[4]:
     st.header("Links")
     st.write("Useful links will be updated here. This could include additional reading materials, online resources, and related external websites.")
-    st.components.v1.iframe("https://padlet.com/mirankim316/acoustics", width=700, height=800)
+    st.components.v1.iframe("https://padlet.com/mirankim316/acoustics", width=800, height=600)
 
 # Content for the Calendar tab
 with tabs[5]:
