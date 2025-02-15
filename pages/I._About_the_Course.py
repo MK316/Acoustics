@@ -62,10 +62,10 @@ with tabs[1]:
 
     st.markdown("""
     #### Key Resources:
-    - **GitHub:** Data and code repository hosting. [Visit GitHub](https://github.com)
-    - **Hugging Face:** Deployment of applications and AI models. [Visit Hugging Face](https://huggingface.co)
-    - **Streamlit:** Easy deployment of applications. [Visit Streamlit](https://streamlit.app)
-    - **Google Colab:** Cloud-based Python programming. [Visit Google Colab](https://colab.google.com/)
+    - **GitHub:** Data and code repository hosting. [github.com](https://github.com)
+    - **Hugging Face:** Deployment of applications and AI models. [huggingface.co](https://huggingface.co)
+    - **Streamlit:** Easy deployment of applications. [streamlit.app](https://streamlit.app)
+    - **Google Colab:** Cloud-based Python programming. [colab.google.com](https://colab.google.com/)
     """)
 
       
