@@ -112,7 +112,7 @@ with tabs[1]:
             if st.session_state.slide_index < num_slides - 1:
                 st.session_state.slide_index += 1
             else:
-                st.warning("This is the end of the slides.")
+                st.warning("END")
 
     with col4:
         # Display slide selector dropdown
