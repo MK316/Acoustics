@@ -8,7 +8,8 @@ st.markdown("""
 
 st.image(
     "https://github.com/MK316/Acoustics/raw/main/images/acoustics-logo4.png",
-    width=600  # Adjust width as needed
+    width=600,  # Adjust width as needed
+    caption: "Physical aspect of sound"
 )
 
 st.caption("What is sound, and how does it relate to teaching/learning spoken English? ")
