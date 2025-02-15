@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.caption("Perception experiment using Praat MFC)")
+st.caption("Perception experiment using Praat MFC")
 st.caption("Online page source: https://www.fon.hum.uva.nl/praat/manual/ExperimentMFC.html")
 
 # Define the tabs
