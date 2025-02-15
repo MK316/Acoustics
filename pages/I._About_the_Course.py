@@ -2,6 +2,8 @@ import streamlit as st
 import requests
 import calendar
 from datetime import datetime
+from PIL import Image
+import os
 
 
 # CSS to adjust the alignment of the dropdown to match the buttons
