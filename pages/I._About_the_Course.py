@@ -25,7 +25,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Create tabs for different sections of the course
-tabs = st.tabs(["🍐 Course Overview", "🍏 Evaluation", "🍒 Assignments", "🍋 Links", "📆 Calendar"])
+tabs = st.tabs(["🍐 Course Overview", "Materials", "🍏 Evaluation", "🍒 Assignments", "🍋 Links", "📆 Calendar"])
 
 # Course Overview tab
 with tabs[0]:
@@ -44,6 +44,7 @@ with tabs[0]:
     </div>
     """, unsafe_allow_html=True)
 
+with tabs[1]:
     st.markdown("---")
     st.markdown("📗Texbook: Johnson, K. (2012) _Acoustics and Auditory Phonetics_ (3rd edition), Wiley-Blackwell [link](https://books.google.co.kr/books/about/Acoustic_and_Auditory_Phonetics.html?id=sKOUKJXbmYMC&redir_esc=y)")
     st.markdown("🔎Praat software to cite:") 
@@ -61,9 +62,9 @@ with tabs[0]:
 
     st.markdown("🔎Colab: Python coding via clouding") 
     st.markdown("- https://colab.google/")
-        
+      
 # Content for the Evaluation tab
-with tabs[1]:
+with tabs[2]:
     st.header("Evaluation")
     st.markdown("""
     - Attendance: 10%
@@ -73,17 +74,17 @@ with tabs[1]:
     """)
 
 # Content for the Assignments tab
-with tabs[2]:
+with tabs[3]:
     st.header("Assignments")
     st.write("Detailed assignments for the course will be updated here in time. Stay tuned!")
 
 # Content for the Links tab
-with tabs[3]:
+with tabs[4]:
     st.header("Links")
     st.write("Useful links will be updated here. This could include additional reading materials, online resources, and related external websites.")
 
 # Content for the Calendar tab
-with tabs[4]:
+with tabs[5]:
     # Dropdown for selecting a month
     month_option = st.selectbox("Select a Month", options=["March", "April", "May", "June"], index=0)
     # Dictionary to map month names to their corresponding numbers
