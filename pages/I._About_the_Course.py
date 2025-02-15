@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 import calendar
 from datetime import datetime
+import st.components.v1.iframe
 
 # Include custom CSS to justify text in the markdown
 # Include custom CSS to justify text in the markdown
@@ -88,6 +89,7 @@ with tabs[3]:
 with tabs[4]:
     st.header("Links")
     st.write("Useful links will be updated here. This could include additional reading materials, online resources, and related external websites.")
+    st.components.v1.iframe("https://padlet.com/mirankim316/acoustics", width=700, height=800)
 
 # Content for the Calendar tab
 with tabs[5]:
