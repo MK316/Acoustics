@@ -127,7 +127,7 @@ with tabs[1]:
     display_image()
     
     st.markdown("---")
-    st.markdown("#### 🎬 Watch video: Objects Under Electron Microscope!)
+    st.markdown("#### 🎬 Watch video: Objects Under Electron Microscope!")
     
     # YouTube Video Embed
     youtube_url = "https://www.youtube.com/embed/yLA8dTncLXA?si=Em5LjfXG9IWVxZzj"
