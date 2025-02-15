@@ -60,17 +60,17 @@ with tabs[1]:
     """)
 
 
-    st.markdown("🔎Github: data and code storage") 
-    st.markdown("- https://github.com")
+    # st.markdown("🔎Github: data and code storage") 
+    # st.markdown("- https://github.com")
 
-    st.markdown("🔎Higgingface: deploy applications, machine learning, AI models") 
-    st.markdown("- https://huggingface.co")
+    # st.markdown("🔎Higgingface: deploy applications, machine learning, AI models") 
+    # st.markdown("- https://huggingface.co")
 
-    st.markdown("🔎Streamlit: application deploy") 
-    st.markdown("- https://streamlit.app")
+    # st.markdown("🔎Streamlit: application deploy") 
+    # st.markdown("- https://streamlit.app")
 
-    st.markdown("🔎Colab: Python coding via clouding") 
-    st.markdown("- https://colab.google/")
+    # st.markdown("🔎Colab: Python coding via clouding") 
+    # st.markdown("- https://colab.google/")
       
 # Content for the Evaluation tab
 with tabs[2]:
