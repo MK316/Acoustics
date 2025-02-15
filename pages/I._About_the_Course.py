@@ -132,9 +132,18 @@ with tabs[1]:
     st.markdown("#### 🎬 Watch video: Objects Under Electron Microscope!")
     
     # YouTube Video Embed
-    youtube_url = "https://www.youtube.com/embed/yLA8dTncLXA?si=Em5LjfXG9IWVxZzj"
-    st.video(youtube_url)
+    video_url = "https://www.youtube.com/embed/yLA8dTncLXA?si=Em5LjfXG9IWVxZzj"
+    # st.video(youtube_url)
 
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
 
 
 with tabs[2]:
