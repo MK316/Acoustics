@@ -26,7 +26,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Create tabs for different sections of the course
-tabs = st.tabs(["🍐 Course Overview", "💙 Materials", "🍏 Evaluation", "🍒 Assignments", "🍋 Padlet", "📆 Calendar"])
+tabs = st.tabs(["🍐 Course Overview", "💙 Materials", "🍏 Padlet", "🍒 Assignments", "🍋 TBA", "📆 Calendar"])
 
 # Course Overview tab
 with tabs[0]:
@@ -80,13 +80,10 @@ with tabs[1]:
       
 # Content for the Evaluation tab
 with tabs[2]:
-    st.header("Evaluation")
-    st.markdown("""
-    - Attendance: 10%
-    - Midterm: 30%
-    - Final: 30%
-    - Assignments: 30%
-    """)
+    st.header("Files to share: on Padlet")
+    st.write("This Padlet serves as a dynamic hub for our Acoustics course. Here, you'll find additional course materials, additional reading resources, and online tools. It's also a space for sharing files and submitting assignments.")
+    st.components.v1.iframe("https://padlet.com/mirankim316/acoustics", width=800, height=600)
+
 
 # Content for the Assignments tab
 with tabs[3]:
@@ -95,9 +92,7 @@ with tabs[3]:
 
 # Content for the Links tab
 with tabs[4]:
-    st.header("Files to share: on Padlet")
-    st.write("This Padlet serves as a dynamic hub for our Acoustics course. Here, you'll find additional course materials, additional reading resources, and online tools. It's also a space for sharing files and submitting assignments.")
-    st.components.v1.iframe("https://padlet.com/mirankim316/acoustics", width=800, height=600)
+    st.header("TBA")
 
 # Content for the Calendar tab
 with tabs[5]:
