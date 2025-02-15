@@ -46,11 +46,10 @@ with tabs[0]:
 
 with tabs[1]:
 
-    st.markdown("""#### 📗Texbook: 
-    - Johnson, K. (2012) _Acoustics and Auditory Phonetics_ (3rd edition), Wiley-Blackwell [link](https://books.google.co.kr/books/about/Acoustic_and_Auditory_Phonetics.html?id=sKOUKJXbmYMC&redir_esc=y))
-    - Supplementary readings (TBA)
-    """)
-    
+    st.markdown("#### 📗Texbook: ")
+    st.write("- Johnson, K. (2012) _Acoustics and Auditory Phonetics_ (3rd edition), Wiley-Blackwell [link](https://books.google.co.kr/books/about/Acoustic_and_Auditory_Phonetics.html?id=sKOUKJXbmYMC&redir_esc=y))
+    - Supplementary readings (TBA)")
+        
     st.markdown("---")
     
     # st.markdown("""
