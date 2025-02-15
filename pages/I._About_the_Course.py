@@ -52,9 +52,10 @@ with tabs[1]:
     
     st.markdown("---")
     
-    st.markdown("""#### Software and online platforms
-    - 🔎Praat software: Sound handling, speech analysis, perception experiments) 
-    - Paul Boersma & David Weenink (1992–2022). _Praat: doing phonetics by computer_ [Computer program]. Version 6.4.27, retrieved 23 January 2025 from https://www.praat.org.)
+    st.markdown("""#### Software and online platforms:
+                
+    - 🔎Praat software: Sound handling, speech analysis, perception experiments 
+    - Paul Boersma & David Weenink (1992–2022). _Praat: doing phonetics by computer_ [Computer program]. Version 6.4.27, retrieved 23 January 2025 from https://www.praat.org.
     - Download from [fon.hum.uva.nl](https://www.fon.hum.uva.nl/praat/)
     """)
 
