@@ -184,7 +184,7 @@ with tabs[5]:
         st.audio(speech.getvalue(), format='audio/mp3')
 
 # Code for the calculator within the first tab
-with tab1:
+with tabs[5]:
     st.markdown("### 🔢 Calculator")
     # Initialize calculator input and result
     if 'calc_input' not in st.session_state:
