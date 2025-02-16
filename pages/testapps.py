@@ -8,6 +8,10 @@ if 'result' not in st.session_state:
 
 # Function to update the calculator input
 def update_input(value):
+    # Mapping from Unicode symbols to standard operators
+    symbol_map = {"➕": "+", "➖": "-", "✖️": "*", "➗": "/"}
+    # Replace the symbol with its corresponding operator if it's a special symbol
+    value = symbol_map.get(value, value)
     st.session_state.calc_input += str(value)
 
 # Function to calculate the result
