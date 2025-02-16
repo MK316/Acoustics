@@ -213,12 +213,23 @@ with tabs[5]:
         st.session_state.calc_input = ""
         st.session_state.result = ""
 
-    # Display the calculator input and result
-    input_key = "input_box"
-    st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
+    # # Display the calculator input and result
+    # input_key = "input_box"
+    # st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
     # st.text(st.session_state.result)
-    st.markdown("## f{st.session_state.result}")
 
+    # Custom CSS to adjust the font size of the result text
+    result_style = """
+    <style>
+    div[data-testid="stText"] {
+        font-size: 24px; /* Larger font size for the result */
+    }
+    </style>
+    """
+    st.markdown(result_style, unsafe_allow_html=True)
+    st.text(st.session_state.result)
+
+ 
     # Layout for number and operation buttons
     buttons = [
         ("1", "2", "3", "➕"),
