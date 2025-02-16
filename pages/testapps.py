@@ -36,7 +36,7 @@ buttons = [
     (".", "0", "=", "+")
 ]
 
-for row in buttons:
+for i, row in enumerate(buttons):
     with col1:
         st.button(row[0], on_click=update_input, args=(row[0],))
     with col2:
@@ -45,9 +45,24 @@ for row in buttons:
         st.button(row[2], on_click=update_input, args=(row[2],))
     with col4:
         if row[3] == "=":
-            st.button(row[3], on_click=calculate_result)
+            result_button_key = f"result_button_{i}"
+            st.button(row[3], key=result_button_key, on_click=calculate_result)
         else:
             st.button(row[3], on_click=update_input, args=(row[3],))
 
 # Clear button
 st.button("Clear", on_click=clear_input)
+
+# Custom JavaScript to trigger the "=" button click on "Enter" key press
+st.markdown("""
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        document.addEventListener('keydown', function(e) {
+            const keyCode = e.which || e.keyCode;
+            if (keyCode === 13) { // 13 is the Enter key
+                document.getElementById('""" + result_button_key + """').click();
+            }
+        });
+    });
+    </script>
+    """, unsafe_allow_html=True)
