@@ -36,9 +36,9 @@ buttons = [
     (".", "0", "=", "/")
 ]
 
-# Display the buttons in a compact grid layout
+# Display the buttons in a compact grid layout without specifying gap
 for row in buttons:
-    cols = st.columns([0.25, 0.25, 0.25, 0.25], gap="tiny")
+    cols = st.columns(4)
     for i, value in enumerate(row):
         if value == "=":
             cols[i].button(value, on_click=calculate_result, key=f"btn_{value}", help=f"Calculate the result")
