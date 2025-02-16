@@ -227,6 +227,7 @@ with tabs[5]:
     </style>
     """
     st.markdown(result_style, unsafe_allow_html=True)
+    st.markdown("#### The result is:")
     st.text(st.session_state.result)
 
  
