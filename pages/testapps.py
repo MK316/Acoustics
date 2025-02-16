@@ -36,17 +36,17 @@ buttons = [
     (".", "0", "=", "/")
 ]
 
-# Display the buttons in a grid layout
+# Display the buttons in a grid layout with reduced spacing
 for row in buttons:
-    cols = st.columns(4)
+    cols = st.columns([0.25, 0.25, 0.25, 0.25], gap="small")
     for i, value in enumerate(row):
-        if value == "=":
-            cols[i].button(value, on_click=calculate_result, key=f"btn_{value}")
-        else:
-            cols[i].button(value, on_click=update_input, args=(value,), key=f"btn_{value}")
+        cols[i].button(value, on_click=(calculate_result if value == "=" else update_input), 
+                       args=(value,) if value != "=" else (), 
+                       key=f"btn_{value}", 
+                       help=f"Press to add '{value}' to the expression")
 
 # Clear button
-st.button("Clear", on_click=clear_input)
+st.button("Clear", on_click=clear_input, help="Press to clear all inputs and results")
 
 # JavaScript for handling the Enter key to trigger "=" button click
 st.markdown("""
