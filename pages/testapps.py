@@ -41,7 +41,7 @@ button_style = """
 <style>
 button {
     font-size: 16px; /* Increase font size */
-    height: 3em; /* Increase height */
+    height: 5em; /* Increase height */
     width: 100%; /* Adjust width to fill column */
     margin: 1px; /* Tight margin to reduce space */
 }
