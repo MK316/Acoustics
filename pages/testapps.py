@@ -40,28 +40,42 @@ buttons = [
     (".", "0", "=", "➗")
 ]
 
-# Display the buttons in a grid layout
+# Adjusting button widths and font size via columns and markdown
+button_style = """
+<style>
+div.stButton > button:first-child {
+    font-size: 18px; /* Increase font size */
+    height: 3em; /* Increase height */
+    width: 100%; /* Attempt to adjust width */
+    margin: 0.25em; /* Tight margin to reduce space */
+}
+</style>
+"""
+st.markdown(button_style, unsafe_allow_html=True)
+
 for row in buttons:
     cols = st.columns(4)
     for i, value in enumerate(row):
+        button_label = f"{value}"  # Ensures symbols are displayed
         if value == "=":
-            cols[i].button(value, on_click=calculate_result, key=f"btn_{value}", args=())
+            cols[i].button(button_label, on_click=calculate_result, key=f"btn_{value}")
         else:
-            cols[i].button(value, on_click=update_input, args=(value,), key=f"btn_{value}")
+            cols[i].button(button_label, on_click=update_input, args=(value,), key=f"btn_{value}")
 
 # Clear button in a full-width layout
 st.button("Clear", on_click=clear_input)
 
-# Custom CSS to color buttons differently
+# JavaScript for handling the Enter key to trigger "=" button click
 st.markdown("""
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const buttons = document.querySelectorAll('.stButton > button');
-        buttons.forEach(button => {
-            if (['1','2','3','4','5','6','7','8','9','0','.'].includes(button.innerText)) {
-                button.style.backgroundColor = 'yellow'; // Numbers
-            } else {
-                button.style.backgroundColor = 'orange'; // Operations and clear
+        var inputBox = document.getElementById('""" + input_key + """');
+        inputBox.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                var eqButton = document.getElementById('btn_=');
+                if (eqButton) {
+                    eqButton.click();
+                }
             }
         });
     });
