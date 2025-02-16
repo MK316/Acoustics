@@ -216,7 +216,8 @@ with tabs[5]:
     # Display the calculator input and result
     input_key = "input_box"
     st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
-    st.text(st.session_state.result)
+    # st.text(st.session_state.result)
+    st.markdown("## f{st.session_state.result}")
 
     # Layout for number and operation buttons
     buttons = [
