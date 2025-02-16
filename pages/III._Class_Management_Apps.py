@@ -214,8 +214,8 @@ with tabs[5]:
         st.session_state.result = ""
 
     # # Display the calculator input and result
-    # input_key = "input_box"
-    # st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
+    input_key = "input_box"
+    st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
     # st.text(st.session_state.result)
 
     # Custom CSS to adjust the font size of the result text
