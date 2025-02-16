@@ -28,7 +28,7 @@ input_key = "input_box"
 st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
 st.text(st.session_state.result)
 
-# Layout for number and operation buttons with larger button sizes
+# Layout for number and operation buttons
 buttons = [
     ("1", "2", "3", "+"),
     ("4", "5", "6", "-"),
@@ -36,28 +36,27 @@ buttons = [
     (".", "0", "=", "/")
 ]
 
-# Display the buttons in a grid layout with custom styles for larger buttons
-st.markdown(
-    """
-    <style>
-    .reportview-container .btn-outline-secondary {
-        font-size: 40px;  # Larger font size for better visibility
-        height: 50px;  # Increased height
-        width: 80px;  # Increased width
-        margin: 0px;  # Reduce spacing between buttons
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# Adjusting button widths and font size via columns and markdown
+button_style = """
+<style>
+button {
+    font-size: 16px; /* Increase font size */
+    height: 3em; /* Increase height */
+    width: 100%; /* Adjust width to fill column */
+    margin: 1px; /* Tight margin to reduce space */
+}
+</style>
+"""
+st.markdown(button_style, unsafe_allow_html=True)
 
 for row in buttons:
     cols = st.columns(4)
     for i, value in enumerate(row):
+        button_label = f"{value}"  # Ensures symbols are displayed
         if value == "=":
-            cols[i].button(value, on_click=calculate_result, key=f"btn_{value}")
+            cols[i].button(button_label, on_click=calculate_result, key=f"btn_{value}")
         else:
-            cols[i].button(value, on_click=update_input, args=(value,), key=f"btn_{value}")
+            cols[i].button(button_label, on_click=update_input, args=(value,), key=f"btn_{value}")
 
 # Clear button in a full-width layout
 st.button("Clear", on_click=clear_input)
