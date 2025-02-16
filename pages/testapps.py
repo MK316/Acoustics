@@ -40,7 +40,7 @@ buttons = [
 button_style = """
 <style>
 div.stButton > button:first-child {
-    font-size: 18px; /* Increase font size */
+    font-size: 24px; /* Increase font size */
     height: 3em; /* Increase height */
     width: 100%; /* Attempt to adjust width */
     margin: 0.25em; /* Tight margin to reduce space */
