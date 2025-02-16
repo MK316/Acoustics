@@ -5,6 +5,7 @@ tab1, tab2 = st.tabs(["Calculator", "Other Features"])
 
 # Code for the calculator within the first tab
 with tab1:
+    st.markdown("### 🔢 Calculator")
     # Initialize calculator input and result
     if 'calc_input' not in st.session_state:
         st.session_state.calc_input = ""
