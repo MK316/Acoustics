@@ -28,7 +28,7 @@ input_key = "input_box"
 st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
 st.text(st.session_state.result)
 
-# Layout for number and operation buttons
+# Layout for number and operation buttons with larger button sizes
 buttons = [
     ("1", "2", "3", "+"),
     ("4", "5", "6", "-"),
@@ -36,17 +36,31 @@ buttons = [
     (".", "0", "=", "/")
 ]
 
-# Display the buttons in a compact grid layout without specifying gap
+# Display the buttons in a grid layout with custom styles for larger buttons
+st.markdown(
+    """
+    <style>
+    .reportview-container .btn-outline-secondary {
+        font-size: 20px;  # Larger font size for better visibility
+        height: 50px;  # Increased height
+        width: 80px;  # Increased width
+        margin: 2px;  # Reduce spacing between buttons
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 for row in buttons:
     cols = st.columns(4)
     for i, value in enumerate(row):
         if value == "=":
-            cols[i].button(value, on_click=calculate_result, key=f"btn_{value}", help=f"Calculate the result")
+            cols[i].button(value, on_click=calculate_result, key=f"btn_{value}")
         else:
-            cols[i].button(value, on_click=update_input, args=(value,), key=f"btn_{value}", help=f"Add '{value}'")
+            cols[i].button(value, on_click=update_input, args=(value,), key=f"btn_{value}")
 
 # Clear button in a full-width layout
-st.button("Clear", on_click=clear_input, help="Clear all inputs and results")
+st.button("Clear", on_click=clear_input)
 
 # JavaScript for handling the Enter key to trigger "=" button click
 st.markdown("""
