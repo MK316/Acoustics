@@ -41,10 +41,10 @@ st.markdown(
     """
     <style>
     .reportview-container .btn-outline-secondary {
-        font-size: 20px;  # Larger font size for better visibility
+        font-size: 40px;  # Larger font size for better visibility
         height: 50px;  # Increased height
         width: 80px;  # Increased width
-        margin: 2px;  # Reduce spacing between buttons
+        margin: 0px;  # Reduce spacing between buttons
     }
     </style>
     """,
