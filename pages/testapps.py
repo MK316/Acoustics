@@ -32,6 +32,35 @@ input_key = "input_box"
 st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
 st.text(st.session_state.result)
 
+# Adjusting button styles via columns and markdown
+button_style = """
+<style>
+div.stButton > button:first-child {
+    font-size: 18px; /* Increase font size */
+    height: 3em; /* Increase height */
+    width: 100%; /* Adjust width */
+    margin: 0.25em; /* Tight margin */
+}
+
+/* Color styles for number and operation buttons */
+button:contains('1'), button:contains('2'), button:contains('3'), 
+button:contains('4'), button:contains('5'), button:contains('6'), 
+button:contains('7'), button:contains('8'), button:contains('9'), 
+button:contains('0') {
+    background-color: yellow; /* Yellow color for numbers */
+    color: black; /* Black text for better visibility */
+}
+
+/* Color style for operators and clear button */
+button:contains('➕'), button:contains('➖'), button:contains('✖️'), 
+button:contains('➗'), button:contains('Clear'), button:contains('=') {
+    background-color: orange; /* Orange color for operators and clear button */
+    color: white; /* White text for better visibility */
+}
+</style>
+"""
+st.markdown(button_style, unsafe_allow_html=True)
+
 # Layout for number and operation buttons
 buttons = [
     ("1", "2", "3", "➕"),
@@ -39,19 +68,6 @@ buttons = [
     ("7", "8", "9", "✖️"),
     (".", "0", "=", "➗")
 ]
-
-# Adjusting button widths and font size via columns and markdown
-button_style = """
-<style>
-div.stButton > button:first-child {
-    font-size: 18px; /* Increase font size */
-    height: 3em; /* Increase height */
-    width: 100%; /* Attempt to adjust width */
-    margin: 0.25em; /* Tight margin to reduce space */
-}
-</style>
-"""
-st.markdown(button_style, unsafe_allow_html=True)
 
 for row in buttons:
     cols = st.columns(4)
