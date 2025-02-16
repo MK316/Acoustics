@@ -25,7 +25,7 @@ def clear_input():
 
 # Display the calculator input and result
 input_key = "input_box"
-input_box = st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
+st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
 st.text(st.session_state.result)
 
 # Layout for number and operation buttons
@@ -36,17 +36,17 @@ buttons = [
     (".", "0", "=", "/")
 ]
 
-# Display the buttons in a grid layout with reduced spacing
+# Display the buttons in a compact grid layout
 for row in buttons:
-    cols = st.columns([0.25, 0.25, 0.25, 0.25], gap="small")
+    cols = st.columns([0.25, 0.25, 0.25, 0.25], gap="tiny")
     for i, value in enumerate(row):
-        cols[i].button(value, on_click=(calculate_result if value == "=" else update_input), 
-                       args=(value,) if value != "=" else (), 
-                       key=f"btn_{value}", 
-                       help=f"Press to add '{value}' to the expression")
+        if value == "=":
+            cols[i].button(value, on_click=calculate_result, key=f"btn_{value}", help=f"Calculate the result")
+        else:
+            cols[i].button(value, on_click=update_input, args=(value,), key=f"btn_{value}", help=f"Add '{value}'")
 
-# Clear button
-st.button("Clear", on_click=clear_input, help="Press to clear all inputs and results")
+# Clear button in a full-width layout
+st.button("Clear", on_click=clear_input, help="Clear all inputs and results")
 
 # JavaScript for handling the Enter key to trigger "=" button click
 st.markdown("""
@@ -56,7 +56,9 @@ st.markdown("""
         inputBox.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 var eqButton = document.getElementById('btn_=');
-                eqButton.click();
+                if (eqButton) {
+                    eqButton.click();
+                }
             }
         });
     });
