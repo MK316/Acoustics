@@ -24,45 +24,40 @@ def clear_input():
     st.session_state.result = ""
 
 # Display the calculator input and result
-st.text_input("Input", value=st.session_state.calc_input, key="input_box", disabled=True)
+input_box = st.text_input("Input", value=st.session_state.calc_input, disabled=True)
 st.text(st.session_state.result)
 
 # Layout for number and operation buttons
-col1, col2, col3, col4 = st.columns(4)
 buttons = [
-    ("7", "8", "9", "/"),
-    ("4", "5", "6", "*"),
-    ("1", "2", "3", "-"),
-    (".", "0", "=", "+")
+    ("1", "2", "3", "+"),
+    ("4", "5", "6", "-"),
+    ("7", "8", "9", "*"),
+    (".", "0", "=", "/")
 ]
 
-for i, row in enumerate(buttons):
-    with col1:
-        st.button(row[0], on_click=update_input, args=(row[0],))
-    with col2:
-        st.button(row[1], on_click=update_input, args=(row[1],))
-    with col3:
-        st.button(row[2], on_click=update_input, args=(row[2],))
-    with col4:
-        if row[3] == "=":
-            result_button_key = f"result_button_{i}"
-            st.button(row[3], key=result_button_key, on_click=calculate_result)
+# Display the buttons in a grid layout
+for row in buttons:
+    cols = st.columns(4)
+    for i, value in enumerate(row):
+        if value == "=":
+            cols[i].button(value, on_click=calculate_result, key=f"btn_{value}")
         else:
-            st.button(row[3], on_click=update_input, args=(row[3],))
+            cols[i].button(value, on_click=update_input, args=(value,), key=f"btn_{value}")
 
 # Clear button
 st.button("Clear", on_click=clear_input)
 
-# Custom JavaScript to trigger the "=" button click on "Enter" key press
+# JavaScript for handling the Enter key to trigger "=" button click
 st.markdown("""
     <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        document.addEventListener('keydown', function(e) {
-            const keyCode = e.which || e.keyCode;
-            if (keyCode === 13) { // 13 is the Enter key
-                document.getElementById('""" + result_button_key + """').click();
+    const inputBox = document.getElementById('""" + st.session_state.input_box + """');
+    inputBox.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            const eqButton = document.getElementById('btn_=');
+            if (eqButton) {
+                eqButton.click();
             }
-        });
+        }
     });
     </script>
     """, unsafe_allow_html=True)
