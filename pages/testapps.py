@@ -36,15 +36,29 @@ buttons = [
     (".", "0", "=", "/")
 ]
 
+# Adjusting button widths and font size via columns and markdown
+button_style = """
+<style>
+div.stButton > button:first-child {
+    font-size: 18px; /* Increase font size */
+    height: 3em; /* Increase height */
+    width: 100%; /* Attempt to adjust width */
+    margin: 0.25em; /* Tight margin to reduce space */
+}
+</style>
+"""
+st.markdown(button_style, unsafe_allow_html=True)
+
 for row in buttons:
     cols = st.columns(4)
     for i, value in enumerate(row):
+        button_label = f"{value}"  # Ensures symbols are displayed
         if value == "=":
-            cols[i].button(value, on_click=calculate_result, key=f"btn_{value}")
+            cols[i].button(button_label, on_click=calculate_result, key=f"btn_{value}")
         else:
-            cols[i].button(value, on_click=update_input, args=(value,), key=f"btn_{value}")
+            cols[i].button(button_label, on_click=update_input, args=(value,), key=f"btn_{value}")
 
-# Clear button
+# Clear button in a full-width layout
 st.button("Clear", on_click=clear_input)
 
 # JavaScript for handling the Enter key to trigger "=" button click
