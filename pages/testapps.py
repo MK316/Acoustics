@@ -39,11 +39,11 @@ buttons = [
 # Adjusting button widths and font size via columns and markdown
 button_style = """
 <style>
-button {
-    font-size: 24px; /* Increase font size */
-    height: 5em; /* Increase height */
-    width: 5em; /* Adjust width to fill column */
-    margin: 1px; /* Tight margin to reduce space */
+div.stButton > button:first-child {
+    font-size: 18px; /* Increase font size */
+    height: 3em; /* Increase height */
+    width: 100%; /* Attempt to adjust width */
+    margin: 0.25em; /* Tight margin to reduce space */
 }
 </style>
 """
