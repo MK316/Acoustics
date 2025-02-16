@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Create tabs
-tab1, tab2 = st.tabs(["Calculator", "Other Features"])
+tab1, tab2 = st.tabs(["🌱 Calculator", "Other Features"])
 
 # Code for the calculator within the first tab
 with tab1:
