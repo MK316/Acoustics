@@ -24,7 +24,8 @@ def clear_input():
     st.session_state.result = ""
 
 # Display the calculator input and result
-input_box = st.text_input("Input", value=st.session_state.calc_input, disabled=True)
+input_key = "input_box"
+input_box = st.text_input("Input", value=st.session_state.calc_input, key=input_key, disabled=True)
 st.text(st.session_state.result)
 
 # Layout for number and operation buttons
@@ -50,14 +51,14 @@ st.button("Clear", on_click=clear_input)
 # JavaScript for handling the Enter key to trigger "=" button click
 st.markdown("""
     <script>
-    const inputBox = document.getElementById('""" + st.session_state.input_box + """');
-    inputBox.addEventListener('keyup', function(event) {
-        if (event.key === 'Enter') {
-            const eqButton = document.getElementById('btn_=');
-            if (eqButton) {
+    document.addEventListener('DOMContentLoaded', function() {
+        var inputBox = document.getElementById('""" + input_key + """');
+        inputBox.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                var eqButton = document.getElementById('btn_=');
                 eqButton.click();
             }
-        }
+        });
     });
     </script>
     """, unsafe_allow_html=True)
