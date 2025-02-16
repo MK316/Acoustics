@@ -42,7 +42,7 @@ button_style = """
 button {
     font-size: 24px; /* Increase font size */
     height: 5em; /* Increase height */
-    width: 100%; /* Adjust width to fill column */
+    width: 5em; /* Adjust width to fill column */
     margin: 1px; /* Tight margin to reduce space */
 }
 </style>
