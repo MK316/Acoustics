@@ -228,7 +228,7 @@ with tabs[5]:
     """
     st.markdown(result_style, unsafe_allow_html=True)
     st.markdown("#### The result is:")
-    st.text(st.session_state.result)
+    st.text("💎" + st.session_state.result)
 
  
     # Layout for number and operation buttons
