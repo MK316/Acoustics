@@ -60,7 +60,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Create tabs for different sections of the course
-tabs = st.tabs(["🍐 Course Overview", "🍒 Overview2", "💙 Materials", "🍏 Padlet", "🍋 TBA", "📆 Calendar"])
+tabs = st.tabs(["🍐 Course Overview", "🍒 Preview", "💙 Materials", "🍏 Padlet", "🍋 TBA", "📆 Calendar"])
 
 
 # Course Overview tab
@@ -91,7 +91,7 @@ with tabs[0]:
 
 # Content for the Assignments tab
 with tabs[1]:
-    st.header("Overview")
+    st.header("Preview")
     st.write("Perspective")
 
     # Arrange 'Start', 'Previous', 'Next', and 'Slide Selector' in a single row
