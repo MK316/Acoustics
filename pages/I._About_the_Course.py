@@ -68,7 +68,8 @@ with tabs[0]:
     st.caption("🔎 Course Overview")
     st.markdown("""
     This course is tailored for English educators, introducing essential skills for integrating acoustics into language teaching. We will demystify the fundamentals of speech sounds and auditory perception, emphasizing their practical application in English pronunciation and listening comprehension.
-
+    """)
+    st.markdown("""
     **What you will learn:**
 
     - Explore the fundamentals of speech sounds in the context of English language learning.
@@ -77,7 +78,8 @@ with tabs[0]:
     - Create experimental tools for testing pronunciation and listening skills using speech data.
     - **Future Coursework:** While this course empowers you with the tools to design and initiate experiments, a subsequent course will focus on conducting detailed analyses and applying these findings to enhance teaching practices effectively. This future course will help solidify your ability to integrate research into your language teaching.
     """, unsafe_allow_html=True)
-    """, unsafe_allow_html=True)
+
+    
     st.markdown("---")
     st.markdown("#### Evaluation")
     st.markdown("""
