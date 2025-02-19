@@ -38,6 +38,7 @@ st.markdown("""
 <li>3.3.5 Linear predictive coding (LPC) ... 71 </li> 
 <li>3.3.6 Spectra and spectrograms ... 80 </li> 
 </ul>
+
 #### Chapter 4. Basic Audition ... 82    
 4.1 Anatomy of the Peripheral Auditory System ... 82  
 4.2 The Auditory Sensation of Loudness ... 83  
