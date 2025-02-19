@@ -1,6 +1,7 @@
 import streamlit as st
 
 st.markdown("### Contents")
+st.markdown("#### Part I. Fundamentals")
 st.markdown("---")
 
 st.markdown("""
@@ -71,3 +72,13 @@ st.markdown("""
 </ul>
 """, unsafe_allow_html=True)
 st.markdown("---")
+
+st.markdown("#### Part II. Speech Analysis")
+
+st.markdown("""
+##### Chapter 6. Vowels
+##### Chapter 7. Fricatives
+##### Chapter 8. Stops and Affricates
+##### Chapter 9. Nasals and Liquids
+
+""")
