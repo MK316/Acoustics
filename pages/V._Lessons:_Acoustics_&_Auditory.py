@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.markdown("### Chapters")
+st.markdown("### Contents")
 st.markdown("---")
 
 st.markdown("""
