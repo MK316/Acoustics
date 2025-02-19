@@ -4,23 +4,23 @@ st.markdown("### Contents")
 st.markdown("---")
 
 st.markdown("""
-#### Chapter 1. Basic Acoustics and Acoustic Filters
-1.1 The Sensation of Sound  
-1.2 The Propagation of Sound  
-1.3 Types of Sounds  
+#### Chapter 1. Basic Acoustics and Acoustic Filters... 7
+1.1 The Sensation of Sound... 7  
+1.2 The Propagation of Sound... 8  
+1.3 Types of Sounds... 11  
 <ul>
 <li>1.3.1 Simple periodic waves</li>
 <li>1.3.2 Complex periodic waves</li>  
 <li>1.3.3 Aperiodic waves</li>
 </ul>
-1.4 Acoustic Filters  
+1.4 Acoustic Filters... 19    
 
-#### Chapter 2. The Acoustic Theory of Speech Production: Deriving Schwa
-2.1 Voicing  
-2.2 Voicing Quanta  
-2.3 Vocal Tract Filtering  
-2.4 Pendulums, Standing Waves, and Vowel Formants  
-2.5 Discovering Nodes and Antinodes in an Acoustic Tube  
+#### Chapter 2. The Acoustic Theory of Speech Production: Deriving Schwa... 25
+2.1 Voicing... 25    
+2.2 Voicing Quanta... 28    
+2.3 Vocal Tract Filtering... 30     
+2.4 Pendulums, Standing Waves, and Vowel Formants... 32    
+2.5 Discovering Nodes and Antinodes in an Acoustic Tube... 45    
 
 #### Chapter 3. Digital Signal Processing... 49  
 3.1 Continuous versus Discrete Signals...  49    
