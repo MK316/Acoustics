@@ -8,9 +8,9 @@ st.markdown("""
 1.1 The Sensation of Sound  
 1.2 The Propagation of Sound  
 1.3 Types of Sounds  
-1.3.1 Simple periodic waves  
-1.3.2 Complex periodic waves  
-1.3.3 Aperiodic waves  
+&nbsp;&nbsp;&nbsp;&nbsp;1.3.1 Simple periodic waves  
+&nbsp;&nbsp;&nbsp;&nbsp;1.3.2 Complex periodic waves  
+&nbsp;&nbsp;&nbsp;&nbsp;1.3.3 Aperiodic waves  
 1.4 Acoustic Filters  
 
 #### Chapter 2. The Acoustic Theory of Speech Production: Deriving Schwa
@@ -23,15 +23,15 @@ st.markdown("""
 #### Chapter 3. Digital Signal Processing... 49  
 3.1 Continuous versus Discrete Signals...  49    
 3.2 Analog-to-Digital Conversion... 50    
-3.2.1 Sampling ... 51   
-3.2.2 Quantization ... 55  
+&nbsp;&nbsp;&nbsp;&nbsp;3.2.1 Sampling ... 51   
+&nbsp;&nbsp;&nbsp;&nbsp;3.2.2 Quantization ... 55  
 3.3 Signal Analysis Methods ... 59  
-3.3.1 RMS amplitude ... 59  
-3.3.2 Fast Fourier transform (FFT) ... 60  
-3.3.3 Auto-correlation pitch tracking ... 64  
-3.3.4 Digital filters ... 68  
-3.3.5 Linear predictive coding (LPC) ... 71  
-3.3.6 Spectra and spectrograms ... 80  
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.1 RMS amplitude ... 59  
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.2 Fast Fourier transform (FFT) ... 60  
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.3 Auto-correlation pitch tracking ... 64  
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.4 Digital filters ... 68  
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.5 Linear predictive coding (LPC) ... 71  
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.6 Spectra and spectrograms ... 80  
 
 #### Chapter 4. Basic Audition ... 82    
 4.1 Anatomy of the Peripheral Auditory System ... 82  
