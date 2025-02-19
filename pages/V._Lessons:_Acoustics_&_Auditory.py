@@ -8,9 +8,9 @@ st.markdown("""
 1.1 The Sensation of Sound  
 1.2 The Propagation of Sound  
 1.3 Types of Sounds  
-<ul>
+<ol>
 <li>1.3.1 Simple periodic waves</li>
-</ul>
+</ol>
 &nbsp;&nbsp;&nbsp;&nbsp;1.3.2 Complex periodic waves  
 &nbsp;&nbsp;&nbsp;&nbsp;1.3.3 Aperiodic waves  
 1.4 Acoustic Filters  
