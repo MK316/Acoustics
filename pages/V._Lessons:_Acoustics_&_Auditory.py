@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.markdown("### Contents")
+st.markdown("### 📗 Contents")
 st.markdown("#### Part I. Fundamentals")
 st.markdown("---")
 
