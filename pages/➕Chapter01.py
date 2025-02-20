@@ -332,6 +332,21 @@ with tab6:
         """,
         unsafe_allow_html=True
     )
+
+    
+
+    video_url3 = "https://www.youtube.com/embed/wvJAgrUBF4w?si=KxaZ-caUSgWc2noQ"
+
+    st.markdown("#### 3. Sound resonance experiment")
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url3}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
     
 with tab7:
     st.write("### Download Lecture Slides")
