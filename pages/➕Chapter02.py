@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import soundfile as sf
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "🌀 Resonant frequencies", "Spectral tilt", "Videolinks", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "🌀 Resonant frequencies", "🌀 Spectral tilt", "🌀 Videolinks", "💾 Download"])
 
 # Define the function to plot all harmonics
 def plot_harmonics(num_modes=3, num_points=500):
