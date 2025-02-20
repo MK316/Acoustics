@@ -330,6 +330,19 @@ with tab6:
 
 
 
+    video_url2 = "https://www.youtube.com/embed/dihQuwrf9yQ?si=33-SxIxrhNXp59AG"
+
+    st.markdown("#### 2. What is resonance?")
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url2}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+
 with tab7:
     st.write("### Download Lecture Slides")
 
