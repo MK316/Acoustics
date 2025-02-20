@@ -317,6 +317,22 @@ with tab6:
         """,
         unsafe_allow_html=True
     )
+
+    
+
+    video_url2 = "https://www.youtube.com/embed/rYrdiQckGhw?si=nod5AuttYchOzH5X"
+
+    st.markdown("#### 2. Fun experiments with sound")
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url2}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+    
 with tab7:
     st.write("### Download Lecture Slides")
 
