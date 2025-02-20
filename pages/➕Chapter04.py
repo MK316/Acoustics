@@ -7,11 +7,28 @@ with tab1:
     st.write("Other content here.")
 
 with tab2:
-    st.caption("Apps to help the content")
+    st.write("1. The peripheral auditory system")
+    web_url = "https://www.britannica.com/science/ear/The-physiology-of-hearing"
+    st.markdown(f"📎 [Click here to visit Britannica on the physiology of hearing]({web_url})", unsafe_allow_html=True)
 
 
 with tab3:
-    st.write("https://www.youtube.com/embed/eQEaiZ2j9oc?si=K0VhVOXjt9khRkRy")
+    st.caption("Video contents")
+
+    video_url1 = "https://www.youtube.com/embed/eQEaiZ2j9oc?si=K0VhVOXjt9khRkRy"
+
+    st.markdown("#### 1. How human ear works [2:26]")
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url1}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    st.write("")
 
 with tab4:
     st.write("### Download Lecture Slides")
