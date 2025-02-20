@@ -8,9 +8,9 @@ with tab1:
 
 ##########
 with tab2:
-    st.write("The peripheral auditory system")
+    st.write("1. The peripheral auditory system")
     web_url = "https://www.britannica.com/science/ear/The-physiology-of-hearing"
-    st.markdown(f"[Click here to visit Britannica on the physiology of hearing]({web_url})", unsafe_allow_html=True)
+    st.markdown(f"📎 [Click here to visit Britannica on the physiology of hearing]({web_url})", unsafe_allow_html=True)
     
 ##########
 with tab3:
