@@ -1,6 +1,6 @@
 import streamlit as st
 
-tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Videolinks", "🌀 Apps", "💾 Download"])
+tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "images", "🌀 Videolinks", "🌀 Apps", "💾 Download"])
 
 ##########
 with tab1:
@@ -8,6 +8,12 @@ with tab1:
 
 ##########
 with tab2:
+    st.write("The peripheral auditory system")
+    img_url = "https://www.britannica.com/science/ear/The-physiology-of-hearing"
+    st.image(img_url, width=700)
+    
+##########
+with tab3:
     st.caption("Video contents")
 
     video_url1 = "https://www.youtube.com/embed/hiflzRL7sUY?si=yI6gbYVtT99gEowg"
@@ -23,10 +29,10 @@ with tab2:
         unsafe_allow_html=True
     )
 ##########
-with tab3:
+with tab4:
     st.caption("Apps to help the content")
 ##########    
-with tab4:
+with tab5:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
