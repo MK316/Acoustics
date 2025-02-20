@@ -11,6 +11,8 @@ with tab2:
     web_url = "https://www.britannica.com/science/ear/The-physiology-of-hearing"
     st.markdown(f"📎 [Click here to visit Britannica on the physiology of hearing]({web_url})", unsafe_allow_html=True)
 
+    st.write("2. Image links: Standford Medicine")
+    web_url2 = "https://otosurgeryatlas.stanford.edu/otologic-surgery-atlas/surgical-anatomy-of-the-ear/external-ear/"
 
 with tab3:
     st.caption("Video contents")
