@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import soundfile as sf
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "🌀 Resonant frequencies", "Spectral tilt", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "🌀 Resonant frequencies", "Spectral tilt", "Videolinks", "💾 Download"])
 
 # Define the function to plot all harmonics
 def plot_harmonics(num_modes=3, num_points=500):
@@ -314,6 +314,23 @@ with tab5:
 
 ######################################################
 with tab6:
+
+    video_url1 = "https://www.youtube.com/embed/N7NQMhIbz3A?si=G_so9F4daJQPRiY2"
+
+    st.markdown("#### 1. Spectrogram generation demo (3D)")
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url1}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+
+with tab7:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
