@@ -13,7 +13,7 @@ with tab2:
 
     st.write("2. Image links: Standford Medicine")
     web_url2 = "https://otosurgeryatlas.stanford.edu/otologic-surgery-atlas/surgical-anatomy-of-the-ear/external-ear/"
-
+    st.markdown(f"📎 [Click here to visit Stanford Medicine image gallery]({web_url})", unsafe_allow_html=True)
 with tab3:
     st.caption("Video contents")
 
