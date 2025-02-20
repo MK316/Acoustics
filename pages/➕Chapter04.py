@@ -1,6 +1,6 @@
 import streamlit as st
 
-tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "Web resources", "Videolinks", "🌀 Apps", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 Web resources", "🌀 Videolinks", "🌀 Apps", "💾 Download"])
 
 
 with tab1:
@@ -27,10 +27,10 @@ with tab3:
         """,
         unsafe_allow_html=True
     )
-    
+with tab4:
     st.write("")
 
-with tab4:
+with tab5:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
