@@ -27,7 +27,7 @@ with tabs[1]:
   - [Clopper et al. (2005)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3432912/) Acoustic characteristics of the vowel systems of six regional varieties of American English
   - [Maniwa & Jongman (2008)](https://kuppl.ku.edu/sites/kuppl/files/documents/publications/Maniwa_et_al_JASA2009.pdf) Acoustic and perceptual similarity of Japanese and American English vowels
   - [Best et al. (2009)](https://pmc.ncbi.nlm.nih.gov/articles/PMC2777975/) Discrimination of non-native consonant contrasts varying in perceptual assimilation to the listener’s native phonological system
-
+  """)
   
 with tabs[2]:
   st.write("When necessary, assignments will be detailed in this section.")
