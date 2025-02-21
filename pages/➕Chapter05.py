@@ -4,7 +4,7 @@ tab1, tab2, tab3 = st.tabs(["📖 Lecture slides", "🌀 Apps", "💾 Download"]
 
 
 with tab1:
-    st.write("Other content here.")
+    st.write("To be updated in time.")
 
 with tab2:
     st.caption("Apps to help the content")
