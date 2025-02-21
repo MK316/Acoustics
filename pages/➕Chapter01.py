@@ -9,7 +9,7 @@ import random
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 App1: Simple", "🌀App2: Complex", "🌀GCD", "💦 Quiz", "🌀 Videos", "💾 Download"])
 
 with tab1:
-    st.write("Other content here.")
+    st.write("To be updated in time.")
 
 with tab2:
     st.markdown("### 🎵 1. Generate a Simple Periodic Wave")
