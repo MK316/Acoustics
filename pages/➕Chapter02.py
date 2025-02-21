@@ -75,7 +75,7 @@ def apply_spectral_tilt(waveform, sample_rate, tilt_amount):
 
 
 with tab1:
-    st.write("Other content here.")
+    st.write("To be updated in time.")
 
 #######################################################
 
