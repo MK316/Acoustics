@@ -4,7 +4,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 Web resourc
 
 
 with tab1:
-    st.write("Other content here.")
+    st.write("To be updated in time.")
 
 with tab2:
     st.write("1. The peripheral auditory system")
