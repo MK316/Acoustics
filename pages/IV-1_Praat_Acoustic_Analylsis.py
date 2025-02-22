@@ -19,8 +19,16 @@ slide_files = sorted([f for f in os.listdir(slides_path) if f.endswith(".png")])
 num_slides = len(slide_files)
 
 # Initialize session state variables if they do not exist
+
+# Initialize session state variables if they do not exist
 if "slide_index" not in st.session_state:
     st.session_state.slide_index = 0  # Start with the first slide
+
+# Check if there are slides in the folder
+if num_slides == 0:
+    st.error("No slides found in the specified folder.")
+    st.stop()  # Stop the app if there are no slides
+
 
 # Function to load and display the image based on the current index with resizing
 def display_image():
