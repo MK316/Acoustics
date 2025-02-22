@@ -151,7 +151,7 @@ with tabs[2]:
 
     st.markdown("#### 📗Texbook: ")
     st.write("- Johnson, K. (2012) _Acoustics and Auditory Phonetics_ (3rd edition), Wiley-Blackwell [link](https://books.google.co.kr/books/about/Acoustic_and_Auditory_Phonetics.html?id=sKOUKJXbmYMC&redir_esc=y)")
-    st.write("- Supplementary readings (TBA)")
+    st.write("- Supplementary readings: See Course Schedule")
         
     st.markdown("---")
     
