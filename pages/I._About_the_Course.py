@@ -66,6 +66,7 @@ tabs = st.tabs(["🍐 Course Overview", "🍒 Preview", "💙 Materials", "🍏 
 # Course Overview tab
 with tabs[0]:
     st.caption("🔎 Course Overview")
+    # Markdown text about the course
     st.markdown("""
     This course is tailored for English educators, introducing essential skills for integrating acoustics into language teaching. We will demystify the fundamentals of speech sounds and auditory perception, emphasizing their practical application in English pronunciation and listening comprehension.
     """)
