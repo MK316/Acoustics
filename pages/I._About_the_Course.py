@@ -69,6 +69,9 @@ with tabs[0]:
     st.markdown("""
     This course is tailored for English educators, introducing essential skills for integrating acoustics into language teaching. We will demystify the fundamentals of speech sounds and auditory perception, emphasizing their practical application in English pronunciation and listening comprehension.
     """)
+    # Audio for the first passage
+    st.audio('https://github.com/MK316/Acoustics/raw/main/audio/grad-overview1.mp3', format='audio/mp3')
+    
     st.markdown("""
     **What you will learn:**
 
@@ -79,7 +82,10 @@ with tabs[0]:
     - **Future Coursework:** While this course empowers you with the tools to design and initiate experiments, a subsequent course will focus on conducting detailed analyses and applying these findings to enhance teaching practices effectively. This future course will help solidify your ability to integrate research into your language teaching.
     """, unsafe_allow_html=True)
 
-    
+
+    # Audio for the first passage
+    st.audio('https://github.com/MK316/Acoustics/raw/main/audio/grad-overview2.mp3', format='audio/mp3')
+
     st.markdown("---")
     st.markdown("#### Evaluation")
     st.markdown("""
