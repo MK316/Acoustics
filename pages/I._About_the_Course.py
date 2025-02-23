@@ -69,6 +69,7 @@ with tabs[0]:
     st.markdown("""
     This course is tailored for English educators, introducing essential skills for integrating acoustics into language teaching. We will demystify the fundamentals of speech sounds and auditory perception, emphasizing their practical application in English pronunciation and listening comprehension.
     """)
+    
     # Audio for the first passage
     st.audio('https://github.com/MK316/Acoustics/raw/main/audio/grad-overview1.mp3', format='audio/mp3')
     
