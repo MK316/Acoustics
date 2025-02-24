@@ -19,4 +19,4 @@
 |  W15    | June 12[^1] | (Ch.7 Fricatives) |        |
 |  W16    | June 19 |**Final presentation** |        |
 
-[^1] May 1 (make-up class)
+[^1]: May 1 (make-up class)
