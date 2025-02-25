@@ -91,10 +91,17 @@ with tab2:
         st.subheader("🎶 Combined Stereo Audio with Delay")
         st.audio(stereo_audio_file, format="audio/wav")
 
-        # **Interactive Plot with Plotly for Combined Waveform**
+        # Interactive Plot with Plotly for Combined Waveform
         fig_combined = go.Figure()
-        fig_combined.add_trace(go.Scatter(x=t_combined, y=stereo_wave1, mode='lines', name=f"{frequency1} Hz (Left)", line=dict(color="blue")))
-        fig_combined.add_trace(go.Scatter(x=t_combined + delay_time, y=stereo_wave2, mode='lines', name=f"{frequency2} Hz (Right, Delayed)", line=dict(color="red")))
+        
+        # First frequency (Left)
+        fig_combined.add_trace(go.Scatter(x=t_combined, y=stereo_wave1, mode='lines', 
+                                          name=f"{frequency1} Hz (Left)", line=dict(color="blue")))
+        
+        # Second frequency (Right, Delayed) - Apply proper time shift
+        fig_combined.add_trace(go.Scatter(x=t_combined + delay_time, y=stereo_wave2, mode='lines', 
+                                          name=f"{frequency2} Hz (Right, Delayed)", line=dict(color="red")))
+        
         fig_combined.update_layout(
             title=f"Waveforms of {frequency1} Hz (Left) and {frequency2} Hz (Right) with {delay_ms} ms Delay",
             xaxis_title="Time (s)",
@@ -102,7 +109,9 @@ with tab2:
             hovermode="x unified",
             legend=dict(x=0, y=1)
         )
+        
         st.plotly_chart(fig_combined, use_container_width=True)
+
 
 with tab3:
     st.write("### Download Lecture Slides")
