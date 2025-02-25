@@ -39,7 +39,7 @@ if st.button("Submit"):
 
     # Plot results
     fig, ax = plt.subplots()
-    counts.plot(kind="bar", stacked=True, ax=ax, color=["blue", "red"])
+    counts.plot(kind="dot", stacked=True, ax=ax, color=["blue", "red"])
     ax.set_xlabel("Stimulus")
     ax.set_ylabel("Count")
     ax.set_title("Da-Ga Perception Results")
