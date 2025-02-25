@@ -7,36 +7,39 @@ import matplotlib.pyplot as plt
 
 tab1, tab2, tab3 = st.tabs(["📖 Lecture slides", "🌀 Apps", "💾 Download"])
 
-# ✅ Function to generate a pure tone
+# ✅ Function to generate a single pure tone
 def generate_pure_tone(frequency, duration, sample_rate=44100):
     t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
-    waveform = 0.5 * np.sin(2 * np.pi * frequency * t)  # Sine wave
-    return t, waveform
+    waveform = 0.5 * np.sin(2 * np.pi * frequency * t)  # Sine wave with amplitude scaling
+    audio_buffer = BytesIO()
+    sf.write(audio_buffer, waveform, sample_rate, format="WAV")
+    audio_buffer.seek(0)
+    return audio_buffer, t, waveform  # Return waveform for plotting
 
-# ✅ Function to generate a stereo pure tone with delay
+# ✅ Function to generate a stereo pure tone with a delay
 def generate_stereo_tone(frequency1, frequency2, duration, delay_ms, sample_rate=44100):
-    t, tone1 = generate_pure_tone(frequency1, duration, sample_rate)
-    _, tone2 = generate_pure_tone(frequency2, duration, sample_rate)
+    t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
+
+    # Generate the two pure tones
+    tone1 = 0.5 * np.sin(2 * np.pi * frequency1 * t)  # First frequency (Left Channel)
+    tone2 = 0.5 * np.sin(2 * np.pi * frequency2 * t)  # Second frequency (Right Channel)
 
     # Convert delay from milliseconds to samples
     delay_samples = int((delay_ms / 1000) * sample_rate)
 
-    # Apply delay by shifting tone2
+    # Apply the delay by shifting the second tone
     if delay_samples > 0:
-        delayed_tone2 = np.concatenate((np.zeros(delay_samples), tone2[:-delay_samples]))
-    else:
-        delayed_tone2 = tone2
+        tone2 = np.concatenate((np.zeros(delay_samples), tone2[:-delay_samples]))
 
-    # Combine stereo: Left = tone1, Right = delayed_tone2
-    stereo_waveform = np.vstack((tone1, delayed_tone2)).T
+    # Create a stereo waveform: Left (tone1), Right (tone2 with delay)
+    stereo_waveform = np.vstack((tone1, tone2)).T  # Stack as [Left, Right]
 
-    # Save stereo audio to buffer
+    # Save the waveform to a BytesIO buffer
     audio_buffer = BytesIO()
     sf.write(audio_buffer, stereo_waveform, sample_rate, format="WAV")
     audio_buffer.seek(0)
 
-    return audio_buffer, t, tone1, delayed_tone2  # Return both waveforms
-
+    return audio_buffer, t, tone1, tone2  # Return waveforms for plotting
 
 ######################
 
