@@ -4,7 +4,7 @@ import soundfile as sf
 from io import BytesIO
 import plotly.graph_objects as go
 
-tab1, tab2, tab3 = st.tabs(["📖 Lecture slides", "🌀 Apps", "💾 Download"])
+tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Apps", "Continuum stimuli", "💾 Download"])
 
 # ✅ Function to generate a single pure tone
 def generate_pure_tone(frequency, duration, sample_rate=44100):
@@ -113,8 +113,13 @@ with tab2:
         
         st.plotly_chart(fig_combined, use_container_width=True)
 
-
 with tab3:
+    st.title("Simple perception tests")
+
+    # Add a button that links to another page inside the 'pages' folder
+    st.page_link("pages/daga.py", label="da-ga Perception", icon="🎧")
+
+with tab4:
     st.write("### Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
