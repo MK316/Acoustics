@@ -101,7 +101,8 @@ with tab2:
         # Plot waveform of combined stereo tones
         fig, ax = plt.subplots(figsize=(8, 3))
         ax.plot(t_combined[:1000], stereo_wave1[:1000], label=f"{frequency1} Hz (Left)", color="blue")
-        ax.plot(t_combined[:1000], stereo_wave2[:1000], label=f"{frequency2} Hz (Right, Delayed)", color="red")
+        ax.plot(t_combined[:1000] + delay_time, stereo_wave2[:1000], label=f"{frequency2} Hz (Right, Delayed)", color="red")
+
         ax.set_title(f"Waveforms of {frequency1} Hz (Left) and {frequency2} Hz (Right) with {delay_ms} ms Delay")
         ax.set_xlabel("Time (s)")
         ax.set_ylabel("Amplitude")
