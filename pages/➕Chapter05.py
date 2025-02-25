@@ -2,8 +2,7 @@ import streamlit as st
 import numpy as np
 import soundfile as sf
 from io import BytesIO
-import matplotlib.pyplot as plt
-
+import plotly.graph_objects as go
 
 tab1, tab2, tab3 = st.tabs(["📖 Lecture slides", "🌀 Apps", "💾 Download"])
 
@@ -26,7 +25,7 @@ def generate_stereo_tone(frequency1, frequency2, duration, delay_ms, sample_rate
 
     # Convert delay from milliseconds to samples
     delay_samples = int((delay_ms / 1000) * sample_rate)
-    delay_time = delay_samples / sample_rate  # Convert to seconds
+    delay_time = delay_samples / sample_rate  # Convert samples to seconds
 
     # Apply the delay by shifting the second tone
     if delay_samples > 0:
@@ -44,12 +43,11 @@ def generate_stereo_tone(frequency1, frequency2, duration, delay_ms, sample_rate
 
 ######################
 
-
 with tab1:
     st.write("To be updated in time.")
 
 with tab2:
-    st.markdown("### 1. Two pure tone playing asynchronously (Pisoni's experiment)")
+    st.markdown("### 1. Two pure tones playing asynchronously (Pisoni's experiment)")
     
     # User input for frequencies and delay
     col1, col2 = st.columns(2)
@@ -73,44 +71,38 @@ with tab2:
         # Display and play individual pure tones
         st.subheader("🔊 Tone 1 (Left Channel)")
         st.audio(audio_file1, format="audio/wav")
-    
-        # Plot waveform of Tone 1
-        fig, ax = plt.subplots(figsize=(8, 3))
-        ax.plot(t1, waveform1, color="green")  # Show entire waveform
-        ax.set_title(f"Waveform of {frequency1} Hz (Left)")
-        ax.set_xlabel("Time (s)")
-        ax.set_ylabel("Amplitude")
-        ax.grid(True)
-        st.pyplot(fig)
-    
+
+        # **Interactive Plot with Plotly for Tone 1**
+        fig1 = go.Figure()
+        fig1.add_trace(go.Scatter(x=t1, y=waveform1, mode='lines', name=f"{frequency1} Hz (Left)", line=dict(color="green")))
+        fig1.update_layout(title=f"Waveform of {frequency1} Hz (Left)", xaxis_title="Time (s)", yaxis_title="Amplitude", hovermode="x unified")
+        st.plotly_chart(fig1, use_container_width=True)
+
         st.subheader("🔊 Tone 2 (Right Channel)")
         st.audio(audio_file2, format="audio/wav")
-    
-        # Plot waveform of Tone 2
-        fig, ax = plt.subplots(figsize=(8, 3))
-        ax.plot(t2, waveform2, color="blue")  # Show entire waveform
-        ax.set_title(f"Waveform of {frequency2} Hz (Right)")
-        ax.set_xlabel("Time (s)")
-        ax.set_ylabel("Amplitude")
-        ax.grid(True)
-        st.pyplot(fig)
-    
+
+        # **Interactive Plot with Plotly for Tone 2**
+        fig2 = go.Figure()
+        fig2.add_trace(go.Scatter(x=t2, y=waveform2, mode='lines', name=f"{frequency2} Hz (Right)", line=dict(color="blue")))
+        fig2.update_layout(title=f"Waveform of {frequency2} Hz (Right)", xaxis_title="Time (s)", yaxis_title="Amplitude", hovermode="x unified")
+        st.plotly_chart(fig2, use_container_width=True)
+
         # Display and play combined stereo tone
         st.subheader("🎶 Combined Stereo Audio with Delay")
         st.audio(stereo_audio_file, format="audio/wav")
-    
-        # Plot waveform of combined stereo tones
-        fig, ax = plt.subplots(figsize=(10, 4))
-        ax.plot(t_combined, stereo_wave1, label=f"{frequency1} Hz (Left)", color="blue")
-        ax.plot(t_combined + delay_time, stereo_wave2, label=f"{frequency2} Hz (Right, Delayed)", color="red")
 
-        ax.set_title(f"Waveforms of {frequency1} Hz (Left) and {frequency2} Hz (Right) with {delay_ms} ms Delay")
-        ax.set_xlabel("Time (s)")
-        ax.set_ylabel("Amplitude")
-        ax.legend()
-        ax.grid(True)
-        st.pyplot(fig)
-
+        # **Interactive Plot with Plotly for Combined Waveform**
+        fig_combined = go.Figure()
+        fig_combined.add_trace(go.Scatter(x=t_combined, y=stereo_wave1, mode='lines', name=f"{frequency1} Hz (Left)", line=dict(color="blue")))
+        fig_combined.add_trace(go.Scatter(x=t_combined + delay_time, y=stereo_wave2, mode='lines', name=f"{frequency2} Hz (Right, Delayed)", line=dict(color="red")))
+        fig_combined.update_layout(
+            title=f"Waveforms of {frequency1} Hz (Left) and {frequency2} Hz (Right) with {delay_ms} ms Delay",
+            xaxis_title="Time (s)",
+            yaxis_title="Amplitude",
+            hovermode="x unified",
+            legend=dict(x=0, y=1)
+        )
+        st.plotly_chart(fig_combined, use_container_width=True)
 
 with tab3:
     st.write("### Download Lecture Slides")
