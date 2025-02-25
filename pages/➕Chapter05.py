@@ -26,6 +26,7 @@ def generate_stereo_tone(frequency1, frequency2, duration, delay_ms, sample_rate
 
     # Convert delay from milliseconds to samples
     delay_samples = int((delay_ms / 1000) * sample_rate)
+    delay_time = delay_samples / sample_rate  # Convert to seconds
 
     # Apply the delay by shifting the second tone
     if delay_samples > 0:
@@ -39,7 +40,7 @@ def generate_stereo_tone(frequency1, frequency2, duration, delay_ms, sample_rate
     sf.write(audio_buffer, stereo_waveform, sample_rate, format="WAV")
     audio_buffer.seek(0)
 
-    return audio_buffer, t, tone1, tone2  # Return waveforms for plotting
+    return audio_buffer, t, tone1, tone2, delay_time  # Return waveforms for plotting
 
 ######################
 
@@ -67,7 +68,7 @@ with tab2:
         audio_file2, t2, waveform2 = generate_pure_tone(frequency2, duration)
     
         # Generate combined stereo sound
-        stereo_audio_file, t_combined, stereo_wave1, stereo_wave2 = generate_stereo_tone(frequency1, frequency2, duration, delay_ms)
+        stereo_audio_file, t_combined, stereo_wave1, stereo_wave2, delay_time = generate_stereo_tone(frequency1, frequency2, duration, delay_ms)
     
         # Display and play individual pure tones
         st.subheader("🔊 Tone 1 (Left Channel)")
@@ -75,7 +76,7 @@ with tab2:
     
         # Plot waveform of Tone 1
         fig, ax = plt.subplots(figsize=(8, 3))
-        ax.plot(t1[:1000], waveform1[:1000], color="green")  # Show first 1000 samples for clarity
+        ax.plot(t1, waveform1, color="green")  # Show entire waveform
         ax.set_title(f"Waveform of {frequency1} Hz (Left)")
         ax.set_xlabel("Time (s)")
         ax.set_ylabel("Amplitude")
@@ -87,7 +88,7 @@ with tab2:
     
         # Plot waveform of Tone 2
         fig, ax = plt.subplots(figsize=(8, 3))
-        ax.plot(t2[:1000], waveform2[:1000], color="blue")  # Show first 1000 samples for clarity
+        ax.plot(t2, waveform2, color="blue")  # Show entire waveform
         ax.set_title(f"Waveform of {frequency2} Hz (Right)")
         ax.set_xlabel("Time (s)")
         ax.set_ylabel("Amplitude")
@@ -99,9 +100,9 @@ with tab2:
         st.audio(stereo_audio_file, format="audio/wav")
     
         # Plot waveform of combined stereo tones
-        fig, ax = plt.subplots(figsize=(8, 3))
-        ax.plot(t_combined[:1000], stereo_wave1[:1000], label=f"{frequency1} Hz (Left)", color="blue")
-        ax.plot(t_combined[:1000] + delay_samples, stereo_wave2[:1000], label=f"{frequency2} Hz (Right, Delayed)", color="red")
+        fig, ax = plt.subplots(figsize=(10, 4))
+        ax.plot(t_combined, stereo_wave1, label=f"{frequency1} Hz (Left)", color="blue")
+        ax.plot(t_combined + delay_time, stereo_wave2, label=f"{frequency2} Hz (Right, Delayed)", color="red")
 
         ax.set_title(f"Waveforms of {frequency1} Hz (Left) and {frequency2} Hz (Right) with {delay_ms} ms Delay")
         ax.set_xlabel("Time (s)")
