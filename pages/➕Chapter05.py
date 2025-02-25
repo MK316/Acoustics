@@ -47,23 +47,13 @@ with tab1:
 with tab2:
     st.markdown("### 1. Two pure tone playing asynchronously (Pisoni's experiment)")
     
-    # User input for frequencies and delay
+    # User input
     col1, col2 = st.columns(2)
     with col1:
         frequency1 = st.number_input("Enter Frequency 1 (Hz)", min_value=20, max_value=20000, value=500)
         duration = st.number_input("Duration (seconds)", min_value=0.1, max_value=5.0, value=1.0, step=0.1)
     
     with col2:
-        frequency2 = st.number_input("Enter Frequency 2 (Hz)", min_value=20, max_value=20000, value=1500)
-        delay_ms = st.number_input("Delay Time (ms)", min_value=0, max_value=500, value=20)
-    
-# User input
-col1, col2 = st.columns(2)
-with col1:
-    frequency1 = st.number_input("Enter Frequency 1 (Hz)", min_value=20, max_value=20000, value=500)
-    duration = st.number_input("Duration (seconds)", min_value=0.1, max_value=5.0, value=1.0, step=0.1)
-
-with col2:
         frequency2 = st.number_input("Enter Frequency 2 (Hz)", min_value=20, max_value=20000, value=1500)
         delay_ms = st.number_input("Delay Time (ms)", min_value=0, max_value=500, value=20)
     
@@ -90,7 +80,8 @@ with col2:
         ax.legend()
         ax.grid(True)
         st.pyplot(fig)
-        
+
+
 with tab3:
     st.write("### Download Lecture Slides")
 
