@@ -30,23 +30,27 @@ if st.button("Submit"):
     df = pd.DataFrame(list(responses.items()), columns=["Stimulus", "Response"])
     df["Stimulus"] = df["Stimulus"].apply(lambda x: int(x.split("_")[1]))  # Extract stimulus number
 
-    # Encode categorical responses for plotting
-    response_mapping = {"da": 1, "ga": 2}  # Encode 'da' as 1, 'ga' as 2
+    # Encode categorical responses: "da" = 1, "ga" = 2
+    response_mapping = {"da": 1, "ga": 2}
     df["Response_Num"] = df["Response"].map(response_mapping)
 
     # Create the plot
     fig, ax = plt.subplots(figsize=(6, 4))
 
+    # Create a line-dot plot with categorical y-axis
     ax.plot(df["Stimulus"], df["Response_Num"], marker="o", linestyle="-", color="black")
 
     # Set y-axis to categorical labels
     ax.set_yticks([1, 2])
-    ax.set_yticklabels(["Da", "Ga"])  # Show "Da" and "Ga" instead of numbers
+    ax.set_yticklabels(["Da", "Ga"])
 
     ax.set_xticks(df["Stimulus"])  # Set x-ticks to be only stimulus values
     ax.set_xlabel("Stimulus")
     ax.set_ylabel("Response")
     ax.set_title("Da-Ga Perception Results")
+
+    # Remove extra grid lines for a clean look
+    ax.grid(True, linestyle="--", alpha=0.5)
 
     # Display the plot in Streamlit
     st.pyplot(fig)
