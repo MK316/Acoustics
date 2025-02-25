@@ -4,7 +4,7 @@ st.markdown("""
   #### 🐾 Phonology & English Education
   - Semester: Spring 2025
   - Topic: Acoustics and Auditory Phonetics (Physical aspect of sound)
-  - Questions:
+  - Overview Questions:
   1. What is sound, and how does it relate to teaching/learning spoken English?
   2. How do English learners perceive sounds differently based on their linguistic background?
   """)
