@@ -12,7 +12,7 @@ st.markdown("""
 st.image(
     "https://github.com/MK316/Acoustics/raw/main/images/acoustics-logo4.png",
     width=600,  # Adjust width as needed
-    caption= "©️ MK316 Acoustics")
+    caption= "©️ MK316 Acoustic and auditory phonetics")
 
 st.markdown("---")
 st.markdown("⛺Goto [MK316 home](https://mk316.github.io)")
