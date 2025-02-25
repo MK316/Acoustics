@@ -1,18 +1,8 @@
 import streamlit as st
-import requests
 
-st.title("View Python Script from GitHub")
+st.title("Main Page")
 
-# Define GitHub file URL
-github_url = "https://github.com/MK316/Acoustics/raw/main/praat/daga.py"
+# Add a button that links to another page inside the 'pages' folder
+st.page_link("praat/daga.py", label="Go to Page 1", icon="📄")
+st.page_link("pages/page2.py", label="Go to Page 2", icon="🔊")
 
-try:
-    response = requests.get(github_url)
-    response.raise_for_status()
-    script_content = response.text
-
-    st.subheader("Python Script Content")
-    st.code(script_content, language="python")
-
-except requests.exceptions.RequestException as e:
-    st.error(f"Error fetching script: {e}")
