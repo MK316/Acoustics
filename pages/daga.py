@@ -5,10 +5,15 @@ import matplotlib.pyplot as plt
 # GitHub raw URLs for the audio files
 audio_urls = [
     "https://github.com/MK316/Acoustics/raw/main/praat/bada1.wav",
+    "https://github.com/MK316/Acoustics/raw/main/praat/bada2.wav",
     "https://github.com/MK316/Acoustics/raw/main/praat/bada3.wav",
+    "https://github.com/MK316/Acoustics/raw/main/praat/bada4.wav",
     "https://github.com/MK316/Acoustics/raw/main/praat/bada5.wav",
+    "https://github.com/MK316/Acoustics/raw/main/praat/bada6.wav",
     "https://github.com/MK316/Acoustics/raw/main/praat/bada7.wav",
-    "https://github.com/MK316/Acoustics/raw/main/praat/bada9.wav"
+    "https://github.com/MK316/Acoustics/raw/main/praat/bada8.wav",
+    "https://github.com/MK316/Acoustics/raw/main/praat/bada9.wav",
+    "https://github.com/MK316/Acoustics/raw/main/praat/bada10.wav"
 ]
 
 st.title("Da-Ga Perception Test")
