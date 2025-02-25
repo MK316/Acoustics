@@ -29,19 +29,17 @@ if st.button("Submit"):
     df = pd.DataFrame(list(responses.items()), columns=["Stimulus", "Response"])
     df["Stimulus"] = df["Stimulus"].apply(lambda x: int(x.split("_")[1]))  # Extract stimulus number
 
-    # Map categorical labels to numeric positions for plotting
-    response_map = {"da": "Da", "ga": "Ga"}
-    df["Response"] = df["Response"].map(response_map)
-
-    # Define categorical order for y-axis
+    # Encode categorical responses for plotting
     category_order = ["Ga", "Da"]
+    df["Response"] = df["Response"].map({"ga": 0, "da": 1})
 
-    # Plot results as a line-dot plot with categorical y-axis
-    fig, ax = plt.subplots()
+    # Create the plot
+    fig, ax = plt.subplots(figsize=(6, 3))
+
     ax.plot(df["Stimulus"], df["Response"], marker="o", linestyle="-", color="black")
 
-    # Adjust y-axis for categorical labels
-    ax.set_yticks(category_order)
+    # Set y-axis labels as categorical ("Ga" and "Da")
+    ax.set_yticks([0, 1])
     ax.set_yticklabels(category_order)
 
     ax.set_xticks(df["Stimulus"])  # Set x-ticks to be only stimulus values
