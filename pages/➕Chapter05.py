@@ -27,9 +27,9 @@ def generate_stereo_tone(frequency1, frequency2, duration, delay_ms, sample_rate
     delay_samples = int((delay_ms / 1000) * sample_rate)
     delay_time = delay_samples / sample_rate  # Convert samples to seconds
 
-    # Apply the delay by shifting the second tone
     if delay_samples > 0:
         tone2 = np.concatenate((np.zeros(delay_samples), tone2[:-delay_samples]))
+
 
     # Create a stereo waveform: Left (tone1), Right (tone2 with delay)
     stereo_waveform = np.vstack((tone1, tone2)).T  # Stack as [Left, Right]
