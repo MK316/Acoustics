@@ -13,5 +13,5 @@ st.image(
 )
 
 st.markdown("---")
-st.markdown("⛺Goto [MK316 home](https://mk316home.streamlit.app)")
+st.markdown("⛺Goto [MK316 home](https://mk316.github.io)")
 st.caption("🕑 Last updated: Feb.11, 2025")
