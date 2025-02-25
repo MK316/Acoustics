@@ -31,14 +31,18 @@ if st.button("Submit"):
 
     # Encode categorical responses for plotting
     category_order = ["Ga", "Da"]
-    df["Response"] = df["Response"].map({"ga": 0, "da": 1})
+    df["Response"] = df["Response"].map({"ga": "Ga", "da": "Da"})
 
-    # Create the plot
-    fig, ax = plt.subplots(figsize=(6, 3))
+    # Create a mapping to numerical values for plotting purposes
+    response_mapping = {"Ga": 0, "Da": 1}
+    df["Response_Num"] = df["Response"].map(response_mapping)
 
-    ax.plot(df["Stimulus"], df["Response"], marker="o", linestyle="-", color="black")
+    # Create the line-dot plot
+    fig, ax = plt.subplots(figsize=(6, 4))
 
-    # Set y-axis labels as categorical ("Ga" and "Da")
+    ax.plot(df["Stimulus"], df["Response_Num"], marker="o", linestyle="-", color="black")
+
+    # Set y-axis to categorical labels
     ax.set_yticks([0, 1])
     ax.set_yticklabels(category_order)
 
@@ -47,4 +51,5 @@ if st.button("Submit"):
     ax.set_ylabel("Response")
     ax.set_title("Da-Ga Perception Results")
 
+    # Display the plot in Streamlit
     st.pyplot(fig)
