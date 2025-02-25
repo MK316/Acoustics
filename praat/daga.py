@@ -28,17 +28,23 @@ if st.button("Submit"):
     # Convert responses to DataFrame
     df = pd.DataFrame(list(responses.items()), columns=["Stimulus", "Response"])
     df["Stimulus"] = df["Stimulus"].apply(lambda x: int(x.split("_")[1]))  # Extract stimulus number
-    df["Response"] = df["Response"].map({"da": 1, "ga": 0})  # Convert to numerical values
 
-    # Sort by stimulus order
-    df = df.sort_values("Stimulus")
+    # Map categorical labels to numeric positions for plotting
+    response_map = {"da": "Da", "ga": "Ga"}
+    df["Response"] = df["Response"].map(response_map)
 
-    # Plot results as a line plot with dots
+    # Define categorical order for y-axis
+    category_order = ["Ga", "Da"]
+
+    # Plot results as a line-dot plot with categorical y-axis
     fig, ax = plt.subplots()
     ax.plot(df["Stimulus"], df["Response"], marker="o", linestyle="-", color="black")
+
+    # Adjust y-axis for categorical labels
+    ax.set_yticks(category_order)
+    ax.set_yticklabels(category_order)
+
     ax.set_xticks(df["Stimulus"])  # Set x-ticks to be only stimulus values
-    ax.set_yticks([0, 1])  # Only show "ga" and "da" on y-axis
-    ax.set_yticklabels(["Ga", "Da"])
     ax.set_xlabel("Stimulus")
     ax.set_ylabel("Response")
     ax.set_title("Da-Ga Perception Results")
