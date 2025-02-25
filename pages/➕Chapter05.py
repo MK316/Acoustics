@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import soundfile as sf
 from io import BytesIO
+import matplotlib.pyplot as plt
 
 
 tab1, tab2, tab3 = st.tabs(["📖 Lecture slides", "🌀 Apps", "💾 Download"])
