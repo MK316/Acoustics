@@ -18,6 +18,7 @@ st.write("Listen to each sound and select whether you hear 'da' or 'ga'.")
 # Dictionary to store responses
 responses = {}
 
+
 # Display audio files with radio buttons for selection
 for i, url in enumerate(audio_urls, start=1):
     st.audio(url, format="audio/wav")
@@ -30,21 +31,17 @@ if st.button("Submit"):
     df["Stimulus"] = df["Stimulus"].apply(lambda x: int(x.split("_")[1]))  # Extract stimulus number
 
     # Encode categorical responses for plotting
-    category_order = ["Ga", "Da"]
-    df["Response"] = df["Response"].map({"ga": "Ga", "da": "Da"})
-
-    # Create a mapping to numerical values for plotting purposes
-    response_mapping = {"Ga": 0, "Da": 1}
+    response_mapping = {"da": 1, "ga": 2}  # Encode 'da' as 1, 'ga' as 2
     df["Response_Num"] = df["Response"].map(response_mapping)
 
-    # Create the line-dot plot
+    # Create the plot
     fig, ax = plt.subplots(figsize=(6, 4))
 
     ax.plot(df["Stimulus"], df["Response_Num"], marker="o", linestyle="-", color="black")
 
     # Set y-axis to categorical labels
-    ax.set_yticks([0, 1])
-    ax.set_yticklabels(category_order)
+    ax.set_yticks([1, 2])
+    ax.set_yticklabels(["Da", "Ga"])  # Show "Da" and "Ga" instead of numbers
 
     ax.set_xticks(df["Stimulus"])  # Set x-ticks to be only stimulus values
     ax.set_xlabel("Stimulus")
