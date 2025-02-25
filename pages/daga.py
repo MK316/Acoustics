@@ -40,10 +40,10 @@ if st.button("Submit"):
     df["Response_Num"] = df["Response"].map(response_mapping)
 
     # Create the plot
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(6, 3))
 
     # Create a line-dot plot with categorical y-axis
-    ax.plot(df["Stimulus"], df["Response_Num"], marker="o", linestyle="-", color="black")
+    ax.plot(df["Stimulus"], df["Response_Num"], marker="o", linestyle="-", color="blue")
 
     # Set y-axis to categorical labels
     ax.set_yticks([1, 2])
