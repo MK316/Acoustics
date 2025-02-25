@@ -7,3 +7,4 @@ matplotlib
 qrcode
 wordcloud
 soundfile
+plotly
