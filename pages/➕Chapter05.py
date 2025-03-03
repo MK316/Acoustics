@@ -21,7 +21,7 @@ audio_urls = [
 ]
 
 
-tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Apps", "Continuum stimuli", "💾 Download"])
+tab1, tab2, tab3, tab4 = st.tabs(["📖 Lecture slides", "🌀 Apps", "🌱 Continuum stimuli", "💾 Download"])
 
 # ✅ Function to generate a single pure tone
 def generate_pure_tone(frequency, duration, sample_rate=44100):
