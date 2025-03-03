@@ -1,3 +1,4 @@
+```
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -60,3 +61,4 @@ if st.button("Submit"):
     # Display the plot in Streamlit
     st.pyplot(fig)
 
+```
