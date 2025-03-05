@@ -41,9 +41,9 @@ with tabs[4]:
     st.markdown("#### Github IDs")
 
     st.markdown("""
-    +[MK316](https://github.com/mk316)
-    +[WC Jung](https://github.com/Alexwcjung)
-    +[SJ Kwon](https://github.com/kwonsungja)
+    +[MK316](https://github.com/mk316)  
+    +[WC Jung](https://github.com/Alexwcjung)  
+    +[SJ Kwon](https://github.com/kwonsungja)  
     +JH Choi
     """)
   
