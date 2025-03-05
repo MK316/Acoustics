@@ -15,7 +15,7 @@ def create_wordcloud(text):
     return wordcloud
 
 # Streamlit tabs
-tabs = st.tabs(["🔆 QR", "⏳ Timer", "👥 Grouping", "🐤 Github IDs","🔊 Text-to-Speech", "🎱 Calculator", "⛅ Word Cloud","🎨 Drawing"])
+tabs = st.tabs(["🔆 QR", "⏳ Timer", "👥 Grouping", "🐤 Github IDs","🔊 Text-to-Speech", "🎱 Calculator", "⛅ Word Cloud","🎨 Drawing", "Textboard"])
 
 # QR Code tab
 with tabs[0]:
@@ -341,3 +341,43 @@ with tabs[7]:
     if st.button("🗑️ Clear Canvas"):
         st.session_state["clear_canvas"] = not st.session_state["clear_canvas"]
         st.rerun()  # This forces Streamlit to reload and clear the drawing
+
+with tabs[8]:
+with tab4:
+
+    st.markdown("#### 📝 Text Board")
+    st.write("Pick a color and font size for each part, enter the text, and click 'Show'.")
+
+    # Font size selection (same for all parts)
+    font_size = st.slider("Select Font Size (px)", min_value=10, max_value=100, value=30)
+
+    # Adjust column widths: [1,4] - Smaller column for color, larger for text input
+    col1, col2 = st.columns([1, 4])
+    with col1:
+        color1 = st.color_picker("🎨 Part 1", "#FF0000")
+    with col2:
+        text1 = st.text_input("Enter text for Part 1", "")
+
+    col3, col4 = st.columns([1, 4])
+    with col3:
+        color2 = st.color_picker("🎨 Part 2", "#008000")
+    with col4:
+        text2 = st.text_input("Enter text for Part 2", "")
+
+    col5, col6 = st.columns([1, 4])
+    with col5:
+        color3 = st.color_picker("🎨 Part 3", "#0000FF")
+    with col6:
+        text3 = st.text_input("Enter text for Part 3", "")
+
+    # Button to display combined text on one line
+    if st.button("Show"):
+        combined_text = f"""
+        <p style='font-size:{font_size}px;'>
+            <span style='color:{color1};'>{text1} </span>
+            <span style='color:{color2};'>{text2} </span>
+            <span style='color:{color3};'>{text3}</span>
+        </p>
+        """
+        st.markdown("---")
+        st.markdown(combined_text, unsafe_allow_html=True)
