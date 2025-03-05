@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # Create tabs for different sections of the course
-tabs = st.tabs(["🍐 Weekly", "Readings", "🍏 Assignment details", "🐾 Padlet","👫 Github IDs"])
+tabs = st.tabs(["🍐 Weekly", "📕 Readings", "🍏 Assignment details", "🐾 Padlet","👫 Github IDs"])
                 
 # Content for the Schedule tab
 with tabs[0]:
