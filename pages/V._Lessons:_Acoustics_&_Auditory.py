@@ -65,8 +65,10 @@ st.markdown("""
 <ul>
 <li>5.2.1 Categorical perception ... 104 </li> 
 <li>5.2.2 Phonetic coherence ... 109</li>   
+</ul>
 5.3 Linguistic Knowledge Shapes Speech Perception ... 112  
 5.4 Perceptual Similarity ... 115  
+<ul>
 <li>5.4.1 Maps from distances ... 116</li>   
 <li>5.4.2 The perceptual map of fricatives ... 119</li>
 </ul>
