@@ -309,7 +309,7 @@ with tabs[6]:
     with col1:
         stroke_width = st.slider("✏️ Stroke Width", 1, 10, 5)
     with col2:
-        stroke_color = st.color_picker("🖌 Stroke Color", "#000000")
+        stroke_color = st.color_picker("🖌 Stroke Color", "#0B0B0B")
     with col3:
         bg_color = st.color_picker("🖼 Background Color", "#FFFFFF")
 
