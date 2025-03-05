@@ -344,13 +344,13 @@ with tabs[7]:
     # Adjust column widths: [1,4] - Smaller column for color, larger for text input
     col1, col2 = st.columns([1, 4])
     with col1:
-        color1 = st.color_picker("🎨 Part 1", "#FF0000")
+        color1 = st.color_picker("🎨 Part 1", "#0B0B0B")
     with col2:
         text1 = st.text_input("Enter text for Part 1", "")
 
     col3, col4 = st.columns([1, 4])
     with col3:
-        color2 = st.color_picker("🎨 Part 2", "#008000")
+        color2 = st.color_picker("🎨 Part 2", "#CC0000")
     with col4:
         text2 = st.text_input("Enter text for Part 2", "")
 
