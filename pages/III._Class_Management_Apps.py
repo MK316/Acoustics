@@ -15,7 +15,7 @@ def create_wordcloud(text):
     return wordcloud
 
 # Streamlit tabs
-tabs = st.tabs(["🔆 QR", "⏳ Timer", "👥 Grouping", "🐤 Github IDs","🔊 Text-to-Speech", "🎱 Calculator", "⛅ Word Cloud"])
+tabs = st.tabs(["🔆 QR", "⏳ Timer", "👥 Grouping", "🐤 Github IDs","🔊 Text-to-Speech", "🎱 Calculator", "⛅ Word Cloud","🎨 Drawing"])
 
 # QR Code tab
 with tabs[0]:
@@ -307,3 +307,37 @@ with tabs[6]:
             st.pyplot(fig)
         else:
             st.warning("Please enter some text to generate a word cloud.")
+
+with tabs[7]:
+    st.caption("Use the canvas below to draw freely. You can change the stroke width and color.")
+
+   # Place Stroke Width, Stroke Color, and Background Color in the same row
+    col1, col2, col3 = st.columns([1, 1, 1])
+
+    with col1:
+        stroke_width = st.slider("✏️ Stroke Width", 1, 10, 5)
+    with col2:
+        stroke_color = st.color_picker("🖌 Stroke Color", "#000000")
+    with col3:
+        bg_color = st.color_picker("🖼 Background Color", "#FFFFFF")
+
+    # Initialize session state for clearing
+    if "clear_canvas" not in st.session_state:
+        st.session_state["clear_canvas"] = False
+
+    # Create the canvas (Unique key prevents duplication)
+    canvas_result = st_canvas(
+        fill_color="rgba(255, 165, 0, 0.3)",  
+        stroke_width=stroke_width,
+        stroke_color=stroke_color,
+        background_color=bg_color,
+        height=400,
+        width=600,
+        drawing_mode="freedraw",
+        key="main_canvas" if not st.session_state["clear_canvas"] else "new_canvas"
+    )
+
+    # Clear Canvas button
+    if st.button("🗑️ Clear Canvas"):
+        st.session_state["clear_canvas"] = not st.session_state["clear_canvas"]
+        st.rerun()  # This forces Streamlit to reload and clear the drawing
