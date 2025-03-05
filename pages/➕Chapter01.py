@@ -434,5 +434,5 @@ with tab7:
     pdf_url = "https://github.com/MK316/Acoustics/raw/main/data/test.pdf"
 
     # Create a button that triggers download
-    if st.button("Download PDF 📥"):
+    if st.button("Download PDF (No need) 📥"):
         st.markdown(f'<meta http-equiv="refresh" content="0;url={pdf_url}">', unsafe_allow_html=True)
