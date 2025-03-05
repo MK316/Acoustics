@@ -39,11 +39,13 @@ with tabs[3]:
 
 with tabs[4]:
     st.markdown("#### Github IDs")
-    st.markdown("[Github IDs](https://docs.google.com/spreadsheets/d/1z2uYvH-foo3BZ6a4_T80TK7HOQbIJIYIUe5SWOEaGyk/edit?usp=sharing): Group members, Google Drive")
 
-    # Button to open GitHub ID page
-    if st.button("Open GitHub ID Page"):
-        st.markdown(f'<meta http-equiv="refresh" content="0;url=https://docs.google.com/spreadsheets/d/1z2uYvH-foo3BZ6a4_T80TK7HOQbIJIYIUe5SWOEaGyk/edit?usp=sharing">', unsafe_allow_html=True)
-
+    st.markdown("""
+    +[MK316](https://github.com/mk316)
+    +[WC Jung](https://github.com/Alexwcjung)
+    +[SJ Kwon](https://github.com/kwonsungja)
+    +JH Choi
+    """)
+  
 
 
