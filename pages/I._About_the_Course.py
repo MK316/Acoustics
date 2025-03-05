@@ -73,6 +73,14 @@ with tabs[0]:
     
     # Audio for the first passage
     st.audio('https://github.com/MK316/Acoustics/raw/main/audio/grad-overview1.mp3', format='audio/mp3')
+
+    st.markdown("""
+    This course aims to deepen educators' and researchers' intrinsic understanding of sound and explore how this understanding can be linked to teaching listening and speaking in English. Participants will gain foundational knowledge in the basics of speech acoustics and auditory perception necessary to read academic papers and will be equipped to conduct related research in the future. Ultimately, this course seeks to enable participants to enhance their teaching practices based on scientific evidence.
+    """)
+    
+    # Audio for the first passage
+    st.audio('https://github.com/MK316/Acoustics/raw/main/audio/overview3.mp3', format='audio/mp3')
+
     
     st.markdown("""
     **What you will learn:**
