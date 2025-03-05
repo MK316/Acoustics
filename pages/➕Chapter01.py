@@ -87,6 +87,9 @@ with tab1:
     # Display the image
     display_image()
 
+    st.markdown("---")
+    st.caption("Introduction: Slides 1~8")
+    st.caption("Chapter 01: Slides 9~52")
 with tab2:
     st.markdown("### 🎵 1. Generate a Simple Periodic Wave")
 
