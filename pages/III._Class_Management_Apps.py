@@ -16,7 +16,7 @@ def create_wordcloud(text):
     return wordcloud
 
 # Streamlit tabs
-tabs = st.tabs(["🔆 QR", "⏳ Timer", "👥 Grouping", "🐤 Github IDs","🔊 Text-to-Speech", "🎱 Calculator", "⛅ Word Cloud","🎨 Drawing", "✏️ Textboard"])
+tabs = st.tabs(["🔆 QR", "⏳ Timer", "👥 Grouping", "🔊 Text-to-Speech", "🎱 Calculator", "⛅ Word Cloud","🎨 Drawing", "✏️ Textboard"])
 
 # QR Code tab
 with tabs[0]:
@@ -148,17 +148,8 @@ with tabs[2]:
 
 # Github
 
-with tabs[3]:
-    st.markdown("#### Github IDs")
-    st.markdown("[Github IDs](https://docs.google.com/spreadsheets/d/1z2uYvH-foo3BZ6a4_T80TK7HOQbIJIYIUe5SWOEaGyk/edit?usp=sharing): Group members, Google Drive")
-
-    # Button to open GitHub ID page
-    if st.button("Open GitHub ID Page"):
-        st.markdown(f'<meta http-equiv="refresh" content="0;url=https://docs.google.com/spreadsheets/d/1z2uYvH-foo3BZ6a4_T80TK7HOQbIJIYIUe5SWOEaGyk/edit?usp=sharing">', unsafe_allow_html=True)
-
-
 # Text-to-Speech tab
-with tabs[4]:
+with tabs[3]:
     st.subheader("Text-to-Speech Converter (using Google TTS")
     text_input = st.text_area("Enter the text you want to convert to speech:")
     language = st.selectbox("Choose a language: 🇰🇷 🇺🇸 🇬🇧 🇷🇺 🇫🇷 🇪🇸 🇯🇵 ", ["Korean", "English (American)", "English (British)", "Russian", "Spanish", "French", "Japanese"])
@@ -193,7 +184,7 @@ with tabs[4]:
         st.audio(speech.getvalue(), format='audio/mp3')
 
 # Code for the calculator within the first tab
-with tabs[5]:
+with tabs[4]:
     st.markdown("### 🔢 Calculator")
     # Initialize calculator input and result
     if 'calc_input' not in st.session_state:
@@ -291,7 +282,7 @@ with tabs[5]:
 
 
 # Word Cloud tab
-with tabs[6]:
+with tabs[5]:
     st.subheader("🌌 Word Cloud Generator")
 
     # Input text for generating the word cloud
@@ -309,7 +300,7 @@ with tabs[6]:
         else:
             st.warning("Please enter some text to generate a word cloud.")
 
-with tabs[7]:
+with tabs[6]:
     st.caption("Use the canvas below to draw freely. You can change the stroke width and color.")
 
    # Place Stroke Width, Stroke Color, and Background Color in the same row
@@ -343,7 +334,7 @@ with tabs[7]:
         st.session_state["clear_canvas"] = not st.session_state["clear_canvas"]
         st.rerun()  # This forces Streamlit to reload and clear the drawing
 
-with tabs[8]:
+with tabs[7]:
     st.markdown("#### 📝 Text Board")
     st.write("Pick a color and font size for each part, enter the text, and click 'Show'.")
 
