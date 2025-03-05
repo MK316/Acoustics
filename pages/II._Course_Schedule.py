@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # Create tabs for different sections of the course
-tabs = st.tabs(["🍐 Weekly", "Readings", "🍏 Assignment details", "🐾 Padlet"])
+tabs = st.tabs(["🍐 Weekly", "Readings", "🍏 Assignment details", "🐾 Padlet","👫 Github IDs"])
                 
 # Content for the Schedule tab
 with tabs[0]:
@@ -36,5 +36,14 @@ with tabs[3]:
     st.header("🐾 Files to share: on Padlet")
     st.write("This Padlet serves as a dynamic hub for our Acoustics course. Here, you'll find additional course materials, additional reading resources, and online tools. It's also a space for sharing files and submitting assignments.")
     st.components.v1.iframe("https://padlet.com/mirankim316/acoustics", width=700, height=800)
+
+with tabs[4]:
+    st.markdown("#### Github IDs")
+    st.markdown("[Github IDs](https://docs.google.com/spreadsheets/d/1z2uYvH-foo3BZ6a4_T80TK7HOQbIJIYIUe5SWOEaGyk/edit?usp=sharing): Group members, Google Drive")
+
+    # Button to open GitHub ID page
+    if st.button("Open GitHub ID Page"):
+        st.markdown(f'<meta http-equiv="refresh" content="0;url=https://docs.google.com/spreadsheets/d/1z2uYvH-foo3BZ6a4_T80TK7HOQbIJIYIUe5SWOEaGyk/edit?usp=sharing">', unsafe_allow_html=True)
+
 
 
