@@ -343,8 +343,6 @@ with tabs[7]:
         st.rerun()  # This forces Streamlit to reload and clear the drawing
 
 with tabs[8]:
-with tab4:
-
     st.markdown("#### 📝 Text Board")
     st.write("Pick a color and font size for each part, enter the text, and click 'Show'.")
 
