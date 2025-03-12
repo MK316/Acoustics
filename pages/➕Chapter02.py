@@ -350,8 +350,8 @@ with tab5:
     st.markdown("---")
     st.markdown("#### 🌀 Spectral Tilt and Sound Quality Analysis (simple demo)")
 
-    freq = st.sidebar.slider("Frequency", 100, 5000, 440, 100, key='freq')
-    duration = st.sidebar.slider("Duration", 1, 5, 1, key='duration')
+    freq = st.slider("Frequency", 100, 5000, 440, 100, key='freq')
+    duration = st.slider("Duration", 1, 5, 1, key='duration')
     sample_rate = 44100
     tilt_amount_high = 0.1
     tilt_amount_low = 0.5
