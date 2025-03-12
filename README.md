@@ -5,7 +5,7 @@
 |  W01    | Mar. 6     |Introduction; Ch.1| [Praat](https://www.fon.hum.uva.nl/praat/)|
 |  W02    | **Mar. 13** | Ch.1 Basics and acoustic filters |        |
 |  W03    | Mar. 20 | Ch.2 The acoustic theory of speech         |        |
-|  W04    | 💙 Mar. 27 | Ch.2 Reading & summary  | Ch.1 Exercises (selected numbers)|
+|  W04    | 💙 Mar. 27 | Ch.2 Reading  | Ch.1 Exercises (selected numbers)|
 |  W05    | Apr. 3 | Ch.3 Digital signal processing |        |
 |  W06    | 💙 Apr. 10[^2] |  |        |
 |  W07    | 💙 Apr. 17[^3] |   |        |
