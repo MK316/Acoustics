@@ -9,7 +9,7 @@
 |  W05    | Apr. 3 | Ch.3 Digital signal processing |        |
 |  W06    | 💙 Apr. 10[^2] |  |        |
 |  W07    | 💙 Apr. 17[^3] |   |        |
-|  W08    | 💙 Apr. 24[^4] | Article summary video to upload (4/26)  |        |
+|  W08    | 💙 Apr. 24[^4] | Article summary video to upload (4/26, Sat)  |        |
 |  W09    | 💛 (May 1) | Holiday | Video review |
 |  W10    | May 8 |  Reading discussions (1hr) + Ch.4 |        |
 |  W11    | May 15 | Ch.4 Basic audition|        |
