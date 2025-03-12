@@ -88,11 +88,9 @@ slide_files = sorted([f for f in os.listdir(slides_path) if f.endswith(".png")])
 num_slides = len(slide_files)
 
 
-# Initialize session state variables if they do not exist
-
-# Initialize session state variables if they do not exist
-if "slide_index" not in st.session_state:
-    st.session_state.slide_index = 0  # Start with the first slide
+# Initialize session state for slide index if not set or out of bounds
+if "slide_index" not in st.session_state or st.session_state.slide_index >= num_slides:
+    st.session_state.slide_index = 0
 
 # Check if there are slides in the folder
 if num_slides == 0:
