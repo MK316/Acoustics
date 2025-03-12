@@ -315,9 +315,26 @@ with tab5:
 ######################################################
 with tab6:
 
+
+    video_url0 = "https://www.youtube.com/embed/7cDAYFTXq3E?si=xjLndaN5Nopm3yvF"
+
+    st.markdown("#### 1. Types of sounds: Longitudinal vs. Transverse waves")
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url1}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+
+
     video_url1 = "https://www.youtube.com/embed/N7NQMhIbz3A?si=G_so9F4daJQPRiY2"
 
-    st.markdown("#### 1. Spectrogram generation demo (3D)")
+    st.markdown("#### 2. Spectrogram generation demo (3D)")
     st.markdown(
         f"""
         <iframe width="560" height="315" src="{video_url1}" 
@@ -332,7 +349,7 @@ with tab6:
 
     video_url2 = "https://www.youtube.com/embed/dihQuwrf9yQ?si=33-SxIxrhNXp59AG"
 
-    st.markdown("#### 2. What is resonance?")
+    st.markdown("#### 3. What is resonance?")
     st.markdown(
         f"""
         <iframe width="560" height="315" src="{video_url2}" 
