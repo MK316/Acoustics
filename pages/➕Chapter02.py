@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import soundfile as sf
 import os
+from PIL import Image
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 Quantal theory", "🌀 Harmonics", "🌀 Resonant frequencies", "🌀 Spectral tilt", "🌀 Videolinks", "💾 Download"])
 
