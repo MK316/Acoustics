@@ -7,7 +7,7 @@
 |  W03    | Mar. 20 | Ch.2 The acoustic theory of speech         |        |
 |  W04    | 💙 Mar. 27 | Ch.2 Reading  | Ch.1 Exercises (selected numbers)|
 |  W05    | Apr. 3 | Ch.3 Digital signal processing |        |
-|  W06    | 💙 Apr. 10[^2] |  |        |
+|  W06    | 💙 Apr. 10[^2] |  | Ch.1 Exercises (selected numbers)|
 |  W07    | 💙 Apr. 17[^3] |   |        |
 |  W08    | 💙 Apr. 24[^4] | Article summary video to upload (4/26, Sat)  |  Post link on Padlet |
 |  W09    | 💛 (May 1) | Holiday | Video review |
