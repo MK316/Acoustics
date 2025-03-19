@@ -1,4 +1,7 @@
 import streamlit as st
+import numpy as np
+import matplotlib.pyplot as plt
+import soundfile as sf
 import os
 from PIL import Image
 
