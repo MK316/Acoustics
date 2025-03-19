@@ -17,11 +17,23 @@ with tab3:
     st.caption("Video contents")
 
     video_url1 = "https://www.youtube.com/embed/hiflzRL7sUY?si=yI6gbYVtT99gEowg"
-
+    video_url2 = "https://www.youtube.com/embed/-7PYX0ohST4?si=x_D5KnAd83NwSe1q"
+    
     st.markdown("#### 1. Spectrogram generation demo (3D)")
     st.markdown(
         f"""
         <iframe width="560" height="315" src="{video_url1}" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.markdown("#### 2. How Does LP record music?")
+    st.markdown(
+        f"""
+        <iframe width="560" height="315" src="{video_url2}" 
         title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
