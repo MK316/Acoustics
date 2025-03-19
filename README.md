@@ -11,7 +11,7 @@
 |  W07    | 💙 Apr. 17[^3] |   | Ch. 3 Exerciese (selected numbers)|
 |  W08    | 💙 Apr. 24[^4] | Article summary video to upload (4/26, Sat)  |  Post link on Padlet |
 |  W09    | 💛 (May 1) | Holiday | Video review |
-|  W10    | May 8 |  Reading discussions | Submit Exercise note|
+|  W10    | May 8 |  Reading discussions | Submit Exercise notebook|
 |  W11    | May 15 | Ch.4 Basic audition (continued)|        |
 |  W12    | May 22 | Ch.5 Speech perception |        |
 |  W13    | May 29 | _(continued)_  |        |
