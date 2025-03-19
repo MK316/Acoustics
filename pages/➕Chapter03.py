@@ -85,7 +85,7 @@ with tab1:
     display_image()
 
     st.markdown("---")
-    st.caption("Chapter 2: Slides 1~51")
+    st.caption("Chapter 2: Slides 1~64")
 
 #######################################################
 
