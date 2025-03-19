@@ -5,9 +5,18 @@ import soundfile as sf
 import os
 from PIL import Image
 
-
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "💾 Download"])
 
+
+
+# CSS to adjust the alignment of the dropdown to match the buttons
+st.markdown("""
+    <style>
+    .stSelectbox div[data-baseweb="select"] {
+        margin-top: -30px;  /* Adjust this value to align with the buttons */
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Set up the path to the slides folder
 slides_path = "pages/AAP03/"  # Ensure this is correct relative to your app's location
@@ -76,7 +85,9 @@ with tab1:
     display_image()
 
     st.markdown("---")
-    st.caption("Chapter 3: Slides 1~64")
+    st.caption("Chapter 2: Slides 1~51")
+
+#######################################################
 
 ##########
 with tab2:
