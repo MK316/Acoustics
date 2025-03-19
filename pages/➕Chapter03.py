@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+from PIL import Image
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "💾 Download"])
 
