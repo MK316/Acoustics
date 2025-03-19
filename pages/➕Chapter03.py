@@ -22,7 +22,7 @@ with tab3:
     st.markdown("#### 1. How Does LP record music?")
     st.markdown(
         f"""
-        <iframe width="560" height="315" src="{video_url2}" 
+        <iframe width="560" height="315" src="{video_url1}" 
         title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -34,7 +34,7 @@ with tab3:
     st.markdown("#### 2. Spectrogram generation demo (3D)")
     st.markdown(
         f"""
-        <iframe width="560" height="315" src="{video_url1}" 
+        <iframe width="560" height="315" src="{video_url2}" 
         title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
