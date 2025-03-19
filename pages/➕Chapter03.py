@@ -1,4 +1,3 @@
-```
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
@@ -140,4 +139,4 @@ with tab5:
     # Create a button that triggers download
     if st.button("Download PDF 📥"):
         st.markdown(f'<meta http-equiv="refresh" content="0;url={pdf_url}">', unsafe_allow_html=True)
-```
+
