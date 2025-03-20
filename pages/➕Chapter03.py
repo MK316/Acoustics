@@ -91,9 +91,9 @@ with tab1:
 
 ##########
 with tab2:
-    st.write("1. The peripheral auditory system")
-    web_url = "https://www.britannica.com/science/ear/The-physiology-of-hearing"
-    st.markdown(f"📎 [Click here to visit Britannica on the physiology of hearing]({web_url})", unsafe_allow_html=True)
+    st.write("1. Digital Signal Processing")
+    web_url = "https://www.techtarget.com/whatis/definition/digital-signal-processing-DSP"
+    st.markdown(f"📎 [Click here to visit DSP intro]({web_url})", unsafe_allow_html=True)
     
 ##########
 with tab3:
