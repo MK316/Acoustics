@@ -148,6 +148,10 @@ def plot_waveform(t, waveform, sampled_t, sampled_waveform):
     for x, y in zip(sampled_t, sampled_waveform):
         ax.vlines(x, 0, y, color='gray', linestyle=':', linewidth=0.5)  # 세로선은 x축에서 샘플 y값까지만
         ax.hlines(y, 0, x, color='gray', linestyle=':', linewidth=0.5)  # 가로선은 y축에서 샘플 x값까지만
+
+    # 축의 원점에 진한 선 추가
+    ax.axhline(0, color='black', linewidth=1)  # y축의 0점을 강조
+    ax.axvline(0, color='black', linewidth=1)  # x축의 0점을 강조
     
     ax.set_title('Complex Waveform with Samples')
     ax.set_xlabel('Time (s)')
@@ -155,6 +159,7 @@ def plot_waveform(t, waveform, sampled_t, sampled_waveform):
     ax.legend()
     ax.grid(False)  # 기본 그리드 비활성화
     return fig
+
 
 
 def calculate_rms(sampled_waveform):
