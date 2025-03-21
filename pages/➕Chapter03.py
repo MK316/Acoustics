@@ -130,7 +130,6 @@ with tab3:
 ##########
 # Sentence Split & Audio tab
 
-
 def generate_waveform(frequencies, duration_ms, sample_rate, num_samples):
     t = np.linspace(0, duration_ms / 1000, int(sample_rate * (duration_ms / 1000)), endpoint=False)
     waveform = np.sum([np.sin(2 * np.pi * f * t) for f in frequencies], axis=0)
@@ -154,12 +153,6 @@ def plot_waveform(t, waveform, sampled_t, sampled_waveform):
     ax.legend()
     ax.grid(False)
     return fig
-
-def calculate_rms(sampled_waveform):
-    squares = sampled_waveform ** 2
-    mean_squares = np.mean(squares)
-    rms = np.sqrt(mean_squares)
-    return squares, mean_squares, rms
 
 def calculate_rms(sampled_waveform):
     squares = sampled_waveform ** 2
@@ -192,6 +185,10 @@ with tab4:
         'Sample Amplitude': sampled_waveform,
         'Squares': squares
     })
+    
+    # Add a row for the sum of squares
+    sum_row = {'Sample Time (s)': "", 'Sample Amplitude': "", 'Squares': np.sum(squares)}
+    data = data.append(sum_row, ignore_index=True)
     
     # Display results
     st.write('Sampled Data and Squares:', data)
