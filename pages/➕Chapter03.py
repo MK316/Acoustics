@@ -144,17 +144,18 @@ def plot_waveform(t, waveform, sampled_t, sampled_waveform):
     ax.plot(t, waveform, label='Waveform')
     ax.scatter(sampled_t, sampled_waveform, color='red')  # sample points
     
-    # Add grid lines for each sample point
+    # 각 샘플 점에서 x축과 y축에 도달할 때까지 선을 그림
     for x, y in zip(sampled_t, sampled_waveform):
-        ax.axvline(x=x, color='gray', linestyle=':', linewidth=0.5)  # vertical lines
-        ax.axhline(y=y, color='gray', linestyle=':', linewidth=0.5)  # horizontal lines
+        ax.vlines(x, 0, y, color='gray', linestyle=':', linewidth=0.5)  # 세로선은 x축에서 샘플 y값까지만
+        ax.hlines(y, 0, x, color='gray', linestyle=':', linewidth=0.5)  # 가로선은 y축에서 샘플 x값까지만
     
     ax.set_title('Complex Waveform with Samples')
     ax.set_xlabel('Time (s)')
     ax.set_ylabel('Amplitude')
-    ax.grid(True, which='both', linestyle='-', linewidth=0.5, color='lightgray')  # enhanced grid visibility
+    ax.grid(True, which='both', linestyle='-', linewidth=0.5, color='lightgray')  # 전체 그리드 강조
     ax.legend()
     return fig
+
 
 
 def calculate_rms(sampled_waveform):
