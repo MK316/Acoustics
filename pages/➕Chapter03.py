@@ -140,18 +140,18 @@ def generate_waveform(frequencies, duration_ms, sample_rate, num_samples):
     return t, waveform, sampled_t, sampled_waveform
 
 def plot_waveform(t, waveform, sampled_t, sampled_waveform):
-    plt.figure(figsize=(10, 4))
-    plt.plot(t, waveform, label='Waveform')
-    plt.scatter(sampled_t, sampled_waveform, color='red')  # sample points
+    fig, ax = plt.subplots(figsize=(10, 4))
+    ax.plot(t, waveform, label='Waveform')
+    ax.scatter(sampled_t, sampled_waveform, color='red')  # sample points
     for x, y in zip(sampled_t, sampled_waveform):
-        plt.axvline(x=x, color='gray', linestyle='--', linewidth=0.5)
-        plt.axhline(y=y, color='gray', linestyle='--', linewidth=0.5)
-    plt.title('Complex Waveform with Samples')
-    plt.xlabel('Time (s)')
-    plt.ylabel('Amplitude')
-    plt.grid(True)
-    plt.legend()
-    plt.show()
+        ax.axvline(x=x, color='gray', linestyle='--', linewidth=0.5)
+        ax.axhline(y=y, color='gray', linestyle='--', linewidth=0.5)
+    ax.set_title('Complex Waveform with Samples')
+    ax.set_xlabel('Time (s)')
+    ax.set_ylabel('Amplitude')
+    ax.grid(True)
+    ax.legend()
+    return fig
 
 def calculate_rms(sampled_waveform):
     squares = sampled_waveform ** 2
@@ -173,7 +173,8 @@ with tab4:
     
     # Generate and plot waveform
     t, waveform, sampled_t, sampled_waveform = generate_waveform(frequencies, duration_ms, sample_rate, num_samples)
-    plot_waveform(t, waveform, sampled_t, sampled_waveform)
+    fig = plot_waveform(t, waveform, sampled_t, sampled_waveform)
+    st.pyplot(fig)  # Use st.pyplot to display the matplotlib figure
     
     # Calculations
     squares, mean_squares, rms = calculate_rms(sampled_waveform)
@@ -187,7 +188,6 @@ with tab4:
     st.write('Sampled Data and Squares:', data)
     st.write(f'Mean of Squares: {mean_squares:.2f}')
     st.write(f'RMS Amplitude: {rms:.2f}')
-
 
 ##########    
 with tab5:
