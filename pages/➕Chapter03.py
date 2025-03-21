@@ -186,9 +186,12 @@ with tab4:
         'Squares': squares
     })
     
+    # Adjust index to start from 1
+    data.index = data.index + 1
+    
     # Add a row for the sum of squares
-    sum_data = pd.DataFrame({'Sample Time (s)': [""], 'Sample Amplitude': [""], 'Squares': [squares.sum()]})
-    data = pd.concat([data, sum_data], ignore_index=True)
+    sum_data = pd.DataFrame({'Sample Time (s)': ["Sum"], 'Sample Amplitude': [""], 'Squares': [squares.sum()]})
+    data = pd.concat([data, sum_data], ignore_index=False)
     
     # Display results
     st.write('Sampled Data and Squares:', data)
