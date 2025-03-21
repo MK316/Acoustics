@@ -162,7 +162,7 @@ def calculate_rms(sampled_waveform):
 
 # Streamlit interface
 with tab4:
-    st.markdown('#### ❄️ RMS Amplitude Calculator')
+    st.markdown('#### ❄️ RMS Amplitude Calculator (simulation)')
     
     # User input
     num_samples = st.text_input('Enter number of samples:', '10')  # Text input for number of samples
