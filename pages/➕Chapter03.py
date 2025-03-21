@@ -129,38 +129,65 @@ with tab3:
 
 ##########
 # Sentence Split & Audio tab
+
+
+def generate_waveform(frequencies, duration_ms, sample_rate, num_samples):
+    t = np.linspace(0, duration_ms / 1000, int(sample_rate * (duration_ms / 1000)), endpoint=False)
+    waveform = np.sum([np.sin(2 * np.pi * f * t) for f in frequencies], axis=0)
+    sample_indices = np.linspace(0, len(t) - 1, num_samples, dtype=int)
+    sampled_t = t[sample_indices]
+    sampled_waveform = waveform[sample_indices]
+    return t, waveform, sampled_t, sampled_waveform
+
+def plot_waveform(t, waveform, sampled_t, sampled_waveform):
+    plt.figure(figsize=(10, 4))
+    plt.plot(t, waveform, label='Waveform')
+    plt.scatter(sampled_t, sampled_waveform, color='red')  # sample points
+    for x, y in zip(sampled_t, sampled_waveform):
+        plt.axvline(x=x, color='gray', linestyle='--', linewidth=0.5)
+        plt.axhline(y=y, color='gray', linestyle='--', linewidth=0.5)
+    plt.title('Complex Waveform with Samples')
+    plt.xlabel('Time (s)')
+    plt.ylabel('Amplitude')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+def calculate_rms(sampled_waveform):
+    squares = sampled_waveform ** 2
+    mean_squares = np.mean(squares)
+    rms = np.sqrt(mean_squares)
+    return squares, mean_squares, rms
+
+# Streamlit interface
 with tab4:
-    st.subheader("📝 Read by Sentences")
-    text_input = st.text_area("Enter the text you want to split and convert to audio per sentence:")
-    language = st.selectbox("Choose a language for audio output:", ["English (American)", "English (British)"])
-
-    split_button = st.button("Split Text & Generate Audio")
+    st.markdown('### RMS Amplitude Calculator')
     
-    if split_button and text_input:
-        # Using re module to split the text into sentences
-        import re
-        sentences = re.split(r'[.!?]\s+', text_input)
+    # User input
+    num_samples = st.selectbox('Select number of samples:', (5, 10, 20))
+    
+    # Constants
+    frequencies = [100, 150, 300]  # Hz
+    duration_ms = 50  # milliseconds
+    sample_rate = 10000  # samples per second
+    
+    # Generate and plot waveform
+    t, waveform, sampled_t, sampled_waveform = generate_waveform(frequencies, duration_ms, sample_rate, num_samples)
+    plot_waveform(t, waveform, sampled_t, sampled_waveform)
+    
+    # Calculations
+    squares, mean_squares, rms = calculate_rms(sampled_waveform)
+    data = pd.DataFrame({
+        'Sample Time (s)': sampled_t,
+        'Sample Amplitude': sampled_waveform,
+        'Squares': squares
+    })
+    
+    # Display results
+    st.write('Sampled Data and Squares:', data)
+    st.write(f'Mean of Squares: {mean_squares:.2f}')
+    st.write(f'RMS Amplitude: {rms:.2f}')
 
-        # Mapping language selections to gTTS language codes and TLDs
-        lang_codes = {
-            "English (American)": ("en", 'com'),
-            "English (British)": ("en", 'co.uk')
-        }
-        language_code, tld = lang_codes[language]
-
-        for i, sentence in enumerate(sentences, 1):
-            if sentence:  # Ensure the sentence is not just whitespace
-                st.write(f"{i}. {sentence}")
-                # Generate TTS for each sentence
-                if tld:
-                    tts = gTTS(text=sentence, lang=language_code, tld=tld, slow=False)
-                else:
-                    tts = gTTS(text=sentence, lang=language_code, slow=False)
-                
-                speech = io.BytesIO()
-                tts.write_to_fp(speech)
-                speech.seek(0)
-                st.audio(speech.getvalue(), format='audio/mp3')
 
 ##########    
 with tab5:
