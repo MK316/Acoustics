@@ -195,7 +195,7 @@ with tab4:
     data = pd.concat([data, sum_data], ignore_index=False)
     
     # Display results
-    st.markdown('### ✏️ Sampled Data and Squares:', data)
+    st.write('✏️ **Sampled Data and Squares:**', data)
     st.text(f"Mean of Squares Calculation: Total of Squares / Number of Samples = {squares.sum():.2f} / {len(squares)}")
     st.write(f"Mean of Squares: {mean_squares:.2f}")
     st.text(f"RMS Calculation: Square Root of Mean of Squares = sqrt({mean_squares:.2f})")
