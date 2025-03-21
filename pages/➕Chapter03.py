@@ -187,12 +187,12 @@ with tab4:
     })
     
     # Add a row for the sum of squares
-    sum_row = {'Sample Time (s)': "", 'Sample Amplitude': "", 'Squares': np.sum(squares)}
-    data = data.append(sum_row, ignore_index=True)
+    sum_data = pd.DataFrame({'Sample Time (s)': [""], 'Sample Amplitude': [""], 'Squares': [squares.sum()]})
+    data = pd.concat([data, sum_data], ignore_index=True)
     
     # Display results
     st.write('Sampled Data and Squares:', data)
-    st.text(f"Mean of Squares Calculation: Total of Squares / Number of Samples = {np.sum(squares):.2f} / {len(squares)}")
+    st.text(f"Mean of Squares Calculation: Total of Squares / Number of Samples = {squares.sum():.2f} / {len(squares)}")
     st.write(f"Mean of Squares: {mean_squares:.2f}")
     st.text(f"RMS Calculation: Square Root of Mean of Squares = sqrt({mean_squares:.2f})")
     st.write(f"RMS Amplitude: {rms:.2f}")
