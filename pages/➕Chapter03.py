@@ -170,7 +170,7 @@ with tab4:
     
     # Constants
     frequencies = [100, 150, 300]  # Hz
-    duration_ms = 50  # milliseconds
+    duration_ms = 30  # milliseconds
     sample_rate = 10000  # samples per second
     
     # Generate and plot waveform
