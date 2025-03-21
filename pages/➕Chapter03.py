@@ -162,15 +162,15 @@ def calculate_rms(sampled_waveform):
 
 # Streamlit interface
 with tab4:
-    # Streamlit interface
     st.title('RMS Amplitude Calculator')
     
     # User input
     num_samples = st.selectbox('Select number of samples:', (5, 10, 20))
-    
+    duration_ms = st.text_input('Enter duration in milliseconds:', '100')  # Text input for duration
+    duration_ms = int(duration_ms)  # Convert input to integer
+
     # Constants
     frequencies = [100, 150, 300]  # Hz
-    duration_ms = 100  # milliseconds
     sample_rate = 10000  # samples per second
     
     # Generate and plot waveform
