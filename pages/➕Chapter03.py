@@ -165,7 +165,8 @@ with tab4:
     st.title('RMS Amplitude Calculator')
     
     # User input
-    num_samples = st.selectbox('Select number of samples:', (5, 10, 20))
+    num_samples = st.text_input('Enter number of samples:', '10')  # Text input for number of samples
+    num_samples = int(num_samples)  # Convert input to integer
     duration_ms = st.text_input('Enter duration in milliseconds:', '100')  # Text input for duration
     duration_ms = int(duration_ms)  # Convert input to integer
 
