@@ -143,15 +143,19 @@ def plot_waveform(t, waveform, sampled_t, sampled_waveform):
     fig, ax = plt.subplots(figsize=(10, 4))
     ax.plot(t, waveform, label='Waveform')
     ax.scatter(sampled_t, sampled_waveform, color='red')  # sample points
+    
+    # Add grid lines for each sample point
     for x, y in zip(sampled_t, sampled_waveform):
-        ax.axvline(x=x, color='gray', linestyle='--', linewidth=0.5)
-        ax.axhline(y=y, color='gray', linestyle='--', linewidth=0.5)
+        ax.axvline(x=x, color='gray', linestyle=':', linewidth=0.5)  # vertical lines
+        ax.axhline(y=y, color='gray', linestyle=':', linewidth=0.5)  # horizontal lines
+    
     ax.set_title('Complex Waveform with Samples')
     ax.set_xlabel('Time (s)')
     ax.set_ylabel('Amplitude')
-    ax.grid(True)
+    ax.grid(True, which='both', linestyle='-', linewidth=0.5, color='lightgray')  # enhanced grid visibility
     ax.legend()
     return fig
+
 
 def calculate_rms(sampled_waveform):
     squares = sampled_waveform ** 2
