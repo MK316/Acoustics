@@ -178,7 +178,7 @@ with tab4:
     t, waveform, sampled_t, sampled_waveform = generate_waveform(frequencies, duration_ms, sample_rate, num_samples)
     fig = plot_waveform(t, waveform, sampled_t, sampled_waveform)
     st.pyplot(fig)
-    
+    st.caption("📌 This complex wave has three component waves at 100Hz, 150Hz, 300Hz.")
     # Calculations
     squares, mean_squares, rms = calculate_rms(sampled_waveform)
     data = pd.DataFrame({
