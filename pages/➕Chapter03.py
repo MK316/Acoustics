@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import soundfile as sf
 import os
 from PIL import Image
+import pandas as pd
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "💾 Download"])
 
@@ -127,8 +128,40 @@ with tab3:
 
 
 ##########
+# Sentence Split & Audio tab
 with tab4:
-    st.caption("Apps to help the content")
+    st.subheader("📝 Read by Sentences")
+    text_input = st.text_area("Enter the text you want to split and convert to audio per sentence:")
+    language = st.selectbox("Choose a language for audio output:", ["English (American)", "English (British)"])
+
+    split_button = st.button("Split Text & Generate Audio")
+    
+    if split_button and text_input:
+        # Using re module to split the text into sentences
+        import re
+        sentences = re.split(r'[.!?]\s+', text_input)
+
+        # Mapping language selections to gTTS language codes and TLDs
+        lang_codes = {
+            "English (American)": ("en", 'com'),
+            "English (British)": ("en", 'co.uk')
+        }
+        language_code, tld = lang_codes[language]
+
+        for i, sentence in enumerate(sentences, 1):
+            if sentence:  # Ensure the sentence is not just whitespace
+                st.write(f"{i}. {sentence}")
+                # Generate TTS for each sentence
+                if tld:
+                    tts = gTTS(text=sentence, lang=language_code, tld=tld, slow=False)
+                else:
+                    tts = gTTS(text=sentence, lang=language_code, slow=False)
+                
+                speech = io.BytesIO()
+                tts.write_to_fp(speech)
+                speech.seek(0)
+                st.audio(speech.getvalue(), format='audio/mp3')
+
 ##########    
 with tab5:
     st.write("### Download Lecture Slides")
