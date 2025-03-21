@@ -142,25 +142,24 @@ def generate_waveform(frequencies, duration_ms, sample_rate, num_samples):
 def plot_waveform(t, waveform, sampled_t, sampled_waveform):
     fig, ax = plt.subplots(figsize=(10, 4))
     ax.plot(t, waveform, label='Waveform')
-    ax.scatter(sampled_t, sampled_waveform, color='red')  # sample points
-
-    # 각 샘플 점에서 x축과 y축에 도달할 때까지 선을 그림
+    ax.scatter(sampled_t, sampled_waveform, color='red')
     for x, y in zip(sampled_t, sampled_waveform):
-        ax.vlines(x, 0, y, color='gray', linestyle=':', linewidth=0.5)  # 세로선은 x축에서 샘플 y값까지만
-        ax.hlines(y, 0, x, color='gray', linestyle=':', linewidth=0.5)  # 가로선은 y축에서 샘플 x값까지만
-
-    # 축의 원점에 진한 선 추가
-    ax.axhline(0, color='black', linewidth=1)  # y축의 0점을 강조
-    ax.axvline(0, color='black', linewidth=1)  # x축의 0점을 강조
-    
+        ax.vlines(x, 0, y, color='gray', linestyle=':', linewidth=0.5)
+        ax.hlines(y, 0, x, color='gray', linestyle=':', linewidth=0.5)
+    ax.axhline(0, color='black', linewidth=1)
+    ax.axvline(0, color='black', linewidth=1)
     ax.set_title('Complex Waveform with Samples')
     ax.set_xlabel('Time (s)')
     ax.set_ylabel('Amplitude')
     ax.legend()
-    ax.grid(False)  # 기본 그리드 비활성화
+    ax.grid(False)
     return fig
 
-
+def calculate_rms(sampled_waveform):
+    squares = sampled_waveform ** 2
+    mean_squares = np.mean(squares)
+    rms = np.sqrt(mean_squares)
+    return squares, mean_squares, rms
 
 def calculate_rms(sampled_waveform):
     squares = sampled_waveform ** 2
@@ -170,7 +169,8 @@ def calculate_rms(sampled_waveform):
 
 # Streamlit interface
 with tab4:
-    st.markdown('### RMS Amplitude Calculator')
+    # Streamlit interface
+    st.title('RMS Amplitude Calculator')
     
     # User input
     num_samples = st.selectbox('Select number of samples:', (5, 10, 20))
@@ -183,7 +183,7 @@ with tab4:
     # Generate and plot waveform
     t, waveform, sampled_t, sampled_waveform = generate_waveform(frequencies, duration_ms, sample_rate, num_samples)
     fig = plot_waveform(t, waveform, sampled_t, sampled_waveform)
-    st.pyplot(fig)  # Use st.pyplot to display the matplotlib figure
+    st.pyplot(fig)
     
     # Calculations
     squares, mean_squares, rms = calculate_rms(sampled_waveform)
@@ -195,8 +195,10 @@ with tab4:
     
     # Display results
     st.write('Sampled Data and Squares:', data)
-    st.write(f'Mean of Squares: {mean_squares:.2f}')
-    st.write(f'RMS Amplitude: {rms:.2f}')
+    st.text(f"Mean of Squares Calculation: Total of Squares / Number of Samples = {np.sum(squares):.2f} / {len(squares)}")
+    st.write(f"Mean of Squares: {mean_squares:.2f}")
+    st.text(f"RMS Calculation: Square Root of Mean of Squares = sqrt({mean_squares:.2f})")
+    st.write(f"RMS Amplitude: {rms:.2f}")
 
 ##########    
 with tab5:
