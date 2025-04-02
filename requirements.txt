@@ -10,3 +10,4 @@ soundfile
 plotly
 streamlit_drawable_canvas
 Pillow
+scipy
