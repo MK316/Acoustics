@@ -5,8 +5,9 @@ import soundfile as sf
 import os
 from PIL import Image
 import pandas as pd
+from scipy.fft import fft
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "APP2", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "APP2", "APP3", "💾 Download"])
 
 
 
@@ -246,10 +247,48 @@ with tab5:
         fig = plot_frequencies(frequencies)
         st.pyplot(fig)
 
+##########
+with tab6:
+
+    # Settings
+    sampling_rate = 22000  # Sampling rate in Hz
+    window_size = 64       # Window size in samples
+    t = np.arange(window_size) / sampling_rate  # Time vector for window
+    
+    # Generate a signal (sine wave + noise)
+    frequency = 1000  # Frequency of the sine wave
+    signal = 0.5 * np.sin(2 * np.pi * frequency * t) + 0.5 * np.random.normal(size=window_size)
+    
+    # Perform FFT
+    fft_result = fft(signal)
+    frequencies = np.linspace(0, sampling_rate, window_size, endpoint=False)  # Frequency vector
+    
+    # Plotting
+    plt.figure(figsize=(12, 6))
+    
+    # Time-domain plot
+    plt.subplot(1, 2, 1)
+    plt.plot(t * 1000, signal, label='Signal')  # Plot in milliseconds
+    plt.title('Time Domain Signal')
+    plt.xlabel('Time (ms)')
+    plt.ylabel('Amplitude')
+    plt.grid(True)
+    
+    # Frequency-domain plot
+    plt.subplot(1, 2, 2)
+    magnitude = np.abs(fft_result)[:window_size // 2]  # Magnitude of the FFT
+    plt.stem(frequencies[:window_size // 2], magnitude, 'b', markerfmt=" ", basefmt="-b")
+    plt.title('Frequency Domain Spectrum')
+    plt.xlabel('Frequency (Hz)')
+    plt.ylabel('Magnitude')
+    plt.grid(True)
+    
+    plt.tight_layout()
+    plt.show()
 
 
 ##########
-with tab6:
+with tab7:
     st.write("### ✏Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
