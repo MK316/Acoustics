@@ -217,7 +217,8 @@ with tab5:
     
     def plot_frequencies(frequencies):
         plt.figure(figsize=(10, 4))
-        plt.stem(frequencies, use_line_collection=True)
+        indices = range(len(frequencies))  # Create an index array for the x-values
+        plt.stem(indices, frequencies, use_line_collection=True)  # Use indices and frequencies for x and y values respectively
         plt.xlabel('Index')
         plt.ylabel('Frequency (Hz)')
         plt.title('Frequency Components')
