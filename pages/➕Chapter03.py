@@ -6,7 +6,7 @@ import os
 from PIL import Image
 import pandas as pd
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "APP2", "💾 Download"])
 
 
 
@@ -201,8 +201,54 @@ with tab4:
     st.text(f"🔵 RMS Calculation: Square Root of Mean of Squares = sqrt({mean_squares:.2f})")
     st.write(f"🔴 RMS Amplitude: {rms:.2f}")
 
-##########    
+##########  
 with tab5:
+
+    def calculate_interval(sampling_rate, window_size):
+        # Calculate the chunk duration in milliseconds
+        chunk_duration = (window_size / sampling_rate) * 1000
+        
+        # Calculate the frequency interval
+        freq_interval = sampling_rate / window_size
+        
+        # Generate frequencies
+        frequencies = [i * freq_interval for i in range(int(window_size/2))]  # Only half due to Nyquist
+        return chunk_duration, freq_interval, frequencies[:10]  # Display only the first 10 frequencies
+    
+    def plot_frequencies(frequencies):
+        plt.figure(figsize=(10, 4))
+        plt.stem(frequencies, use_line_collection=True)
+        plt.xlabel('Index')
+        plt.ylabel('Frequency (Hz)')
+        plt.title('Frequency Components')
+        plt.grid(True)
+        plt.tight_layout()
+        return plt
+    
+    # Streamlit interface
+    st.title('Audio Sampling and Window Size Analysis')
+    
+    # User inputs
+    sampling_rate = st.number_input('Enter the sampling rate (in Hz)', value=22000, min_value=1000)
+    window_size = st.number_input('Enter the window size (in samples)', value=1024, min_value=128)
+    
+    if st.button('Calculate'):
+        chunk_duration, freq_interval, frequencies = calculate_interval(sampling_rate, window_size)
+        
+        # Display results
+        st.write(f"Chunk duration: {chunk_duration:.2f} ms")
+        st.write(f"Interval between points in the computed spectrum: {freq_interval:.2f} Hz")
+        st.write("Frequencies of the first few components:")
+        st.write(frequencies)
+        
+        # Plot frequencies
+        fig = plot_frequencies(frequencies)
+        st.pyplot(fig)
+
+
+
+##########
+with tab6:
     st.write("### ✏Download Lecture Slides")
 
     # GitHub raw file URL (replace with your actual link)
