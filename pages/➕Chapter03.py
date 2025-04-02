@@ -287,7 +287,6 @@ with tab6:  # Assuming you're placing this within a specific tab in Streamlit
     # Display the plot in Streamlit
     st.pyplot(fig)
 
-
 ##########
 with tab7:
     st.write("### ✏Download Lecture Slides")
