@@ -248,7 +248,8 @@ with tab5:
         st.pyplot(fig)
 
 ##########
-with tab6:
+
+with st.tab("Signal Analysis"):  # Assuming you're placing this within a specific tab in Streamlit
 
     # Settings
     sampling_rate = 22000  # Sampling rate in Hz
@@ -264,27 +265,27 @@ with tab6:
     frequencies = np.linspace(0, sampling_rate, window_size, endpoint=False)  # Frequency vector
     
     # Plotting
-    plt.figure(figsize=(12, 6))
+    fig, axs = plt.subplots(1, 2, figsize=(12, 6))
     
     # Time-domain plot
-    plt.subplot(1, 2, 1)
-    plt.plot(t * 1000, signal, label='Signal')  # Plot in milliseconds
-    plt.title('Time Domain Signal')
-    plt.xlabel('Time (ms)')
-    plt.ylabel('Amplitude')
-    plt.grid(True)
+    axs[0].plot(t * 1000, signal, label='Signal')  # Plot in milliseconds
+    axs[0].set_title('Time Domain Signal')
+    axs[0].set_xlabel('Time (ms)')
+    axs[0].set_ylabel('Amplitude')
+    axs[0].grid(True)
     
     # Frequency-domain plot
-    plt.subplot(1, 2, 2)
     magnitude = np.abs(fft_result)[:window_size // 2]  # Magnitude of the FFT
-    plt.stem(frequencies[:window_size // 2], magnitude, 'b', markerfmt=" ", basefmt="-b")
-    plt.title('Frequency Domain Spectrum')
-    plt.xlabel('Frequency (Hz)')
-    plt.ylabel('Magnitude')
-    plt.grid(True)
+    axs[1].stem(frequencies[:window_size // 2], magnitude, 'b', markerfmt=" ", basefmt="-b")
+    axs[1].set_title('Frequency Domain Spectrum')
+    axs[1].set_xlabel('Frequency (Hz)')
+    axs[1].set_ylabel('Magnitude')
+    axs[1].grid(True)
     
     plt.tight_layout()
-    plt.show()
+    
+    # Display the plot in Streamlit
+    st.pyplot(fig)
 
 
 ##########
