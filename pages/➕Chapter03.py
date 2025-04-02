@@ -251,41 +251,60 @@ with tab5:
 
 with tab6:  # Assuming you're placing this within a specific tab in Streamlit
 
+
+    def plot_signal_and_spectrum(signal, sampling_rate, window_size, title_suffix):
+        # Time vector for the window
+        t = np.arange(len(signal)) / sampling_rate
+    
+        # Perform FFT
+        fft_result = fft(signal)
+        frequencies = np.linspace(0, sampling_rate, len(signal), endpoint=False)
+        
+        # Create figure for both plots
+        fig, axs = plt.subplots(1, 2, figsize=(12, 4))
+        
+        # Time-domain plot
+        axs[0].plot(t * 1000, signal)  # Convert time to milliseconds
+        axs[0].set_title(f'Time Domain Signal - Window Size {title_suffix}')
+        axs[0].set_xlabel('Time (ms)')
+        axs[0].set_ylabel('Amplitude')
+        axs[0].grid(True)
+        
+        # Frequency-domain plot
+        magnitude = np.abs(fft_result)[:len(signal) // 2]
+        axs[1].stem(frequencies[:len(signal) // 2], magnitude, 'b', markerfmt=" ", basefmt="-b")
+        axs[1].set_title(f'Frequency Domain Spectrum - Window Size {title_suffix}')
+        axs[1].set_xlabel('Frequency (Hz)')
+        axs[1].set_ylabel('Magnitude')
+        axs[1].grid(True)
+        
+        plt.tight_layout()
+        return fig
+    
+    # Streamlit app setup
+    st.title('Signal Analysis with Different Window Sizes')
+    
+    # User inputs for window sizes
+    window_size1 = st.number_input('Enter first window size (in samples)', min_value=16, max_value=2048, value=64, step=16)
+    window_size2 = st.number_input('Enter second window size (in samples)', min_value=16, max_value=2048, value=1024, step=16)
+    
     # Settings
     sampling_rate = 22000  # Sampling rate in Hz
-    window_size = 64       # Window size in samples
-    t = np.arange(window_size) / sampling_rate  # Time vector for window
-    
-    # Generate a signal (sine wave + noise)
     frequency = 1000  # Frequency of the sine wave
-    signal = 0.5 * np.sin(2 * np.pi * frequency * t) + 0.5 * np.random.normal(size=window_size)
     
-    # Perform FFT
-    fft_result = fft(signal)
-    frequencies = np.linspace(0, sampling_rate, window_size, endpoint=False)  # Frequency vector
+    if st.button('Generate and Analyze Signals'):
+        # Generate a signal (sine wave + noise)
+        signal1 = 0.5 * np.sin(2 * np.pi * frequency * np.arange(window_size1) / sampling_rate) + 0.5 * np.random.normal(size=window_size1)
+        signal2 = 0.5 * np.sin(2 * np.pi * frequency * np.arange(window_size2) / sampling_rate) + 0.5 * np.random.normal(size=window_size2)
     
-    # Plotting
-    fig, axs = plt.subplots(1, 2, figsize=(12, 6))
-    
-    # Time-domain plot
-    axs[0].plot(t * 1000, signal, label='Signal')  # Plot in milliseconds
-    axs[0].set_title('Time Domain Signal')
-    axs[0].set_xlabel('Time (ms)')
-    axs[0].set_ylabel('Amplitude')
-    axs[0].grid(True)
-    
-    # Frequency-domain plot
-    magnitude = np.abs(fft_result)[:window_size // 2]  # Magnitude of the FFT
-    axs[1].stem(frequencies[:window_size // 2], magnitude, 'b', markerfmt=" ", basefmt="-b")
-    axs[1].set_title('Frequency Domain Spectrum')
-    axs[1].set_xlabel('Frequency (Hz)')
-    axs[1].set_ylabel('Magnitude')
-    axs[1].grid(True)
-    
-    plt.tight_layout()
-    
-    # Display the plot in Streamlit
-    st.pyplot(fig)
+        # Generate plots
+        fig1 = plot_signal_and_spectrum(signal1, sampling_rate, window_size1, f'{window_size1} samples')
+        fig2 = plot_signal_and_spectrum(signal2, sampling_rate, window_size2, f'{window_size2} samples')
+        
+        # Display plots
+        st.pyplot(fig1)
+        st.pyplot(fig2)
+
 
 ##########
 with tab7:
