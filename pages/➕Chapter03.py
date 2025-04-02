@@ -7,7 +7,7 @@ from PIL import Image
 import pandas as pd
 from scipy.fft import fft
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "APP2", "APP3", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "🌀 Sampling & Window size", "🌀 Window size", "💾 Download"])
 
 
 
@@ -228,7 +228,7 @@ with tab5:
         return plt
     
     # Streamlit interface
-    st.title('Audio Sampling and Window Size Analysis')
+    st.markdown('#### Audio Sampling and Window Size Analysis')
     
     # User inputs
     sampling_rate = st.number_input('Enter the sampling rate (in Hz)', value=22000, min_value=1000)
@@ -251,7 +251,7 @@ with tab5:
 
 with tab6:  # Assuming you're placing this within a specific tab in Streamlit
 
-
+    st.markdown('#### Compare window size and time/frequency resolution')
     def plot_signal_and_spectrum(signal, sampling_rate, window_size, title_suffix):
         # Time vector for the window
         t = np.arange(len(signal)) / sampling_rate
