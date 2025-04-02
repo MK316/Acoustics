@@ -249,7 +249,7 @@ with tab5:
 
 ##########
 
-with st.tab("Signal Analysis"):  # Assuming you're placing this within a specific tab in Streamlit
+with tab6:  # Assuming you're placing this within a specific tab in Streamlit
 
     # Settings
     sampling_rate = 22000  # Sampling rate in Hz
