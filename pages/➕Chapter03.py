@@ -251,7 +251,6 @@ with tab5:
 
 with tab6:  # Assuming you're placing this within a specific tab in Streamlit
 
-    st.markdown('#### Compare window size and time/frequency resolution')
     def plot_signal_and_spectrum(signal, sampling_rate, window_size, title_suffix):
         # Time vector for the window
         t = np.arange(len(signal)) / sampling_rate
@@ -282,7 +281,7 @@ with tab6:  # Assuming you're placing this within a specific tab in Streamlit
         return fig
     
     # Streamlit app setup
-    st.title('Signal Analysis with Different Window Sizes')
+    st.markdown('#### Signal Analysis with Different Window Sizes')
     
     # User inputs for window sizes
     window_size1 = st.number_input('Enter first window size (in samples)', min_value=16, max_value=2048, value=64, step=16)
