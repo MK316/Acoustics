@@ -7,7 +7,7 @@ from PIL import Image
 import pandas as pd
 from scipy.fft import fft
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "🌀 Sampling & Window size", "🌀 Window size", "💾 Download"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📖 Lecture slides", "🌀 Web Resources", "🌀 Videolinks", "🌀 Apps", "🌀 Sampling & Window size", "🌀 Window size", "Example"])
 
 
 
@@ -307,12 +307,25 @@ with tab6:  # Assuming you're placing this within a specific tab in Streamlit
 
 ##########
 with tab7:
-    st.write("### ✏Download Lecture Slides")
 
-    # GitHub raw file URL (replace with your actual link)
-    pdf_url = "https://github.com/MK316/Acoustics/raw/main/data/test.pdf"
+    # Parameters
+    Fs = 100  # Sampling rate in Hz
+    f = 10    # Frequency of the waveform in Hz
+    T = 1 / f # Period of the waveform in seconds
+    t = np.linspace(0, T, int(Fs * T), endpoint=False) # Time vector for one period
+    
+    # Generate the waveform
+    waveform = np.sin(2 * np.pi * f * t)
+    
+    # Plotting
+    plt.figure(figsize=(8, 4))
+    plt.plot(t, waveform, label='10 Hz Sine Wave', marker='o')
+    plt.axvspan(0, 0.1, color='yellow', alpha=0.3, label='Window (0.1s)')
+    plt.title('Windowing a 10 Hz Waveform Sampled at 100 Hz')
+    plt.xlabel('Time (seconds)')
+    plt.ylabel('Amplitude')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
 
-    # Create a button that triggers download
-    if st.button("Download PDF 📥"):
-        st.markdown(f'<meta http-equiv="refresh" content="0;url={pdf_url}">', unsafe_allow_html=True)
 
