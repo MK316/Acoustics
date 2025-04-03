@@ -308,6 +308,7 @@ with tab6:  # Assuming you're placing this within a specific tab in Streamlit
 ##########
 with tab7:
 
+
     # Parameters
     Fs = 100  # Sampling rate in Hz
     f = 10    # Frequency of the waveform in Hz
@@ -326,6 +327,4 @@ with tab7:
     plt.ylabel('Amplitude')
     plt.legend()
     plt.grid(True)
-    plt.show()
-
-
+    plt.show()  # Ensure this line is included to display the plot
