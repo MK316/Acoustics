@@ -27,6 +27,7 @@ with tabs[1]:
   - [Clopper et al. (2005)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3432912/) Acoustic characteristics of the vowel systems of six regional varieties of American English
   - [Maniwa & Jongman (2009)](https://kuppl.ku.edu/sites/kuppl/files/documents/publications/Maniwa_et_al_JASA2009.pdf) Acoustic characteristics of clearly spoken English fricatives
   - [Best et al. (2009)](https://pmc.ncbi.nlm.nih.gov/articles/PMC2777975/) Discrimination of non-native consonant contrasts varying in perceptual assimilation to the listener’s native phonological system
+  - [Kim (2011)](https://linguistics.stonybrook.edu/_pdf/dissertation/Mi-ran_Kim_2011_dissertation.pdf) The phonetics of stress manifestation: Segmental variation, syllable constituency and rhythm
   """)
   
 with tabs[2]:
