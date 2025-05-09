@@ -7,7 +7,7 @@ from PIL import Image
 import pandas as pd
 from scipy.fft import fft
 
-tab1, tab2, tab3 = st.tabs(["📖 Lecture slides", "🌀 Samples", "🌀 Project"])
+tab1, tab2, tab3 = st.tabs(["📖 Lecture slides", "🌀 Videos", "🌀 Project"])
 
 
 
@@ -93,9 +93,10 @@ with tab1:
 
 ##########
 with tab2:
-    st.write("1. Digital Signal Processing")
-    web_url = "https://www.techtarget.com/whatis/definition/digital-signal-processing-DSP"
-    st.markdown(f"📎 [Click here to visit DSP intro]({web_url})", unsafe_allow_html=True)
+    st.write("1. Nothern Cities Chain Shift")
+    web_url = "https://www.youtube.com/embed/9UoJ1-ZGb1w?si=3X5Fm0eoDkGz_bFq"
+    st.video(web_url)
+
     
 ##########
 with tab3:
