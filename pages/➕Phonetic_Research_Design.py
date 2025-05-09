@@ -93,6 +93,10 @@ with tab1:
 
 ##########
 with tab2:
+    st.write("IPA vowel chart")
+    st.markdown("[Online vowel chart](https://www.ipachart.com/)")
+    st.markdown("---")
+    
     st.write("1. Nothern Cities Chain Shift")
     web_url = "https://www.youtube.com/embed/9UoJ1-ZGb1w?si=3X5Fm0eoDkGz_bFq"
     st.video(web_url)
