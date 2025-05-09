@@ -96,7 +96,11 @@ with tab2:
     st.write("1. Nothern Cities Chain Shift")
     web_url = "https://www.youtube.com/embed/9UoJ1-ZGb1w?si=3X5Fm0eoDkGz_bFq"
     st.video(web_url)
-
+    st.markdown("---")
+    
+    st.write("2. Southern Vowel Shift")
+    web_url2 = "https://www.youtube.com/embed/-6Xc9_lG9Mw?si=6jzOugzaw1hjD60e"
+    st.video(web_url2)
     
 ##########
 with tab3:
